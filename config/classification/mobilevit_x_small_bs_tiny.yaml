@@ -20,17 +20,13 @@ image_augmentation:
     interpolation: "bilinear"
   random_horizontal_flip:
     enable: true
+  random_gauss_noise:
+    enable: false
 sampler:
-  name: "variable_batch_sampler"
-  vbs:
+  name: "batch_sampler"
+  bs:
     crop_size_width: 64
     crop_size_height: 64
-    max_n_scales: 1
-    min_crop_size_width: 64
-    max_crop_size_width: 64
-    min_crop_size_height: 64
-    max_crop_size_height: 64
-    check_scale: 8
 loss:
   category: "classification"
   classification:

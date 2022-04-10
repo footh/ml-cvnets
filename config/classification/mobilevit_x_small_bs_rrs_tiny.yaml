@@ -1,5 +1,5 @@
 common:
-  run_label: "sanity_check"
+  run_label: "rrs_05-10_85-120"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -17,20 +17,18 @@ dataset:
 image_augmentation:
   random_resized_crop:
     enable: true
+    scale: [ 0.5, 1.0 ]
+    aspect_ratio: [ 0.85, 1.2 ]
     interpolation: "bilinear"
   random_horizontal_flip:
     enable: true
+  random_gauss_noise:
+    enable: false
 sampler:
-  name: "variable_batch_sampler"
-  vbs:
+  name: "batch_sampler"
+  bs:
     crop_size_width: 64
     crop_size_height: 64
-    max_n_scales: 1
-    min_crop_size_width: 64
-    max_crop_size_width: 64
-    min_crop_size_height: 64
-    max_crop_size_height: 64
-    check_scale: 8
 loss:
   category: "classification"
   classification:
