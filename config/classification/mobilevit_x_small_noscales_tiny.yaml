@@ -4,8 +4,8 @@ common:
   auto_resume: true
   mixed_precision: false
 dataset:
-  root_train: "/home/jfaath/projects/image_data/tiny-imagenet-200/train"
-  root_val: "/home/jfaath/projects/image_data/tiny-imagenet-200/val/images"
+  root_train: "../image_data/tiny-imagenet-200/train"
+  root_val: "../image_data/tiny-imagenet-200/val/images"
   name: "tinyimagenet"
   category: "classification"
   train_batch_size0: 128
