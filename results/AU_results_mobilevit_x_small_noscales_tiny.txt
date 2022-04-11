@@ -1,0 +1,1176 @@
+(ml-cvnets2) C:\Users\auppuluri_outwardinc\Documents\P\DL-Tests\ml-cvnets>cvnets-train --common.config-file config/classification/mobilevit_x_small_noscales_tiny.yaml --common.results-loc results_mobilevit_x_small_noscales_tiny
+Namespace(**{'sampler.name': 'variable_batch_sampler', 'sampler.bs.crop_size_width': 256, 'sampler.bs.crop_size_height': 256, 'sampler.vbs.crop_size_width': 64, 'sampler.vbs.crop_size_height': 64, 'sampler.vbs.min_crop_size_width': 64, 'sampler.vbs.max_crop_size_width': 64, 'sampler.vbs.min_crop_size_height': 64, 'sampler.vbs.max_crop_size_height': 64, 'sampler.vbs.max_n_scales': 1, 'sampler.vbs.check_scale': 8, 'sampler.vbs.ep_intervals': [40], 'sampler.vbs.scale_inc_factor': 0.25, 'sampler.vbs.scale_inc': False, 'dataset.root_train': '../image_data/tiny-imagenet-200/train', 'dataset.root_val': '../image_data/tiny-imagenet-200/val/images', 'dataset.root_test': '', 'dataset.name': 'tinyimagenet', 'dataset.category': 'classification', 'dataset.train_batch_size0': 128, 'dataset.val_batch_size0': 100, 'dataset.eval_batch_size0': 100, 'dataset.workers': 4, 'dataset.persistent_workers': False, 'dataset.pin_memory': True, 'dataset.augmentation.gauss_noise_var': None, 'dataset.augmentation.jpeg_q_range': None, 'dataset.augmentation.gamma_corr_range': None, 'dataset.augmentation.blur_kernel_range': None, 'dataset.augmentation.translate_factor': None, 'dataset.augmentation.rotate_angle': None, 'dataset.pascal.use_coco_data': False, 'dataset.pascal.coco_root_dir': None, 'image_augmentation.random_gamma_correction.enable': False, 'image_augmentation.random_gamma_correction.gamma': (0.5, 1.5), 'image_augmentation.random_gamma_correction.p': 0.5, 'image_augmentation.random_resize.enable': False, 'image_augmentation.random_resize.min_size': 256, 'image_augmentation.random_resize.max_size': 1024, 'image_augmentation.random_resize.interpolation': 'bilinear', 'image_augmentation.random_zoom_out.enable': False, 'image_augmentation.random_zoom_out.side_range': [1, 4], 'image_augmentation.random_zoom_out.p': 0.5, 'image_augmentation.random_scale.enable': False, 'image_augmentation.random_scale.min_scale': 0.5, 'image_augmentation.random_scale.max_scale': 2.0, 'image_augmentation.random_scale.interpolation': 'bilinear', 'image_augmentation.random_resized_crop.enable': True, 
+'image_augmentation.random_resized_crop.interpolation': 'bilinear', 'image_augmentation.random_resized_crop.scale': (0.08, 1.0), 'image_augmentation.random_resized_crop.aspect_ratio': (0.75, 1.3333333333333333), 'image_augmentation.random_crop.enable': False, 'image_augmentation.random_crop.mask_fill': 255, 'image_augmentation.random_crop.resize_if_needed': False, 'image_augmentation.random_flip.enable': False, 'image_augmentation.random_horizontal_flip.enable': True, 'image_augmentation.random_horizontal_flip.p': 0.5, 'image_augmentation.random_vertical_flip.enable': False, 'image_augmentation.random_vertical_flip.p': 0.5, 'image_augmentation.random_rotate.enable': False, 'image_augmentation.random_rotate.angle': 10.0, 'image_augmentation.random_rotate.fill_mask': 255, 'image_augmentation.random_rotate.interpolation': 'bilinear', 'image_augmentation.random_rotate.p': 0.5, 'image_augmentation.random_blur.enable': False, 'image_augmentation.random_blur.kernel_size': [3, 7], 'image_augmentation.random_blur.kernel_type': 255, 'image_augmentation.random_blur.p': 0.5, 'image_augmentation.random_translate.enable': False, 'image_augmentation.random_translate.factor': 0.2, 'image_augmentation.resize.enable': False, 'image_augmentation.resize.interpolation': 'bilinear', 'image_augmentation.resize.no_maintain_aspect_ratio': False, 'image_augmentation.box_absolute_coords.enable': False, 'image_augmentation.box_percent_coords.enable': False, 'image_augmentation.center_crop.enable': False, 'image_augmentation.random_jpeg_compress.enable': False, 'image_augmentation.random_jpeg_compress.q_factor': (5, 25), 'image_augmentation.random_jpeg_compress.p': 0.5, 'image_augmentation.random_gauss_noise.enable': False, 'image_augmentation.random_gauss_noise.sigma': (0.03, 0.1), 'image_augmentation.random_gauss_noise.p': 0.5, 'image_augmentation.random_order.enable': False, 'image_augmentation.random_order.apply_k': 1.0, 'image_augmentation.photo_metric_distort.enable': False, 'image_augmentation.photo_metric_distort.alpha_min': 0.5, 'image_augmentation.photo_metric_distort.alpha_max': 1.5, 'image_augmentation.photo_metric_distort.beta_min': -0.2, 'image_augmentation.photo_metric_distort.beta_max': 0.2, 'image_augmentation.photo_metric_distort.gamma_min': 0.5, 'image_augmentation.photo_metric_distort.gamma_max': 1.5, 'image_augmentation.photo_metric_distort.delta_min': -0.05, 'image_augmentation.photo_metric_distort.delta_max': 0.05, 'image_augmentation.photo_metric_distort.p': 0.5, 'model.layer.conv_init': 'kaiming_normal', 'model.layer.conv_init_std_dev': None, 'model.layer.global_pool': 'mean', 'model.layer.group_linear_init': 'xavier_uniform', 'model.layer.group_linear_init_std_dev': 0.01, 'model.layer.linear_init': 'trunc_normal', 'model.layer.linear_init_std_dev': 0.02, 'model.activation.name': 'swish', 'model.activation.inplace': False, 'model.activation.neg_slope': 0.1, 'model.normalization.name': 'batch_norm_2d', 'model.normalization.groups': 32, 'model.normalization.momentum': 0.1, 'adjust_bn_momentum.enable': False, 'adjust_bn_momentum.anneal_type': 'cosine', 'adjust_bn_momentum.final_momentum_value': 1e-06, 'model.classification.classifier_dropout': 0.1, 'model.classification.name': 'mobilevit', 'model.classification.n_classes': 1000, 'model.classification.pretrained': None, 'model.classification.freeze_batch_norm': False, 'model.classification.activation.name': 'swish', 'model.classification.activation.inplace': False, 'model.classification.activation.neg_slope': 0.1, 'model.classification.mobilenetv2.width_multiplier': 1.0, 'model.classification.mit.mode': 'x_small', 'model.classification.mit.attn_dropout': 0.0, 'model.classification.mit.ffn_dropout': 0.0, 'model.classification.mit.dropout': 0.1, 'model.classification.mit.transformer_norm_layer': 'layer_norm', 'model.classification.mit.no_fuse_local_global_features': False, 'model.classification.mit.conv_kernel_size': 3, 'model.classification.mit.head_dim': None, 'model.classification.mit.number_heads': 4, 'model.classification.resnet.depth': 50, 'model.detection.name': None, 'model.detection.n_classes': None, 'model.detection.pretrained': None, 'model.detection.output_stride': None, 'model.detection.replace_stride_with_dilation': False, 'model.detection.freeze_batch_norm': False, 'model.detection.ssd.anchors_aspect_ratio': [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3]], 'model.detection.ssd.output_strides': [16, 32, 64, 128, -1], 'model.detection.ssd.proj_channels': [128, 256, 384, 512, 768], 'model.detection.ssd.min_box_size': 0.1, 'model.detection.ssd.max_box_size': 1.05, 'model.detection.ssd.center_variance': 0.1, 'model.detection.ssd.size_variance': 0.2, 'model.detection.ssd.iou_threshold': 0.45, 'model.detection.ssd.conf_threshold': 0.05, 'model.detection.ssd.num_objects_per_class': 200, 'model.detection.ssd.nms_iou_threshold': 0.3, 'model.segmentation.name': None, 'model.segmentation.n_classes': None, 'model.segmentation.pretrained': None, 'model.segmentation.lr_multiplier': 1.0, 'model.segmentation.seg_head': 'basic', 'model.segmentation.classifier_dropout': 0.1, 'model.segmentation.use_aux_head': False, 'model.segmentation.output_stride': None, 'model.segmentation.replace_stride_with_dilation': False, 'model.segmentation.activation.name': None, 'model.segmentation.activation.inplace': False, 'model.segmentation.activation.neg_slope': 0.1, 'model.segmentation.freeze_batch_norm': False, 'model.segmentation.use_level5_exp': False, 'model.segmentation.deeplabv3.aspp_rates': (6, 12, 18), 'model.segmentation.deeplabv3.aspp_out_channels': 256, 'model.segmentation.deeplabv3.aspp_sep_conv': False, 'model.segmentation.deeplabv3.aspp_dropout': 0.1, 'ema.enable': True, 'ema.momentum': 0.0005, 'ema.copy_at_epoch': -1, 'loss.category': 'classification', 'loss.ignore_idx': -1, 'loss.classification.name': 'label_smoothing', 'loss.classification.cross_entropy_class_weights': False, 'loss.classification.label_smoothing_factor': 0.1, 'loss.detection.name': 'cross_entropy', 'loss.detection.ssd_multibox_loss.neg_pos_ratio': 3, 'loss.detection.ssd_multibox_loss.max_monitor_iter': -1, 'loss.detection.ssd_multibox_loss.update_wt_freq': 200, 'loss.distillation.name': 'vanilla', 'loss.distillation.vanilla_teacher_model': 'resnet_50', 'loss.distillation.vanilla_label_loss': 'cross_entropy', 'loss.distillation.vanilla_alpha': 0.5, 'loss.distillation.vanilla_tau': 1.0, 'loss.distillation.vanilla_adaptive_weight_balance': False, 'loss.distillation.vanilla_accum_iterations': 10000, 'loss.distillation.vanilla_weight_update_freq': 100, 'loss.distillation.vanilla_teacher_model_weights': None, 'loss.distillation.vanilla_distillation_type': 'soft', 'loss.segmentation.name': 'cross_entropy', 'loss.segmentation.cross_entropy_class_weights': False, 'loss.segmentation.cross_entropy_aux_weight': 0.4, 'optim.name': 'adamw', 'optim.eps': 1e-08, 'optim.weight_decay': 0.01, 'optim.no_decay_bn_filter_bias': False, 'optim.adam.beta1': 0.9, 'optim.adam.beta2': 0.98, 'optim.adam.amsgrad': False, 'optim.adamw.beta1': 0.9, 'optim.adamw.beta2': 0.999, 'optim.adamw.amsgrad': False, 'optim.sgd.momentum': 0.9, 'optim.sgd.nesterov': False, 'scheduler.name': 'cosine', 'scheduler.lr': 0.1, 'scheduler.max_epochs': 300, 'scheduler.max_iterations': None, 'scheduler.warmup_iterations': 3000, 'scheduler.warmup_init_lr': 0.0002, 'scheduler.is_iteration_based': False, 'scheduler.cosine.min_lr': 0.0002, 'scheduler.cosine.max_lr': 0.002, 'scheduler.cyclic.min_lr': 0.1, 'scheduler.cyclic.last_cycle_end_lr': 0.001, 'scheduler.cyclic.total_cycles': 11, 'scheduler.cyclic.epochs_per_cycle': 5, 'scheduler.cyclic.steps': None, 'scheduler.cyclic.gamma': 0.5, 'scheduler.cyclic.last_cycle_type': 'linear', 'scheduler.polynomial.power': 2.5, 'scheduler.polynomial.start_lr': 0.1, 'scheduler.polynomial.end_lr': 1e-05, 'ddp.enable': True, 'ddp.rank': 0, 'ddp.world_size': -1, 'ddp.dist_url': None, 'ddp.dist_port': 30786, 'stats.name': ['loss', 'top1', 'top5'], 'stats.checkpoint_metric': 'top1', 'stats.checkpoint_metric_max': True, 'common.seed': 0, 'common.config_file': 'config/classification/mobilevit_x_small_noscales_tiny.yaml', 'common.results_loc': 'results_mobilevit_x_small_noscales_tiny', 'common.run_label': 'sanity_check', 'common.resume': None, 'common.finetune': None, 'common.finetune_ema': None, 'common.mixed_precision': False, 'common.accum_freq': 1, 'common.accum_after_epoch': 0, 'common.log_freq': 500, 'common.auto_resume': True, 'common.grad_clip': None, 'common.k_best_checkpoints': 5})
+2022-04-10 23:45:57 - LOGS    - Random seeds are set to 0
+2022-04-10 23:45:57 - LOGS    - Using PyTorch version 1.11.0+cu113
+2022-04-10 23:45:57 - LOGS    - Available GPUs: 1
+2022-04-10 23:45:57 - LOGS    - CUDNN is enabled
+2022-04-10 23:45:57 - LOGS    - Directory exists at: results_mobilevit_x_small_noscales_tiny/sanity_check
+2022-04-10 23:46:01 - LOGS    - Training and validation dataset details: 
+TinyImagenetDataset(
+        root=../image_data/tiny-imagenet-200/train
+         is_training=True
+        samples=100000
+        transforms=Compose(
+                        RandomResizedCrop(scale=(0.08, 1.0), ratio=(0.75, 1.333), interpolation=bilinear),
+                        RandomHorizontalFlip(p=0.5),
+                        NumpyToTensor())
+)
+TinyImagenetDataset(
+        root=../image_data/tiny-imagenet-200/val/images
+         is_training=False
+        samples=2605
+        transforms=Compose(
+                        Resize(size=72, interpolation=bilinear),
+                        CenterCrop(size=(h=64, w=64)),
+                        NumpyToTensor())
+)
+2022-04-10 23:46:01 - LOGS    - Training sampler details:
+VariableBatchSampler(
+         base_im_size=(h=64, w=64),
+         base_batch_size=128
+         scales=[(64, 64, 128)]
+         scale_inc=False
+         scale_inc_factor=0.25
+         ep_intervals=[40]
+)
+2022-04-10 23:46:01 - LOGS    - Validation sampler details:
+VariableBatchSampler(
+         base_im_size=(h=64, w=64),
+         base_batch_size=100
+         scales=[(64, 64, 100)]
+         scale_inc=False
+         scale_inc_factor=0.25
+         ep_intervals=[40]
+)
+2022-04-10 23:46:01 - LOGS    - Number of data workers: 4
+2022-04-10 23:46:01 - LOGS    - Max. epochs for training: 300
+2022-04-10 23:46:02 - LOGS    - Using EMA
+2022-04-10 23:46:02 - LOGS    - No checkpoint found at 'results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint.pt'
+2022-04-10 23:46:02 - LOGS    - Model
+MobileViT(
+  (conv_1): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, normalization=BatchNorm2d, activation=Swish, bias=False)
+  (layer_1): Sequential(
+    (0): InvertedResidual(in_channels=16, out_channels=32, stride=1, exp=4, dilation=1)
+  )
+  (layer_2): Sequential(
+    (0): InvertedResidual(in_channels=32, out_channels=48, stride=2, exp=4, dilation=1)
+    (1): InvertedResidual(in_channels=48, out_channels=48, stride=1, exp=4, dilation=1)
+    (2): InvertedResidual(in_channels=48, out_channels=48, stride=1, exp=4, dilation=1)
+  )
+  (layer_3): Sequential(
+    (0): InvertedResidual(in_channels=48, out_channels=64, stride=2, exp=4, dilation=1)
+    (1): MobileViTBlock(
+        conv_in_dim=64, conv_out_dim=96, dilation=1, conv_ksize=3
+        patch_h=2, patch_w=2
+        transformer_in_dim=96, transformer_n_heads=4, transformer_ffn_dim=192, dropout=0.1, ffn_dropout=0.0, attn_dropout=0.0, blocks=2
+    )
+  )
+  (layer_4): Sequential(
+    (0): InvertedResidual(in_channels=64, out_channels=80, stride=2, exp=4, dilation=1)
+    (1): MobileViTBlock(
+        conv_in_dim=80, conv_out_dim=120, dilation=1, conv_ksize=3
+        patch_h=2, patch_w=2
+        transformer_in_dim=120, transformer_n_heads=4, transformer_ffn_dim=240, dropout=0.1, ffn_dropout=0.0, attn_dropout=0.0, blocks=4
+    )
+  )
+  (layer_5): Sequential(
+    (0): InvertedResidual(in_channels=80, out_channels=96, stride=2, exp=4, dilation=1)
+    (1): MobileViTBlock(
+        conv_in_dim=96, conv_out_dim=144, dilation=1, conv_ksize=3
+        patch_h=2, patch_w=2
+        transformer_in_dim=144, transformer_n_heads=4, transformer_ffn_dim=288, dropout=0.1, ffn_dropout=0.0, attn_dropout=0.0, blocks=3
+    )
+  )
+  (conv_1x1_exp): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False, normalization=BatchNorm2d, activation=Swish, bias=False)
+  (classifier): Sequential(
+    (global_pool): GlobalPool(type=mean)
+    (dropout): Dropout(p=0.1, inplace=True)
+    (fc): LinearLayer(in_features=384, out_features=1000, bias=True)
+  )
+)
+2022-04-10 23:46:02 - LOGS    - Model statistics for an input of size torch.Size([1, 3, 64, 64])
+=================================================================
+                          MobileViT Summary
+=================================================================
+ConvLayer                Params:    0.000 M      MACs :    0.442 M
+-------------------------------------------------------------------
+InvertedResidual         Params:    0.004 M      MACs :    3.736 M
+-------------------------------------------------------------------
+InvertedResidual
++InvertedResidual
++InvertedResidual        Params:    0.054 M      MACs :   16.384 M
+-------------------------------------------------------------------
+InvertedResidual
++MobileViTBlock          Params:    0.297 M      MACs :   23.003 M
+-------------------------------------------------------------------
+InvertedResidual
++MobileViTBlock          Params:    0.699 M      MACs :   13.755 M
+-------------------------------------------------------------------
+InvertedResidual
++MobileViTBlock          Params:    0.840 M      MACs :    4.150 M
+-------------------------------------------------------------------
+ConvLayer                Params:    0.038 M      MACs :    0.147 M
+-------------------------------------------------------------------
+Classifier               Params:    0.385 M      MACs :    0.385 M
+=================================================================
+Overall parameters   =    2.318 M
+Overall MACs         =   62.003 M
+Overall parameters (sanity check) =    2.318 M
+=================================================================
+2022-04-10 23:46:02 - LOGS    - Loss function
+LabelSmoothing(
+         ignore_idx=-1
+         label_smooth=0.1
+)
+2022-04-10 23:46:02 - LOGS    - Optimizer
+AdamWOptimizer (
+         amsgrad: [False]
+         betas: [(0.9, 0.999)]
+         eps: [1e-08]
+         lr: [0.1]
+         maximize: [False]
+         weight_decay: [0.01]
+)
+2022-04-10 23:46:02 - LOGS    - Learning rate scheduler
+CosineScheduler(
+         min_lr=0.0002
+         max_lr=0.002
+         period=300
+         warmup_init_lr=0.0002
+         warmup_iters=3000
+ )
+2022-04-10 23:46:02 - INFO    - Configuration file is stored here: results_mobilevit_x_small_noscales_tiny/sanity_check/config.yaml
+2022-04-10 23:46:10 - LOGS    - Epoch:   0 [       0/10000000], loss: 6.9282, top1: 0.7812, top5: 0.7812, LR: [0.0002], Avg. batch load time: 3.854, Elapsed time:  6.23
+2022-04-10 23:46:58 - LOGS    - Epoch:   0 [     500/10000000], loss: 5.6044, top1: 2.5324, top5: 9.3267, LR: [0.0005], Avg. batch load time: 0.008, Elapsed time: 53.93
+2022-04-10 23:47:24 - LOGS    - *** Training summary for epoch 0
+         loss=5.4302 || top1=3.6385 || top5=12.5460
+2022-04-10 23:47:30 - LOGS    - Epoch:   0 [     100/    2605], loss: 4.7367, top1: 10.0000, top5: 35.0000, LR: [0.000669], Avg. batch load time: 0.000, Elapsed time:  3.62
+2022-04-10 23:47:30 - LOGS    - *** Validation summary for epoch 0
+         loss=4.9665 || top1=7.7407 || top5=22.4444
+2022-04-10 23:47:36 - LOGS    - Epoch:   0 [     100/    2605], loss: 6.6519, top1: 0.0000, top5: 0.0000, LR: [0.000669], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-10 23:47:37 - LOGS    - *** Validation (Ema) summary for epoch 0
+         loss=6.7050 || top1=0.5185 || top5=2.5556
+2022-04-10 23:47:37 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-10 23:47:43 - LOGS    - Epoch:   1 [     782/10000000], loss: 5.0182, top1: 3.9062, top5: 20.3125, LR: [0.000669], Avg. batch load time: 3.703, Elapsed time:  3.99
+2022-04-10 23:48:30 - LOGS    - Epoch:   1 [    1282/10000000], loss: 4.9149, top1: 8.0059, top5: 24.2874, LR: [0.000969], Avg. batch load time: 0.007, Elapsed time: 51.48
+2022-04-10 23:48:57 - LOGS    - *** Training summary for epoch 1
+         loss=4.8678 || top1=8.7916 || top5=25.6044
+2022-04-10 23:49:03 - LOGS    - Epoch:   1 [     100/    2605], loss: 4.4102, top1: 17.0000, top5: 43.0000, LR: [0.001138], Avg. batch load time: 0.000, Elapsed time:  3.74
+2022-04-10 23:49:03 - LOGS    - *** Validation summary for epoch 1
+         loss=4.6389 || top1=13.0741 || top5=32.0370
+2022-04-10 23:49:09 - LOGS    - Epoch:   1 [     100/    2605], loss: 6.4932, top1: 0.0000, top5: 0.0000, LR: [0.001138], Avg. batch load time: 0.000, Elapsed time:  3.75
+2022-04-10 23:49:10 - LOGS    - *** Validation (Ema) summary for epoch 1
+         loss=6.4843 || top1=0.5556 || top5=2.2222
+2022-04-10 23:49:10 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-10 23:49:16 - LOGS    - Epoch:   2 [    1564/10000000], loss: 4.8927, top1: 8.5938, top5: 22.6562, LR: [0.001138], Avg. batch load time: 3.771, Elapsed time:  4.18
+2022-04-10 23:50:04 - LOGS    - Epoch:   2 [    2064/10000000], loss: 4.6484, top1: 12.1039, top5: 31.8394, LR: [0.001438], Avg. batch load time: 0.008, Elapsed time: 52.29
+2022-04-10 23:50:31 - LOGS    - *** Training summary for epoch 2
+         loss=4.6178 || top1=12.4800 || top5=32.7815
+2022-04-10 23:50:36 - LOGS    - Epoch:   2 [     100/    2605], loss: 4.1040, top1: 22.0000, top5: 47.0000, LR: [0.001607], Avg. batch load time: 0.000, Elapsed time:  3.48
+2022-04-10 23:50:37 - LOGS    - *** Validation summary for epoch 2
+         loss=4.3088 || top1=17.1111 || top5=39.9630
+2022-04-10 23:50:43 - LOGS    - Epoch:   2 [     100/    2605], loss: 6.2629, top1: 0.0000, top5: 0.0000, LR: [0.001607], Avg. batch load time: 0.000, Elapsed time:  3.53
+2022-04-10 23:50:43 - LOGS    - *** Validation (Ema) summary for epoch 2
+         loss=6.1637 || top1=0.4815 || top5=2.4444
+2022-04-10 23:50:44 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-10 23:50:50 - LOGS    - Epoch:   3 [    2346/10000000], loss: 4.3970, top1: 17.9688, top5: 35.1562, LR: [0.001608], Avg. batch load time: 3.591, Elapsed time:  4.02
+
+
+
+
+======================================================================================================================================================
+2022-04-11 00:12:17 - LOGS    - Epoch:  17 [   13294/10000000], loss: 3.9026, top1: 28.1250, top5: 54.6875, LR: [0.001986], Avg. batch load time: 3.658, Elapsed time:  4.07
+2022-04-11 00:13:03 - LOGS    - Epoch:  17 [   13794/10000000], loss: 3.8108, top1: 27.9316, top5: 54.3912, LR: [0.001986], Avg. batch load time: 0.007, Elapsed time: 50.03
+2022-04-11 00:13:29 - LOGS    - *** Training summary for epoch 17
+         loss=3.8122 || top1=27.8613 || top5=54.2229
+2022-04-11 00:13:35 - LOGS    - Epoch:  17 [     100/    2605], loss: 3.3549, top1: 37.0000, top5: 61.0000, LR: [0.001986], Avg. batch load time: 0.000, Elapsed time:  3.67
+2022-04-11 00:13:36 - LOGS    - *** Validation summary for epoch 17
+         loss=3.5504 || top1=32.5926 || top5=59.9630
+2022-04-11 00:13:41 - LOGS    - Epoch:  17 [     100/    2605], loss: 3.2189, top1: 43.0000, top5: 63.0000, LR: [0.001986], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 00:13:42 - LOGS    - *** Validation (Ema) summary for epoch 17
+         loss=3.5323 || top1=33.2593 || top5=60.9630
+2022-04-11 00:13:42 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_11.4074.pt
+2022-04-11 00:13:42 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_18.6296.pt', 'checkpoint_ema_score_24.7037.pt', 'checkpoint_ema_score_29.2222.pt', 'checkpoint_ema_score_31.7037.pt', 'checkpoint_ema_score_33.2593.pt']
+2022-04-11 00:13:42 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:13:42 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:13:48 - LOGS    - Epoch:  18 [   14076/10000000], loss: 3.7137, top1: 30.4688, top5: 57.8125, LR: [0.001984], Avg. batch load time: 3.610, Elapsed time:  3.89
+2022-04-11 00:14:34 - LOGS    - Epoch:  18 [   14576/10000000], loss: 3.7773, top1: 28.7176, top5: 54.9620, LR: [0.001984], Avg. batch load time: 0.007, Elapsed time: 49.89
+2022-04-11 00:15:00 - LOGS    - *** Training summary for epoch 18
+         loss=3.7824 || top1=28.5566 || top5=54.8334
+2022-04-11 00:15:06 - LOGS    - Epoch:  18 [     100/    2605], loss: 3.3225, top1: 41.0000, top5: 66.0000, LR: [0.001984], Avg. batch load time: 0.000, Elapsed time:  3.50
+2022-04-11 00:15:06 - LOGS    - *** Validation summary for epoch 18
+         loss=3.4935 || top1=34.7778 || top5=62.9630
+2022-04-11 00:15:12 - LOGS    - Epoch:  18 [     100/    2605], loss: 3.1725, top1: 43.0000, top5: 65.0000, LR: [0.001984], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 00:15:13 - LOGS    - *** Validation (Ema) summary for epoch 18
+         loss=3.4624 || top1=35.0741 || top5=62.6667
+2022-04-11 00:15:13 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_26.4815.pt
+2022-04-11 00:15:13 - LOGS    - Averaging checkpoints: ['checkpoint_score_27.0000.pt', 'checkpoint_score_30.2593.pt', 'checkpoint_score_31.1852.pt', 'checkpoint_score_33.2963.pt', 'checkpoint_score_34.7778.pt']
+2022-04-11 00:15:13 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:15:13 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_18.6296.pt
+2022-04-11 00:15:13 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_24.7037.pt', 'checkpoint_ema_score_29.2222.pt', 'checkpoint_ema_score_31.7037.pt', 'checkpoint_ema_score_33.2593.pt', 'checkpoint_ema_score_35.0741.pt']
+2022-04-11 00:15:13 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:15:13 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:15:19 - LOGS    - Epoch:  19 [   14858/10000000], loss: 3.6506, top1: 35.1562, top5: 53.9062, LR: [0.001982], Avg. batch load time: 3.619, Elapsed time:  3.91
+2022-04-11 00:16:05 - LOGS    - Epoch:  19 [   15358/10000000], loss: 3.7624, top1: 29.1994, top5: 55.4797, LR: [0.001982], Avg. batch load time: 0.007, Elapsed time: 49.89
+2022-04-11 00:16:31 - LOGS    - *** Training summary for epoch 19
+         loss=3.7631 || top1=29.1061 || top5=55.4737
+2022-04-11 00:16:37 - LOGS    - Epoch:  19 [     100/    2605], loss: 3.2048, top1: 43.0000, top5: 65.0000, LR: [0.001982], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:16:38 - LOGS    - *** Validation summary for epoch 19
+         loss=3.4592 || top1=35.3704 || top5=62.8148
+2022-04-11 00:16:43 - LOGS    - Epoch:  19 [     100/    2605], loss: 3.1394, top1: 44.0000, top5: 69.0000, LR: [0.001982], Avg. batch load time: 0.000, Elapsed time:  3.59
+2022-04-11 00:16:44 - LOGS    - *** Validation (Ema) summary for epoch 19
+         loss=3.4084 || top1=36.4444 || top5=63.7037
+2022-04-11 00:16:44 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_27.0000.pt
+2022-04-11 00:16:44 - LOGS    - Averaging checkpoints: ['checkpoint_score_30.2593.pt', 'checkpoint_score_31.1852.pt', 'checkpoint_score_33.2963.pt', 'checkpoint_score_34.7778.pt', 'checkpoint_score_35.3704.pt']
+2022-04-11 00:16:44 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:16:44 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_24.7037.pt
+2022-04-11 00:16:44 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_29.2222.pt', 'checkpoint_ema_score_31.7037.pt', 'checkpoint_ema_score_33.2593.pt', 'checkpoint_ema_score_35.0741.pt', 'checkpoint_ema_score_36.4444.pt']
+2022-04-11 00:16:44 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:16:44 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:16:50 - LOGS    - Epoch:  20 [   15640/10000000], loss: 3.6156, top1: 37.5000, top5: 57.8125, LR: [0.00198], Avg. batch load time: 3.597, Elapsed time:  3.89
+2022-04-11 00:17:36 - LOGS    - Epoch:  20 [   16140/10000000], loss: 3.7310, top1: 29.6376, top5: 56.2313, LR: [0.00198], Avg. batch load time: 0.007, Elapsed time: 49.83
+2022-04-11 00:18:02 - LOGS    - *** Training summary for epoch 20
+         loss=3.7293 || top1=29.7325 || top5=56.2580
+2022-04-11 00:18:08 - LOGS    - Epoch:  20 [     100/    2605], loss: 3.2342, top1: 40.0000, top5: 66.0000, LR: [0.00198], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-11 00:18:09 - LOGS    - *** Validation summary for epoch 20
+         loss=3.4394 || top1=35.3333 || top5=63.4815
+2022-04-11 00:18:14 - LOGS    - Epoch:  20 [     100/    2605], loss: 3.0882, top1: 45.0000, top5: 68.0000, LR: [0.00198], Avg. batch load time: 0.000, Elapsed time:  3.56
+2022-04-11 00:18:15 - LOGS    - *** Validation (Ema) summary for epoch 20
+         loss=3.3617 || top1=37.2963 || top5=64.8148
+2022-04-11 00:18:15 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_29.2222.pt
+2022-04-11 00:18:15 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_31.7037.pt', 'checkpoint_ema_score_33.2593.pt', 'checkpoint_ema_score_35.0741.pt', 'checkpoint_ema_score_36.4444.pt', 'checkpoint_ema_score_37.2963.pt']
+2022-04-11 00:18:15 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:18:15 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:18:21 - LOGS    - Epoch:  21 [   16422/10000000], loss: 4.0286, top1: 21.8750, top5: 45.3125, LR: [0.001978], Avg. batch load time: 3.618, Elapsed time:  3.90
+2022-04-11 00:19:07 - LOGS    - Epoch:  21 [   16922/10000000], loss: 3.6949, top1: 30.4204, top5: 57.0453, LR: [0.001978], Avg. batch load time: 0.007, Elapsed time: 49.86
+2022-04-11 00:19:33 - LOGS    - *** Training summary for epoch 21
+         loss=3.6954 || top1=30.4608 || top5=56.9863
+2022-04-11 00:19:39 - LOGS    - Epoch:  21 [     100/    2605], loss: 3.2824, top1: 37.0000, top5: 64.0000, LR: [0.001978], Avg. batch load time: 0.000, Elapsed time:  3.54
+2022-04-11 00:19:39 - LOGS    - *** Validation summary for epoch 21
+         loss=3.3615 || top1=36.0370 || top5=65.0000
+2022-04-11 00:19:45 - LOGS    - Epoch:  21 [     100/    2605], loss: 3.0328, top1: 46.0000, top5: 68.0000, LR: [0.001978], Avg. batch load time: 0.000, Elapsed time:  3.61
+2022-04-11 00:19:46 - LOGS    - *** Validation (Ema) summary for epoch 21
+         loss=3.3161 || top1=38.0741 || top5=65.8148
+2022-04-11 00:19:46 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_30.2593.pt
+2022-04-11 00:19:46 - LOGS    - Averaging checkpoints: ['checkpoint_score_31.1852.pt', 'checkpoint_score_33.2963.pt', 'checkpoint_score_34.7778.pt', 'checkpoint_score_35.3704.pt', 'checkpoint_score_36.0370.pt']
+2022-04-11 00:19:46 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:19:46 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_31.7037.pt
+2022-04-11 00:19:46 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_33.2593.pt', 'checkpoint_ema_score_35.0741.pt', 'checkpoint_ema_score_36.4444.pt', 'checkpoint_ema_score_37.2963.pt', 'checkpoint_ema_score_38.0741.pt']
+2022-04-11 00:19:46 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:19:46 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:19:52 - LOGS    - Epoch:  22 [   17204/10000000], loss: 3.6440, top1: 30.4688, top5: 57.8125, LR: [0.001976], Avg. batch load time: 3.608, Elapsed time:  3.91
+2022-04-11 00:20:38 - LOGS    - Epoch:  22 [   17704/10000000], loss: 3.6685, top1: 30.8976, top5: 57.6987, LR: [0.001976], Avg. batch load time: 0.007, Elapsed time: 49.89
+2022-04-11 00:21:04 - LOGS    - *** Training summary for epoch 22
+         loss=3.6786 || top1=30.6885 || top5=57.4658
+2022-04-11 00:21:10 - LOGS    - Epoch:  22 [     100/    2605], loss: 3.5003, top1: 37.0000, top5: 59.0000, LR: [0.001976], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:21:10 - LOGS    - *** Validation summary for epoch 22
+         loss=3.4833 || top1=35.6667 || top5=62.7407
+2022-04-11 00:21:16 - LOGS    - Epoch:  22 [     100/    2605], loss: 2.9907, top1: 48.0000, top5: 68.0000, LR: [0.001976], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:21:17 - LOGS    - *** Validation (Ema) summary for epoch 22
+         loss=3.2760 || top1=39.1481 || top5=66.9259
+2022-04-11 00:21:17 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_33.2593.pt
+2022-04-11 00:21:17 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_35.0741.pt', 'checkpoint_ema_score_36.4444.pt', 'checkpoint_ema_score_37.2963.pt', 'checkpoint_ema_score_38.0741.pt', 'checkpoint_ema_score_39.1481.pt']
+2022-04-11 00:21:17 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:21:17 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:21:23 - LOGS    - Epoch:  23 [   17986/10000000], loss: 3.5865, top1: 35.1562, top5: 57.8125, LR: [0.001974], Avg. batch load time: 3.617, Elapsed time:  3.91
+2022-04-11 00:22:09 - LOGS    - Epoch:  23 [   18486/10000000], loss: 3.6513, top1: 31.2968, top5: 58.2538, LR: [0.001974], Avg. batch load time: 0.007, Elapsed time: 49.84
+2022-04-11 00:22:35 - LOGS    - *** Training summary for epoch 23
+         loss=3.6531 || top1=31.2850 || top5=58.0443
+2022-04-11 00:22:40 - LOGS    - Epoch:  23 [     100/    2605], loss: 3.1013, top1: 39.0000, top5: 66.0000, LR: [0.001974], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 00:22:41 - LOGS    - *** Validation summary for epoch 23
+         loss=3.3691 || top1=36.5556 || top5=64.5185
+2022-04-11 00:22:47 - LOGS    - Epoch:  23 [     100/    2605], loss: 2.9781, top1: 48.0000, top5: 70.0000, LR: [0.001974], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:22:47 - LOGS    - *** Validation (Ema) summary for epoch 23
+         loss=3.2471 || top1=40.0741 || top5=67.5556
+2022-04-11 00:22:48 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_31.1852.pt
+2022-04-11 00:22:48 - LOGS    - Averaging checkpoints: ['checkpoint_score_33.2963.pt', 'checkpoint_score_34.7778.pt', 'checkpoint_score_35.3704.pt', 'checkpoint_score_36.0370.pt', 'checkpoint_score_36.5556.pt']
+2022-04-11 00:22:48 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:22:48 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_35.0741.pt
+2022-04-11 00:22:48 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_36.4444.pt', 'checkpoint_ema_score_37.2963.pt', 'checkpoint_ema_score_38.0741.pt', 'checkpoint_ema_score_39.1481.pt', 'checkpoint_ema_score_40.0741.pt']
+2022-04-11 00:22:48 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:22:48 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:22:54 - LOGS    - Epoch:  24 [   18768/10000000], loss: 3.4372, top1: 36.7188, top5: 65.6250, LR: [0.001972], Avg. batch load time: 3.666, Elapsed time:  3.94
+2022-04-11 00:23:40 - LOGS    - Epoch:  24 [   19268/10000000], loss: 3.6190, top1: 31.8784, top5: 59.1972, LR: [0.001972], Avg. batch load time: 0.007, Elapsed time: 49.90
+2022-04-11 00:24:06 - LOGS    - *** Training summary for epoch 24
+         loss=3.6219 || top1=31.8065 || top5=59.0343
+2022-04-11 00:24:11 - LOGS    - Epoch:  24 [     100/    2605], loss: 3.1239, top1: 45.0000, top5: 64.0000, LR: [0.001972], Avg. batch load time: 0.000, Elapsed time:  3.51
+2022-04-11 00:24:12 - LOGS    - *** Validation summary for epoch 24
+         loss=3.3450 || top1=38.6296 || top5=65.1111
+2022-04-11 00:24:18 - LOGS    - Epoch:  24 [     100/    2605], loss: 2.9599, top1: 50.0000, top5: 73.0000, LR: [0.001972], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 00:24:18 - LOGS    - *** Validation (Ema) summary for epoch 24
+         loss=3.2192 || top1=40.5556 || top5=68.5556
+2022-04-11 00:24:19 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_33.2963.pt
+2022-04-11 00:24:19 - LOGS    - Averaging checkpoints: ['checkpoint_score_34.7778.pt', 'checkpoint_score_35.3704.pt', 'checkpoint_score_36.0370.pt', 'checkpoint_score_36.5556.pt', 'checkpoint_score_38.6296.pt']
+2022-04-11 00:24:19 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:24:19 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_36.4444.pt
+2022-04-11 00:24:19 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_37.2963.pt', 'checkpoint_ema_score_38.0741.pt', 'checkpoint_ema_score_39.1481.pt', 'checkpoint_ema_score_40.0741.pt', 'checkpoint_ema_score_40.5556.pt']
+2022-04-11 00:24:19 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:24:19 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:24:25 - LOGS    - Epoch:  25 [   19550/10000000], loss: 3.7140, top1: 28.9062, top5: 59.3750, LR: [0.001969], Avg. batch load time: 3.647, Elapsed time:  3.93
+2022-04-11 00:25:11 - LOGS    - Epoch:  25 [   20050/10000000], loss: 3.6006, top1: 32.2605, top5: 59.4233, LR: [0.001969], Avg. batch load time: 0.007, Elapsed time: 49.90
+2022-04-11 00:25:37 - LOGS    - *** Training summary for epoch 25
+         loss=3.6043 || top1=32.2640 || top5=59.2461
+2022-04-11 00:25:42 - LOGS    - Epoch:  25 [     100/    2605], loss: 3.0546, top1: 46.0000, top5: 65.0000, LR: [0.001969], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:25:43 - LOGS    - *** Validation summary for epoch 25
+         loss=3.2891 || top1=38.7037 || top5=66.1481
+2022-04-11 00:25:49 - LOGS    - Epoch:  25 [     100/    2605], loss: 2.9321, top1: 46.0000, top5: 74.0000, LR: [0.001969], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:25:49 - LOGS    - *** Validation (Ema) summary for epoch 25
+         loss=3.1923 || top1=40.7778 || top5=69.1852
+2022-04-11 00:25:50 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_34.7778.pt
+2022-04-11 00:25:50 - LOGS    - Averaging checkpoints: ['checkpoint_score_35.3704.pt', 'checkpoint_score_36.0370.pt', 'checkpoint_score_36.5556.pt', 'checkpoint_score_38.6296.pt', 'checkpoint_score_38.7037.pt']
+2022-04-11 00:25:50 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:25:50 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_37.2963.pt
+2022-04-11 00:25:50 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_38.0741.pt', 'checkpoint_ema_score_39.1481.pt', 'checkpoint_ema_score_40.0741.pt', 'checkpoint_ema_score_40.5556.pt', 'checkpoint_ema_score_40.7778.pt']
+2022-04-11 00:25:50 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:25:50 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:25:56 - LOGS    - Epoch:  26 [   20332/10000000], loss: 3.5736, top1: 33.5938, top5: 58.5938, LR: [0.001967], Avg. batch load time: 3.605, Elapsed time:  3.89
+2022-04-11 00:26:42 - LOGS    - Epoch:  26 [   20832/10000000], loss: 3.5713, top1: 33.1369, top5: 59.8288, LR: [0.001967], Avg. batch load time: 0.007, Elapsed time: 49.86
+2022-04-11 00:27:08 - LOGS    - *** Training summary for epoch 26
+         loss=3.5754 || top1=33.0633 || top5=59.8226
+2022-04-11 00:27:13 - LOGS    - Epoch:  26 [     100/    2605], loss: 3.0200, top1: 45.0000, top5: 69.0000, LR: [0.001967], Avg. batch load time: 0.000, Elapsed time:  3.54
+2022-04-11 00:27:14 - LOGS    - *** Validation summary for epoch 26
+         loss=3.2688 || top1=39.4074 || top5=66.6296
+2022-04-11 00:27:20 - LOGS    - Epoch:  26 [     100/    2605], loss: 2.9065, top1: 45.0000, top5: 73.0000, LR: [0.001967], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 00:27:20 - LOGS    - *** Validation (Ema) summary for epoch 26
+         loss=3.1686 || top1=41.2593 || top5=69.5926
+2022-04-11 00:27:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_35.3704.pt
+2022-04-11 00:27:21 - LOGS    - Averaging checkpoints: ['checkpoint_score_36.0370.pt', 'checkpoint_score_36.5556.pt', 'checkpoint_score_38.6296.pt', 'checkpoint_score_38.7037.pt', 'checkpoint_score_39.4074.pt']
+2022-04-11 00:27:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:27:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_38.0741.pt
+2022-04-11 00:27:21 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_39.1481.pt', 'checkpoint_ema_score_40.0741.pt', 'checkpoint_ema_score_40.5556.pt', 'checkpoint_ema_score_40.7778.pt', 'checkpoint_ema_score_41.2593.pt']
+2022-04-11 00:27:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:27:21 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:27:27 - LOGS    - Epoch:  27 [   21114/10000000], loss: 3.7334, top1: 31.2500, top5: 58.5938, LR: [0.001964], Avg. batch load time: 3.667, Elapsed time:  4.08
+2022-04-11 00:28:13 - LOGS    - Epoch:  27 [   21614/10000000], loss: 3.5553, top1: 33.4674, top5: 60.7020, LR: [0.001964], Avg. batch load time: 0.007, Elapsed time: 50.03
+2022-04-11 00:28:39 - LOGS    - *** Training summary for epoch 27
+         loss=3.5543 || top1=33.4729 || top5=60.7247
+2022-04-11 00:28:45 - LOGS    - Epoch:  27 [     100/    2605], loss: 3.0964, top1: 49.0000, top5: 67.0000, LR: [0.001964], Avg. batch load time: 0.000, Elapsed time:  3.50
+2022-04-11 00:28:45 - LOGS    - *** Validation summary for epoch 27
+         loss=3.2687 || top1=39.8148 || top5=67.0741
+2022-04-11 00:28:51 - LOGS    - Epoch:  27 [     100/    2605], loss: 2.8926, top1: 47.0000, top5: 73.0000, LR: [0.001964], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:28:51 - LOGS    - *** Validation (Ema) summary for epoch 27
+         loss=3.1454 || top1=42.3333 || top5=70.1852
+2022-04-11 00:28:52 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_36.0370.pt
+2022-04-11 00:28:52 - LOGS    - Averaging checkpoints: ['checkpoint_score_36.5556.pt', 'checkpoint_score_38.6296.pt', 'checkpoint_score_38.7037.pt', 'checkpoint_score_39.4074.pt', 'checkpoint_score_39.8148.pt']
+2022-04-11 00:28:52 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:28:52 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_39.1481.pt
+2022-04-11 00:28:52 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_40.0741.pt', 'checkpoint_ema_score_40.5556.pt', 'checkpoint_ema_score_40.7778.pt', 'checkpoint_ema_score_41.2593.pt', 'checkpoint_ema_score_42.3333.pt']
+2022-04-11 00:28:52 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:28:52 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:28:58 - LOGS    - Epoch:  28 [   21896/10000000], loss: 3.4461, top1: 35.9375, top5: 63.2812, LR: [0.001962], Avg. batch load time: 3.602, Elapsed time:  3.90
+2022-04-11 00:29:44 - LOGS    - Epoch:  28 [   22396/10000000], loss: 3.5315, top1: 33.8838, top5: 61.0560, LR: [0.001962], Avg. batch load time: 0.007, Elapsed time: 49.85
+2022-04-11 00:30:10 - LOGS    - *** Training summary for epoch 28
+         loss=3.5382 || top1=33.8095 || top5=60.8656
+2022-04-11 00:30:16 - LOGS    - Epoch:  28 [     100/    2605], loss: 2.9804, top1: 47.0000, top5: 72.0000, LR: [0.001962], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 00:30:16 - LOGS    - *** Validation summary for epoch 28
+         loss=3.2372 || top1=40.2222 || top5=68.0000
+2022-04-11 00:30:22 - LOGS    - Epoch:  28 [     100/    2605], loss: 2.8813, top1: 47.0000, top5: 75.0000, LR: [0.001962], Avg. batch load time: 0.000, Elapsed time:  3.67
+2022-04-11 00:30:23 - LOGS    - *** Validation (Ema) summary for epoch 28
+         loss=3.1242 || top1=42.7407 || top5=70.8519
+2022-04-11 00:30:23 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_36.5556.pt
+2022-04-11 00:30:23 - LOGS    - Averaging checkpoints: ['checkpoint_score_38.6296.pt', 'checkpoint_score_38.7037.pt', 'checkpoint_score_39.4074.pt', 'checkpoint_score_39.8148.pt', 'checkpoint_score_40.2222.pt']
+2022-04-11 00:30:23 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:30:23 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_40.0741.pt
+2022-04-11 00:30:23 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_40.5556.pt', 'checkpoint_ema_score_40.7778.pt', 'checkpoint_ema_score_41.2593.pt', 'checkpoint_ema_score_42.3333.pt', 'checkpoint_ema_score_42.7407.pt']
+2022-04-11 00:30:23 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:30:23 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:30:29 - LOGS    - Epoch:  29 [   22678/10000000], loss: 3.3258, top1: 36.7188, top5: 67.1875, LR: [0.001959], Avg. batch load time: 3.671, Elapsed time:  3.94
+2022-04-11 00:31:15 - LOGS    - Epoch:  29 [   23178/10000000], loss: 3.5076, top1: 34.6276, top5: 61.3539, LR: [0.001959], Avg. batch load time: 0.007, Elapsed time: 49.91
+2022-04-11 00:31:41 - LOGS    - *** Training summary for epoch 29
+         loss=3.5228 || top1=34.2991 || top5=61.1403
+2022-04-11 00:31:47 - LOGS    - Epoch:  29 [     100/    2605], loss: 2.9397, top1: 46.0000, top5: 72.0000, LR: [0.001959], Avg. batch load time: 0.000, Elapsed time:  3.51
+2022-04-11 00:31:47 - LOGS    - *** Validation summary for epoch 29
+         loss=3.2353 || top1=39.2222 || top5=68.5185
+2022-04-11 00:31:53 - LOGS    - Epoch:  29 [     100/    2605], loss: 2.8856, top1: 47.0000, top5: 76.0000, LR: [0.001959], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-11 00:31:54 - LOGS    - *** Validation (Ema) summary for epoch 29
+         loss=3.1082 || top1=43.2593 || top5=70.9630
+2022-04-11 00:31:54 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_40.5556.pt
+2022-04-11 00:31:54 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_40.7778.pt', 'checkpoint_ema_score_41.2593.pt', 'checkpoint_ema_score_42.3333.pt', 'checkpoint_ema_score_42.7407.pt', 'checkpoint_ema_score_43.2593.pt']
+2022-04-11 00:31:54 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:31:54 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:32:00 - LOGS    - Epoch:  30 [   23460/10000000], loss: 3.4243, top1: 32.0312, top5: 65.6250, LR: [0.001956], Avg. batch load time: 3.675, Elapsed time:  4.08
+2022-04-11 00:32:46 - LOGS    - Epoch:  30 [   23960/10000000], loss: 3.4973, top1: 34.5777, top5: 61.8996, LR: [0.001956], Avg. batch load time: 0.007, Elapsed time: 50.02
+2022-04-11 00:33:12 - LOGS    - *** Training summary for epoch 30
+         loss=3.5036 || top1=34.5338 || top5=61.7647
+2022-04-11 00:33:18 - LOGS    - Epoch:  30 [     100/    2605], loss: 3.2549, top1: 38.0000, top5: 63.0000, LR: [0.001956], Avg. batch load time: 0.000, Elapsed time:  3.54
+2022-04-11 00:33:19 - LOGS    - *** Validation summary for epoch 30
+         loss=3.2231 || top1=40.5185 || top5=68.0741
+2022-04-11 00:33:24 - LOGS    - Epoch:  30 [     100/    2605], loss: 2.8833, top1: 48.0000, top5: 76.0000, LR: [0.001956], Avg. batch load time: 0.000, Elapsed time:  3.56
+2022-04-11 00:33:25 - LOGS    - *** Validation (Ema) summary for epoch 30
+         loss=3.0898 || top1=44.0000 || top5=71.8889
+2022-04-11 00:33:25 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_38.6296.pt
+2022-04-11 00:33:25 - LOGS    - Averaging checkpoints: ['checkpoint_score_38.7037.pt', 'checkpoint_score_39.4074.pt', 'checkpoint_score_39.8148.pt', 'checkpoint_score_40.2222.pt', 'checkpoint_score_40.5185.pt']
+2022-04-11 00:33:25 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:33:25 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_40.7778.pt
+2022-04-11 00:33:25 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_41.2593.pt', 'checkpoint_ema_score_42.3333.pt', 'checkpoint_ema_score_42.7407.pt', 'checkpoint_ema_score_43.2593.pt', 'checkpoint_ema_score_44.0000.pt']
+2022-04-11 00:33:25 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:33:25 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:33:31 - LOGS    - Epoch:  31 [   24242/10000000], loss: 3.5773, top1: 35.9375, top5: 60.9375, LR: [0.001953], Avg. batch load time: 3.612, Elapsed time:  3.91
+2022-04-11 00:34:17 - LOGS    - Epoch:  31 [   24742/10000000], loss: 3.4816, top1: 34.7165, top5: 62.3690, LR: [0.001953], Avg. batch load time: 0.007, Elapsed time: 49.85
+2022-04-11 00:34:43 - LOGS    - *** Training summary for epoch 31
+         loss=3.4874 || top1=34.8256 || top5=62.1563
+2022-04-11 00:34:49 - LOGS    - Epoch:  31 [     100/    2605], loss: 2.8498, top1: 50.0000, top5: 76.0000, LR: [0.001953], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:34:49 - LOGS    - *** Validation summary for epoch 31
+         loss=3.1610 || top1=41.5556 || top5=69.9259
+2022-04-11 00:34:55 - LOGS    - Epoch:  31 [     100/    2605], loss: 2.8700, top1: 47.0000, top5: 76.0000, LR: [0.001953], Avg. batch load time: 0.000, Elapsed time:  3.62
+2022-04-11 00:34:56 - LOGS    - *** Validation (Ema) summary for epoch 31
+         loss=3.0708 || top1=44.1481 || top5=72.1111
+2022-04-11 00:34:56 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_38.7037.pt
+2022-04-11 00:34:56 - LOGS    - Averaging checkpoints: ['checkpoint_score_39.4074.pt', 'checkpoint_score_39.8148.pt', 'checkpoint_score_40.2222.pt', 'checkpoint_score_40.5185.pt', 'checkpoint_score_41.5556.pt']
+2022-04-11 00:34:56 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:34:56 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_41.2593.pt
+2022-04-11 00:34:56 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_42.3333.pt', 'checkpoint_ema_score_42.7407.pt', 'checkpoint_ema_score_43.2593.pt', 'checkpoint_ema_score_44.0000.pt', 'checkpoint_ema_score_44.1481.pt']
+2022-04-11 00:34:56 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:34:56 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:35:02 - LOGS    - Epoch:  32 [   25024/10000000], loss: 3.2230, top1: 42.1875, top5: 71.8750, LR: [0.00195], Avg. batch load time: 3.625, Elapsed time:  3.91
+2022-04-11 00:35:48 - LOGS    - Epoch:  32 [   25524/10000000], loss: 3.4565, top1: 35.5399, top5: 62.8571, LR: [0.00195], Avg. batch load time: 0.007, Elapsed time: 49.89
+2022-04-11 00:36:14 - LOGS    - *** Training summary for epoch 32
+         loss=3.4602 || top1=35.5349 || top5=62.7178
+2022-04-11 00:36:20 - LOGS    - Epoch:  32 [     100/    2605], loss: 3.1242, top1: 41.0000, top5: 66.0000, LR: [0.00195], Avg. batch load time: 0.000, Elapsed time:  3.50
+2022-04-11 00:36:20 - LOGS    - *** Validation summary for epoch 32
+         loss=3.1855 || top1=41.6296 || top5=69.1481
+2022-04-11 00:36:26 - LOGS    - Epoch:  32 [     100/    2605], loss: 2.8518, top1: 47.0000, top5: 78.0000, LR: [0.00195], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-11 00:36:27 - LOGS    - *** Validation (Ema) summary for epoch 32
+         loss=3.0530 || top1=45.0741 || top5=72.2593
+2022-04-11 00:36:27 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_39.4074.pt
+2022-04-11 00:36:27 - LOGS    - Averaging checkpoints: ['checkpoint_score_39.8148.pt', 'checkpoint_score_40.2222.pt', 'checkpoint_score_40.5185.pt', 'checkpoint_score_41.5556.pt', 'checkpoint_score_41.6296.pt']
+2022-04-11 00:36:27 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:36:27 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_42.3333.pt
+2022-04-11 00:36:27 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_42.7407.pt', 'checkpoint_ema_score_43.2593.pt', 'checkpoint_ema_score_44.0000.pt', 'checkpoint_ema_score_44.1481.pt', 'checkpoint_ema_score_45.0741.pt']
+2022-04-11 00:36:27 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:36:27 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:36:33 - LOGS    - Epoch:  33 [   25806/10000000], loss: 3.3997, top1: 39.0625, top5: 62.5000, LR: [0.001947], Avg. batch load time: 3.655, Elapsed time:  3.94
+2022-04-11 00:37:19 - LOGS    - Epoch:  33 [   26306/10000000], loss: 3.4418, top1: 35.8720, top5: 63.1659, LR: [0.001947], Avg. batch load time: 0.007, Elapsed time: 49.89
+2022-04-11 00:37:45 - LOGS    - *** Training summary for epoch 33
+         loss=3.4524 || top1=35.6418 || top5=62.9106
+2022-04-11 00:37:51 - LOGS    - Epoch:  33 [     100/    2605], loss: 2.8723, top1: 46.0000, top5: 76.0000, LR: [0.001947], Avg. batch load time: 0.000, Elapsed time:  3.56
+2022-04-11 00:37:51 - LOGS    - *** Validation summary for epoch 33
+         loss=3.2140 || top1=40.6667 || top5=68.7037
+2022-04-11 00:37:57 - LOGS    - Epoch:  33 [     100/    2605], loss: 2.8292, top1: 50.0000, top5: 79.0000, LR: [0.001947], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:37:58 - LOGS    - *** Validation (Ema) summary for epoch 33
+         loss=3.0360 || top1=45.3704 || top5=72.5185
+2022-04-11 00:37:58 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_42.7407.pt
+2022-04-11 00:37:58 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_43.2593.pt', 'checkpoint_ema_score_44.0000.pt', 'checkpoint_ema_score_44.1481.pt', 'checkpoint_ema_score_45.0741.pt', 'checkpoint_ema_score_45.3704.pt']
+2022-04-11 00:37:58 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:37:58 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:38:04 - LOGS    - Epoch:  34 [   26588/10000000], loss: 3.3014, top1: 41.4062, top5: 69.5312, LR: [0.001944], Avg. batch load time: 3.617, Elapsed time:  3.90
+2022-04-11 00:38:50 - LOGS    - Epoch:  34 [   27088/10000000], loss: 3.4221, top1: 36.7094, top5: 63.5308, LR: [0.001944], Avg. batch load time: 0.007, Elapsed time: 49.87
+2022-04-11 00:39:16 - LOGS    - *** Training summary for epoch 34
+         loss=3.4322 || top1=36.3371 || top5=63.3842
+2022-04-11 00:39:21 - LOGS    - Epoch:  34 [     100/    2605], loss: 2.9275, top1: 50.0000, top5: 71.0000, LR: [0.001944], Avg. batch load time: 0.000, Elapsed time:  3.52
+2022-04-11 00:39:22 - LOGS    - *** Validation summary for epoch 34
+         loss=3.1694 || top1=42.3704 || top5=69.6667
+2022-04-11 00:39:28 - LOGS    - Epoch:  34 [     100/    2605], loss: 2.8299, top1: 50.0000, top5: 78.0000, LR: [0.001944], Avg. batch load time: 0.000, Elapsed time:  3.62
+2022-04-11 00:39:28 - LOGS    - *** Validation (Ema) summary for epoch 34
+         loss=3.0212 || top1=45.5185 || top5=72.7407
+2022-04-11 00:39:29 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_39.8148.pt
+2022-04-11 00:39:29 - LOGS    - Averaging checkpoints: ['checkpoint_score_40.2222.pt', 'checkpoint_score_40.5185.pt', 'checkpoint_score_41.5556.pt', 'checkpoint_score_41.6296.pt', 'checkpoint_score_42.3704.pt']
+2022-04-11 00:39:29 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:39:29 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_43.2593.pt
+2022-04-11 00:39:29 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_44.0000.pt', 'checkpoint_ema_score_44.1481.pt', 'checkpoint_ema_score_45.0741.pt', 'checkpoint_ema_score_45.3704.pt', 'checkpoint_ema_score_45.5185.pt']
+2022-04-11 00:39:29 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:39:29 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:39:35 - LOGS    - Epoch:  35 [   27370/10000000], loss: 3.1687, top1: 42.9688, top5: 73.4375, LR: [0.00194], Avg. batch load time: 3.606, Elapsed time:  3.90
+2022-04-11 00:40:21 - LOGS    - Epoch:  35 [   27870/10000000], loss: 3.4069, top1: 36.8139, top5: 63.9081, LR: [0.00194], Avg. batch load time: 0.007, Elapsed time: 49.84
+2022-04-11 00:40:47 - LOGS    - *** Training summary for epoch 35
+         loss=3.4194 || top1=36.5609 || top5=63.6149
+2022-04-11 00:40:52 - LOGS    - Epoch:  35 [     100/    2605], loss: 3.2166, top1: 41.0000, top5: 62.0000, LR: [0.00194], Avg. batch load time: 0.000, Elapsed time:  3.53
+2022-04-11 00:40:53 - LOGS    - *** Validation summary for epoch 35
+         loss=3.1605 || top1=42.1852 || top5=69.3704
+2022-04-11 00:40:59 - LOGS    - Epoch:  35 [     100/    2605], loss: 2.8286, top1: 50.0000, top5: 79.0000, LR: [0.00194], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-11 00:41:00 - LOGS    - *** Validation (Ema) summary for epoch 35
+         loss=3.0088 || top1=46.5185 || top5=73.0000
+2022-04-11 00:41:00 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_44.0000.pt
+2022-04-11 00:41:00 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_44.1481.pt', 'checkpoint_ema_score_45.0741.pt', 'checkpoint_ema_score_45.3704.pt', 'checkpoint_ema_score_45.5185.pt', 'checkpoint_ema_score_46.5185.pt']
+2022-04-11 00:41:00 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:41:00 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:41:06 - LOGS    - Epoch:  36 [   28152/10000000], loss: 3.2703, top1: 39.8438, top5: 67.1875, LR: [0.001937], Avg. batch load time: 3.625, Elapsed time:  3.91
+2022-04-11 00:41:52 - LOGS    - Epoch:  36 [   28652/10000000], loss: 3.3905, top1: 37.1320, top5: 64.3370, LR: [0.001937], Avg. batch load time: 0.007, Elapsed time: 50.09
+2022-04-11 00:42:18 - LOGS    - *** Training summary for epoch 36
+         loss=3.4087 || top1=36.6908 || top5=63.8617
+2022-04-11 00:42:24 - LOGS    - Epoch:  36 [     100/    2605], loss: 3.1415, top1: 39.0000, top5: 68.0000, LR: [0.001937], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 00:42:25 - LOGS    - *** Validation summary for epoch 36
+         loss=3.1532 || top1=42.2222 || top5=70.4815
+2022-04-11 00:42:30 - LOGS    - Epoch:  36 [     100/    2605], loss: 2.8150, top1: 50.0000, top5: 80.0000, LR: [0.001937], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:42:31 - LOGS    - *** Validation (Ema) summary for epoch 36
+         loss=2.9963 || top1=46.2593 || top5=73.1852
+2022-04-11 00:42:31 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:42:37 - LOGS    - Epoch:  37 [   28934/10000000], loss: 3.5495, top1: 35.9375, top5: 61.7188, LR: [0.001933], Avg. batch load time: 3.617, Elapsed time:  4.04
+2022-04-11 00:43:23 - LOGS    - Epoch:  37 [   29434/10000000], loss: 3.3853, top1: 37.2084, top5: 64.5366, LR: [0.001933], Avg. batch load time: 0.007, Elapsed time: 50.03
+2022-04-11 00:43:49 - LOGS    - *** Training summary for epoch 37
+         loss=3.3923 || top1=37.0694 || top5=64.2933
+2022-04-11 00:43:55 - LOGS    - Epoch:  37 [     100/    2605], loss: 2.7872, top1: 51.0000, top5: 74.0000, LR: [0.001933], Avg. batch load time: 0.000, Elapsed time:  3.54
+2022-04-11 00:43:55 - LOGS    - *** Validation summary for epoch 37
+         loss=3.1447 || top1=41.6296 || top5=69.1852
+2022-04-11 00:44:01 - LOGS    - Epoch:  37 [     100/    2605], loss: 2.8044, top1: 48.0000, top5: 78.0000, LR: [0.001933], Avg. batch load time: 0.000, Elapsed time:  3.61
+2022-04-11 00:44:02 - LOGS    - *** Validation (Ema) summary for epoch 37
+         loss=2.9815 || top1=46.5556 || top5=73.2222
+2022-04-11 00:44:02 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_44.1481.pt
+2022-04-11 00:44:02 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_45.0741.pt', 'checkpoint_ema_score_45.3704.pt', 'checkpoint_ema_score_45.5185.pt', 'checkpoint_ema_score_46.5185.pt', 'checkpoint_ema_score_46.5556.pt']
+2022-04-11 00:44:02 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:44:02 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:44:08 - LOGS    - Epoch:  38 [   29716/10000000], loss: 3.2604, top1: 32.8125, top5: 71.8750, LR: [0.00193], Avg. batch load time: 3.654, Elapsed time:  3.93
+2022-04-11 00:44:54 - LOGS    - Epoch:  38 [   30216/10000000], loss: 3.3722, top1: 37.7105, top5: 64.7627, LR: [0.00193], Avg. batch load time: 0.007, Elapsed time: 50.11
+2022-04-11 00:45:20 - LOGS    - *** Training summary for epoch 38
+         loss=3.3792 || top1=37.5350 || top5=64.6020
+2022-04-11 00:45:26 - LOGS    - Epoch:  38 [     100/    2605], loss: 3.0243, top1: 42.0000, top5: 68.0000, LR: [0.00193], Avg. batch load time: 0.000, Elapsed time:  3.51
+2022-04-11 00:45:27 - LOGS    - *** Validation summary for epoch 38
+         loss=3.1197 || top1=42.5185 || top5=70.0741
+2022-04-11 00:45:32 - LOGS    - Epoch:  38 [     100/    2605], loss: 2.7911, top1: 47.0000, top5: 78.0000, LR: [0.00193], Avg. batch load time: 0.000, Elapsed time:  3.75
+2022-04-11 00:45:33 - LOGS    - *** Validation (Ema) summary for epoch 38
+         loss=2.9668 || top1=46.9630 || top5=73.3333
+2022-04-11 00:45:33 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_40.2222.pt
+2022-04-11 00:45:33 - LOGS    - Averaging checkpoints: ['checkpoint_score_40.5185.pt', 'checkpoint_score_41.5556.pt', 'checkpoint_score_41.6296.pt', 'checkpoint_score_42.3704.pt', 'checkpoint_score_42.5185.pt']
+2022-04-11 00:45:33 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:45:33 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_45.0741.pt
+2022-04-11 00:45:33 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_45.3704.pt', 'checkpoint_ema_score_45.5185.pt', 'checkpoint_ema_score_46.5185.pt', 'checkpoint_ema_score_46.5556.pt', 'checkpoint_ema_score_46.9630.pt']
+2022-04-11 00:45:34 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:45:34 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:45:40 - LOGS    - Epoch:  39 [   30498/10000000], loss: 3.3660, top1: 32.8125, top5: 65.6250, LR: [0.001926], Avg. batch load time: 3.740, Elapsed time:  4.09
+2022-04-11 00:46:26 - LOGS    - Epoch:  39 [   30998/10000000], loss: 3.3709, top1: 37.4782, top5: 64.8547, LR: [0.001926], Avg. batch load time: 0.008, Elapsed time: 50.05
+2022-04-11 00:46:52 - LOGS    - *** Training summary for epoch 39
+         loss=3.3761 || top1=37.4940 || top5=64.7289
+2022-04-11 00:46:57 - LOGS    - Epoch:  39 [     100/    2605], loss: 3.0093, top1: 46.0000, top5: 69.0000, LR: [0.001926], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 00:46:58 - LOGS    - *** Validation summary for epoch 39
+         loss=3.1140 || top1=43.2222 || top5=70.4444
+2022-04-11 00:47:03 - LOGS    - Epoch:  39 [     100/    2605], loss: 2.7838, top1: 48.0000, top5: 79.0000, LR: [0.001926], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 00:47:04 - LOGS    - *** Validation (Ema) summary for epoch 39
+         loss=2.9540 || top1=46.8148 || top5=73.6296
+2022-04-11 00:47:04 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_40.5185.pt
+2022-04-11 00:47:04 - LOGS    - Averaging checkpoints: ['checkpoint_score_41.5556.pt', 'checkpoint_score_41.6296.pt', 'checkpoint_score_42.3704.pt', 'checkpoint_score_42.5185.pt', 'checkpoint_score_43.2222.pt']
+2022-04-11 00:47:04 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:47:05 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:47:11 - LOGS    - Epoch:  40 [   31280/10000000], loss: 3.2732, top1: 43.7500, top5: 66.4062, LR: [0.001922], Avg. batch load time: 3.697, Elapsed time:  4.05
+2022-04-11 00:47:57 - LOGS    - Epoch:  40 [   31780/10000000], loss: 3.3489, top1: 37.9351, top5: 65.2991, LR: [0.001922], Avg. batch load time: 0.007, Elapsed time: 50.21
+2022-04-11 00:48:23 - LOGS    - *** Training summary for epoch 40
+         loss=3.3625 || top1=37.7797 || top5=64.9766
+2022-04-11 00:48:28 - LOGS    - Epoch:  40 [     100/    2605], loss: 2.8971, top1: 47.0000, top5: 73.0000, LR: [0.001922], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:48:29 - LOGS    - *** Validation summary for epoch 40
+         loss=3.0799 || top1=44.0741 || top5=71.3704
+2022-04-11 00:48:35 - LOGS    - Epoch:  40 [     100/    2605], loss: 2.7640, top1: 49.0000, top5: 79.0000, LR: [0.001922], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 00:48:35 - LOGS    - *** Validation (Ema) summary for epoch 40
+         loss=2.9432 || top1=47.2222 || top5=73.9630
+2022-04-11 00:48:36 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_41.5556.pt
+2022-04-11 00:48:36 - LOGS    - Averaging checkpoints: ['checkpoint_score_41.6296.pt', 'checkpoint_score_42.3704.pt', 'checkpoint_score_42.5185.pt', 'checkpoint_score_43.2222.pt', 'checkpoint_score_44.0741.pt']
+2022-04-11 00:48:36 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:48:36 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_45.3704.pt
+2022-04-11 00:48:36 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_45.5185.pt', 'checkpoint_ema_score_46.5185.pt', 'checkpoint_ema_score_46.5556.pt', 'checkpoint_ema_score_46.9630.pt', 'checkpoint_ema_score_47.2222.pt']
+2022-04-11 00:48:36 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:48:36 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:48:42 - LOGS    - Epoch:  41 [   32062/10000000], loss: 3.2298, top1: 41.4062, top5: 66.4062, LR: [0.001918], Avg. batch load time: 3.623, Elapsed time:  3.92
+2022-04-11 00:49:28 - LOGS    - Epoch:  41 [   32562/10000000], loss: 3.3343, top1: 38.4590, top5: 65.6484, LR: [0.001918], Avg. batch load time: 0.007, Elapsed time: 49.90
+2022-04-11 00:49:54 - LOGS    - *** Training summary for epoch 41
+         loss=3.3404 || top1=38.4271 || top5=65.5441
+2022-04-11 00:49:59 - LOGS    - Epoch:  41 [     100/    2605], loss: 3.0739, top1: 43.0000, top5: 71.0000, LR: [0.001918], Avg. batch load time: 0.000, Elapsed time:  3.49
+2022-04-11 00:50:00 - LOGS    - *** Validation summary for epoch 41
+         loss=3.0845 || top1=43.3704 || top5=70.3333
+2022-04-11 00:50:06 - LOGS    - Epoch:  41 [     100/    2605], loss: 2.7506, top1: 49.0000, top5: 79.0000, LR: [0.001918], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:50:06 - LOGS    - *** Validation (Ema) summary for epoch 41
+         loss=2.9317 || top1=48.0370 || top5=73.7778
+2022-04-11 00:50:07 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_45.5185.pt
+2022-04-11 00:50:07 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_46.5185.pt', 'checkpoint_ema_score_46.5556.pt', 'checkpoint_ema_score_46.9630.pt', 'checkpoint_ema_score_47.2222.pt', 'checkpoint_ema_score_48.0370.pt']
+2022-04-11 00:50:07 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:50:07 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:50:13 - LOGS    - Epoch:  42 [   32844/10000000], loss: 3.4181, top1: 30.4688, top5: 66.4062, LR: [0.001914], Avg. batch load time: 3.610, Elapsed time:  3.89
+2022-04-11 00:50:59 - LOGS    - Epoch:  42 [   33344/10000000], loss: 3.3336, top1: 38.5276, top5: 65.4815, LR: [0.001914], Avg. batch load time: 0.007, Elapsed time: 50.05
+2022-04-11 00:51:25 - LOGS    - *** Training summary for epoch 42
+         loss=3.3356 || top1=38.5180 || top5=65.4761
+2022-04-11 00:51:30 - LOGS    - Epoch:  42 [     100/    2605], loss: 2.9698, top1: 45.0000, top5: 75.0000, LR: [0.001914], Avg. batch load time: 0.000, Elapsed time:  3.51
+2022-04-11 00:51:31 - LOGS    - *** Validation summary for epoch 42
+         loss=3.0947 || top1=43.8889 || top5=71.2593
+2022-04-11 00:51:37 - LOGS    - Epoch:  42 [     100/    2605], loss: 2.7436, top1: 48.0000, top5: 78.0000, LR: [0.001914], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:51:37 - LOGS    - *** Validation (Ema) summary for epoch 42
+         loss=2.9235 || top1=48.1852 || top5=74.0370
+2022-04-11 00:51:37 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_46.5185.pt
+2022-04-11 00:51:37 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_46.5556.pt', 'checkpoint_ema_score_46.9630.pt', 'checkpoint_ema_score_47.2222.pt', 'checkpoint_ema_score_48.0370.pt', 'checkpoint_ema_score_48.1852.pt']
+2022-04-11 00:51:38 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:51:38 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:51:44 - LOGS    - Epoch:  43 [   33626/10000000], loss: 2.8640, top1: 51.5625, top5: 73.4375, LR: [0.00191], Avg. batch load time: 3.660, Elapsed time:  4.08
+2022-04-11 00:52:30 - LOGS    - Epoch:  43 [   34126/10000000], loss: 3.3172, top1: 38.9081, top5: 66.0039, LR: [0.00191], Avg. batch load time: 0.007, Elapsed time: 50.01
+2022-04-11 00:52:56 - LOGS    - *** Training summary for epoch 43
+         loss=3.3233 || top1=38.7478 || top5=65.8967
+2022-04-11 00:53:01 - LOGS    - Epoch:  43 [     100/    2605], loss: 2.9948, top1: 45.0000, top5: 71.0000, LR: [0.00191], Avg. batch load time: 0.000, Elapsed time:  3.53
+2022-04-11 00:53:02 - LOGS    - *** Validation summary for epoch 43
+         loss=3.0623 || top1=44.0000 || top5=71.4074
+2022-04-11 00:53:08 - LOGS    - Epoch:  43 [     100/    2605], loss: 2.7516, top1: 48.0000, top5: 79.0000, LR: [0.00191], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 00:53:08 - LOGS    - *** Validation (Ema) summary for epoch 43
+         loss=2.9107 || top1=48.9630 || top5=74.3704
+2022-04-11 00:53:08 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_46.5556.pt
+2022-04-11 00:53:08 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_46.9630.pt', 'checkpoint_ema_score_47.2222.pt', 'checkpoint_ema_score_48.0370.pt', 'checkpoint_ema_score_48.1852.pt', 'checkpoint_ema_score_48.9630.pt']
+2022-04-11 00:53:09 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:53:09 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:53:15 - LOGS    - Epoch:  44 [   34408/10000000], loss: 3.4244, top1: 35.1562, top5: 64.0625, LR: [0.001906], Avg. batch load time: 3.616, Elapsed time:  3.89
+2022-04-11 00:54:01 - LOGS    - Epoch:  44 [   34908/10000000], loss: 3.2990, top1: 39.3370, top5: 66.4156, LR: [0.001906], Avg. batch load time: 0.007, Elapsed time: 50.07
+2022-04-11 00:54:27 - LOGS    - *** Training summary for epoch 44
+         loss=3.3057 || top1=39.2283 || top5=66.2134
+2022-04-11 00:54:32 - LOGS    - Epoch:  44 [     100/    2605], loss: 2.7681, top1: 55.0000, top5: 75.0000, LR: [0.001906], Avg. batch load time: 0.000, Elapsed time:  3.54
+2022-04-11 00:54:33 - LOGS    - *** Validation summary for epoch 44
+         loss=3.0715 || top1=44.4444 || top5=71.1852
+2022-04-11 00:54:39 - LOGS    - Epoch:  44 [     100/    2605], loss: 2.7240, top1: 50.0000, top5: 81.0000, LR: [0.001906], Avg. batch load time: 0.000, Elapsed time:  3.67
+2022-04-11 00:54:40 - LOGS    - *** Validation (Ema) summary for epoch 44
+         loss=2.9006 || top1=48.5926 || top5=74.7778
+2022-04-11 00:54:40 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_41.6296.pt
+2022-04-11 00:54:40 - LOGS    - Averaging checkpoints: ['checkpoint_score_42.3704.pt', 'checkpoint_score_42.5185.pt', 'checkpoint_score_43.2222.pt', 'checkpoint_score_44.0741.pt', 'checkpoint_score_44.4444.pt']
+2022-04-11 00:54:40 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:54:40 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:54:46 - LOGS    - Epoch:  45 [   35190/10000000], loss: 3.3219, top1: 38.2812, top5: 67.9688, LR: [0.001902], Avg. batch load time: 3.606, Elapsed time:  3.89
+2022-04-11 00:55:32 - LOGS    - Epoch:  45 [   35690/10000000], loss: 3.2914, top1: 39.5381, top5: 66.5092, LR: [0.001902], Avg. batch load time: 0.007, Elapsed time: 49.84
+2022-04-11 00:55:58 - LOGS    - *** Training summary for epoch 45
+         loss=3.2942 || top1=39.4232 || top5=66.4492
+2022-04-11 00:56:03 - LOGS    - Epoch:  45 [     100/    2605], loss: 2.7982, top1: 50.0000, top5: 73.0000, LR: [0.001902], Avg. batch load time: 0.000, Elapsed time:  3.49
+2022-04-11 00:56:04 - LOGS    - *** Validation summary for epoch 45
+         loss=3.0524 || top1=44.7407 || top5=72.4074
+2022-04-11 00:56:10 - LOGS    - Epoch:  45 [     100/    2605], loss: 2.7120, top1: 51.0000, top5: 80.0000, LR: [0.001902], Avg. batch load time: 0.000, Elapsed time:  3.53
+2022-04-11 00:56:10 - LOGS    - *** Validation (Ema) summary for epoch 45
+         loss=2.8915 || top1=49.2222 || top5=75.2222
+2022-04-11 00:56:11 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_42.3704.pt
+2022-04-11 00:56:11 - LOGS    - Averaging checkpoints: ['checkpoint_score_42.5185.pt', 'checkpoint_score_43.2222.pt', 'checkpoint_score_44.0741.pt', 'checkpoint_score_44.4444.pt', 'checkpoint_score_44.7407.pt']
+2022-04-11 00:56:11 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:56:11 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_46.9630.pt
+2022-04-11 00:56:11 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_47.2222.pt', 'checkpoint_ema_score_48.0370.pt', 'checkpoint_ema_score_48.1852.pt', 'checkpoint_ema_score_48.9630.pt', 'checkpoint_ema_score_49.2222.pt']
+2022-04-11 00:56:11 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:56:11 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:56:17 - LOGS    - Epoch:  46 [   35972/10000000], loss: 3.1941, top1: 43.7500, top5: 67.1875, LR: [0.001898], Avg. batch load time: 3.696, Elapsed time:  4.11
+2022-04-11 00:57:03 - LOGS    - Epoch:  46 [   36472/10000000], loss: 3.2848, top1: 39.7408, top5: 66.6183, LR: [0.001898], Avg. batch load time: 0.007, Elapsed time: 50.29
+2022-04-11 00:57:29 - LOGS    - *** Training summary for epoch 46
+         loss=3.2938 || top1=39.5091 || top5=66.4542
+2022-04-11 00:57:35 - LOGS    - Epoch:  46 [     100/    2605], loss: 2.6887, top1: 52.0000, top5: 78.0000, LR: [0.001898], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 00:57:36 - LOGS    - *** Validation summary for epoch 46
+         loss=3.1009 || top1=42.9259 || top5=69.9630
+2022-04-11 00:57:41 - LOGS    - Epoch:  46 [     100/    2605], loss: 2.7036, top1: 51.0000, top5: 80.0000, LR: [0.001898], Avg. batch load time: 0.000, Elapsed time:  3.60
+2022-04-11 00:57:42 - LOGS    - *** Validation (Ema) summary for epoch 46
+         loss=2.8812 || top1=49.4815 || top5=75.4444
+2022-04-11 00:57:42 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_47.2222.pt
+2022-04-11 00:57:42 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_48.0370.pt', 'checkpoint_ema_score_48.1852.pt', 'checkpoint_ema_score_48.9630.pt', 'checkpoint_ema_score_49.2222.pt', 'checkpoint_ema_score_49.4815.pt']
+2022-04-11 00:57:42 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 00:57:42 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:57:48 - LOGS    - Epoch:  47 [   36754/10000000], loss: 3.1733, top1: 43.7500, top5: 75.7812, LR: [0.001893], Avg. batch load time: 3.603, Elapsed time:  3.90
+2022-04-11 00:58:34 - LOGS    - Epoch:  47 [   37254/10000000], loss: 3.2683, top1: 39.8235, top5: 66.9614, LR: [0.001893], Avg. batch load time: 0.007, Elapsed time: 49.86
+2022-04-11 00:59:00 - LOGS    - *** Training summary for epoch 47
+         loss=3.2743 || top1=39.6929 || top5=66.8378
+2022-04-11 00:59:06 - LOGS    - Epoch:  47 [     100/    2605], loss: 2.7893, top1: 52.0000, top5: 80.0000, LR: [0.001893], Avg. batch load time: 0.000, Elapsed time:  3.55
+2022-04-11 00:59:07 - LOGS    - *** Validation summary for epoch 47
+         loss=3.0426 || top1=45.1111 || top5=72.5926
+2022-04-11 00:59:12 - LOGS    - Epoch:  47 [     100/    2605], loss: 2.6954, top1: 51.0000, top5: 80.0000, LR: [0.001893], Avg. batch load time: 0.000, Elapsed time:  3.63
+2022-04-11 00:59:13 - LOGS    - *** Validation (Ema) summary for epoch 47
+         loss=2.8741 || top1=49.1852 || top5=75.4074
+2022-04-11 00:59:13 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_42.5185.pt
+2022-04-11 00:59:13 - LOGS    - Averaging checkpoints: ['checkpoint_score_43.2222.pt', 'checkpoint_score_44.0741.pt', 'checkpoint_score_44.4444.pt', 'checkpoint_score_44.7407.pt', 'checkpoint_score_45.1111.pt']
+2022-04-11 00:59:13 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 00:59:13 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 00:59:19 - LOGS    - Epoch:  48 [   37536/10000000], loss: 3.0442, top1: 46.0938, top5: 69.5312, LR: [0.001889], Avg. batch load time: 3.589, Elapsed time:  3.89
+2022-04-11 01:00:06 - LOGS    - Epoch:  48 [   38036/10000000], loss: 3.2603, top1: 40.2274, top5: 67.4697, LR: [0.001889], Avg. batch load time: 0.007, Elapsed time: 50.04
+2022-04-11 01:00:32 - LOGS    - *** Training summary for epoch 48
+         loss=3.2700 || top1=40.0565 || top5=67.1685
+2022-04-11 01:00:37 - LOGS    - Epoch:  48 [     100/    2605], loss: 2.8195, top1: 51.0000, top5: 75.0000, LR: [0.001889], Avg. batch load time: 0.000, Elapsed time:  3.63
+2022-04-11 01:00:38 - LOGS    - *** Validation summary for epoch 48
+         loss=3.0908 || top1=44.1111 || top5=70.6296
+2022-04-11 01:00:43 - LOGS    - Epoch:  48 [     100/    2605], loss: 2.6909, top1: 51.0000, top5: 81.0000, LR: [0.001889], Avg. batch load time: 0.000, Elapsed time:  3.59
+2022-04-11 01:00:44 - LOGS    - *** Validation (Ema) summary for epoch 48
+         loss=2.8658 || top1=49.5556 || top5=74.9630
+2022-04-11 01:00:44 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_48.0370.pt
+2022-04-11 01:00:44 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_48.1852.pt', 'checkpoint_ema_score_48.9630.pt', 'checkpoint_ema_score_49.2222.pt', 'checkpoint_ema_score_49.4815.pt', 'checkpoint_ema_score_49.5556.pt']
+2022-04-11 01:00:45 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:00:45 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:00:51 - LOGS    - Epoch:  49 [   38318/10000000], loss: 3.1047, top1: 39.0625, top5: 75.7812, LR: [0.001884], Avg. batch load time: 3.602, Elapsed time:  3.90
+2022-04-11 01:01:37 - LOGS    - Epoch:  49 [   38818/10000000], loss: 3.2495, top1: 40.3927, top5: 67.5571, LR: [0.001884], Avg. batch load time: 0.007, Elapsed time: 50.03
+2022-04-11 01:02:03 - LOGS    - *** Training summary for epoch 49
+         loss=3.2578 || top1=40.3023 || top5=67.2954
+2022-04-11 01:02:09 - LOGS    - Epoch:  49 [     100/    2605], loss: 2.8656, top1: 49.0000, top5: 73.0000, LR: [0.001884], Avg. batch load time: 0.000, Elapsed time:  3.78
+2022-04-11 01:02:10 - LOGS    - *** Validation summary for epoch 49
+         loss=3.0593 || top1=44.4815 || top5=71.0370
+2022-04-11 01:02:15 - LOGS    - Epoch:  49 [     100/    2605], loss: 2.6793, top1: 52.0000, top5: 79.0000, LR: [0.001884], Avg. batch load time: 0.000, Elapsed time:  3.85
+2022-04-11 01:02:16 - LOGS    - *** Validation (Ema) summary for epoch 49
+         loss=2.8584 || top1=49.5185 || top5=75.1852
+2022-04-11 01:02:16 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:02:23 - LOGS    - Epoch:  50 [   39100/10000000], loss: 3.4425, top1: 44.5312, top5: 67.1875, LR: [0.001879], Avg. batch load time: 3.964, Elapsed time:  4.24
+2022-04-11 01:03:09 - LOGS    - Epoch:  50 [   39600/10000000], loss: 3.2504, top1: 40.6655, top5: 67.4510, LR: [0.001879], Avg. batch load time: 0.008, Elapsed time: 50.58
+2022-04-11 01:03:35 - LOGS    - *** Training summary for epoch 50
+         loss=3.2533 || top1=40.5221 || top5=67.4323
+2022-04-11 01:03:41 - LOGS    - Epoch:  50 [     100/    2605], loss: 2.6767, top1: 50.0000, top5: 77.0000, LR: [0.001879], Avg. batch load time: 0.000, Elapsed time:  3.92
+2022-04-11 01:03:42 - LOGS    - *** Validation summary for epoch 50
+         loss=2.9925 || top1=45.2593 || top5=73.2963
+2022-04-11 01:03:48 - LOGS    - Epoch:  50 [     100/    2605], loss: 2.6697, top1: 53.0000, top5: 79.0000, LR: [0.001879], Avg. batch load time: 0.000, Elapsed time:  3.89
+2022-04-11 01:03:48 - LOGS    - *** Validation (Ema) summary for epoch 50
+         loss=2.8540 || top1=49.7407 || top5=75.0741
+2022-04-11 01:03:49 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_43.2222.pt
+2022-04-11 01:03:49 - LOGS    - Averaging checkpoints: ['checkpoint_score_44.0741.pt', 'checkpoint_score_44.4444.pt', 'checkpoint_score_44.7407.pt', 'checkpoint_score_45.1111.pt', 'checkpoint_score_45.2593.pt']
+2022-04-11 01:03:49 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:03:49 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_48.1852.pt
+2022-04-11 01:03:49 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_48.9630.pt', 'checkpoint_ema_score_49.2222.pt', 'checkpoint_ema_score_49.4815.pt', 'checkpoint_ema_score_49.5556.pt', 'checkpoint_ema_score_49.7407.pt']
+2022-04-11 01:03:49 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:03:49 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:03:55 - LOGS    - Epoch:  51 [   39882/10000000], loss: 3.1331, top1: 39.8438, top5: 73.4375, LR: [0.001875], Avg. batch load time: 3.951, Elapsed time:  4.25
+2022-04-11 01:04:41 - LOGS    - Epoch:  51 [   40382/10000000], loss: 3.2330, top1: 40.9119, top5: 68.0109, LR: [0.001875], Avg. batch load time: 0.008, Elapsed time: 50.25
+2022-04-11 01:05:07 - LOGS    - *** Training summary for epoch 51
+         loss=3.2425 || top1=40.7679 || top5=67.6341
+2022-04-11 01:05:13 - LOGS    - Epoch:  51 [     100/    2605], loss: 2.8591, top1: 51.0000, top5: 74.0000, LR: [0.001875], Avg. batch load time: 0.000, Elapsed time:  3.94
+2022-04-11 01:05:14 - LOGS    - *** Validation summary for epoch 51
+         loss=3.0124 || top1=45.8889 || top5=72.5185
+2022-04-11 01:05:20 - LOGS    - Epoch:  51 [     100/    2605], loss: 2.6933, top1: 53.0000, top5: 81.0000, LR: [0.001875], Avg. batch load time: 0.000, Elapsed time:  3.96
+2022-04-11 01:05:21 - LOGS    - *** Validation (Ema) summary for epoch 51
+         loss=2.8492 || top1=50.4815 || top5=75.4074
+2022-04-11 01:05:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_44.0741.pt
+2022-04-11 01:05:21 - LOGS    - Averaging checkpoints: ['checkpoint_score_44.4444.pt', 'checkpoint_score_44.7407.pt', 'checkpoint_score_45.1111.pt', 'checkpoint_score_45.2593.pt', 'checkpoint_score_45.8889.pt']
+2022-04-11 01:05:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:05:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_48.9630.pt
+2022-04-11 01:05:21 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_49.2222.pt', 'checkpoint_ema_score_49.4815.pt', 'checkpoint_ema_score_49.5556.pt', 'checkpoint_ema_score_49.7407.pt', 'checkpoint_ema_score_50.4815.pt']
+2022-04-11 01:05:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:05:21 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:05:27 - LOGS    - Epoch:  52 [   40664/10000000], loss: 3.0765, top1: 38.2812, top5: 74.2188, LR: [0.00187], Avg. batch load time: 3.984, Elapsed time:  4.27
+2022-04-11 01:06:14 - LOGS    - Epoch:  52 [   41164/10000000], loss: 3.2305, top1: 40.9306, top5: 67.8939, LR: [0.00187], Avg. batch load time: 0.008, Elapsed time: 50.42
+2022-04-11 01:06:40 - LOGS    - *** Training summary for epoch 52
+         loss=3.2350 || top1=40.8558 || top5=67.8599
+2022-04-11 01:06:45 - LOGS    - Epoch:  52 [     100/    2605], loss: 2.8909, top1: 52.0000, top5: 76.0000, LR: [0.00187], Avg. batch load time: 0.000, Elapsed time:  3.75
+2022-04-11 01:06:46 - LOGS    - *** Validation summary for epoch 52
+         loss=3.0010 || top1=46.2222 || top5=72.9630
+2022-04-11 01:06:52 - LOGS    - Epoch:  52 [     100/    2605], loss: 2.6902, top1: 54.0000, top5: 80.0000, LR: [0.00187], Avg. batch load time: 0.000, Elapsed time:  3.78
+2022-04-11 01:06:53 - LOGS    - *** Validation (Ema) summary for epoch 52
+         loss=2.8430 || top1=50.4444 || top5=75.6296
+2022-04-11 01:06:53 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_44.4444.pt
+2022-04-11 01:06:53 - LOGS    - Averaging checkpoints: ['checkpoint_score_44.7407.pt', 'checkpoint_score_45.1111.pt', 'checkpoint_score_45.2593.pt', 'checkpoint_score_45.8889.pt', 'checkpoint_score_46.2222.pt']
+2022-04-11 01:06:53 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:06:53 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:06:59 - LOGS    - Epoch:  53 [   41446/10000000], loss: 2.8489, top1: 53.1250, top5: 74.2188, LR: [0.001865], Avg. batch load time: 3.911, Elapsed time:  4.27
+2022-04-11 01:07:45 - LOGS    - Epoch:  53 [   41946/10000000], loss: 3.2190, top1: 41.1458, top5: 68.2245, LR: [0.001865], Avg. batch load time: 0.008, Elapsed time: 50.23
+2022-04-11 01:08:13 - LOGS    - *** Training summary for epoch 53
+         loss=3.2291 || top1=41.0356 || top5=67.9288
+2022-04-11 01:08:19 - LOGS    - Epoch:  53 [     100/    2605], loss: 2.7322, top1: 54.0000, top5: 77.0000, LR: [0.001865], Avg. batch load time: 0.000, Elapsed time:  3.96
+2022-04-11 01:08:20 - LOGS    - *** Validation summary for epoch 53
+         loss=2.9654 || top1=46.4444 || top5=73.1111
+2022-04-11 01:08:26 - LOGS    - Epoch:  53 [     100/    2605], loss: 2.6889, top1: 55.0000, top5: 81.0000, LR: [0.001865], Avg. batch load time: 0.000, Elapsed time:  3.97
+2022-04-11 01:08:26 - LOGS    - *** Validation (Ema) summary for epoch 53
+         loss=2.8334 || top1=50.5185 || top5=76.1111
+2022-04-11 01:08:26 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_44.7407.pt
+2022-04-11 01:08:26 - LOGS    - Averaging checkpoints: ['checkpoint_score_45.1111.pt', 'checkpoint_score_45.2593.pt', 'checkpoint_score_45.8889.pt', 'checkpoint_score_46.2222.pt', 'checkpoint_score_46.4444.pt']
+2022-04-11 01:08:27 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:08:27 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_49.2222.pt
+2022-04-11 01:08:27 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_49.4815.pt', 'checkpoint_ema_score_49.5556.pt', 'checkpoint_ema_score_49.7407.pt', 'checkpoint_ema_score_50.4815.pt', 'checkpoint_ema_score_50.5185.pt']
+2022-04-11 01:08:27 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:08:27 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:08:33 - LOGS    - Epoch:  54 [   42228/10000000], loss: 2.9607, top1: 41.4062, top5: 77.3438, LR: [0.00186], Avg. batch load time: 3.907, Elapsed time:  4.32
+2022-04-11 01:09:23 - LOGS    - Epoch:  54 [   42728/10000000], loss: 3.2136, top1: 41.4140, top5: 68.2354, LR: [0.00186], Avg. batch load time: 0.008, Elapsed time: 53.83
+2022-04-11 01:09:49 - LOGS    - *** Training summary for epoch 54
+         loss=3.2187 || top1=41.2544 || top5=68.1396
+2022-04-11 01:09:55 - LOGS    - Epoch:  54 [     100/    2605], loss: 2.9793, top1: 47.0000, top5: 73.0000, LR: [0.00186], Avg. batch load time: 0.000, Elapsed time:  3.80
+2022-04-11 01:09:56 - LOGS    - *** Validation summary for epoch 54
+         loss=2.9711 || top1=46.8889 || top5=72.8148
+2022-04-11 01:10:02 - LOGS    - Epoch:  54 [     100/    2605], loss: 2.6929, top1: 53.0000, top5: 80.0000, LR: [0.00186], Avg. batch load time: 0.000, Elapsed time:  3.74
+2022-04-11 01:10:02 - LOGS    - *** Validation (Ema) summary for epoch 54
+         loss=2.8257 || top1=50.4444 || top5=76.0000
+2022-04-11 01:10:02 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_45.1111.pt
+2022-04-11 01:10:02 - LOGS    - Averaging checkpoints: ['checkpoint_score_45.2593.pt', 'checkpoint_score_45.8889.pt', 'checkpoint_score_46.2222.pt', 'checkpoint_score_46.4444.pt', 'checkpoint_score_46.8889.pt']
+2022-04-11 01:10:03 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:10:03 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:10:09 - LOGS    - Epoch:  55 [   43010/10000000], loss: 2.9107, top1: 46.8750, top5: 77.3438, LR: [0.001855], Avg. batch load time: 3.807, Elapsed time:  4.10
+2022-04-11 01:10:55 - LOGS    - Epoch:  55 [   43510/10000000], loss: 3.2005, top1: 41.6682, top5: 68.6502, LR: [0.001855], Avg. batch load time: 0.008, Elapsed time: 50.07
+2022-04-11 01:11:21 - LOGS    - *** Training summary for epoch 55
+         loss=3.2130 || top1=41.5431 || top5=68.3584
+2022-04-11 01:11:26 - LOGS    - Epoch:  55 [     100/    2605], loss: 2.8745, top1: 48.0000, top5: 77.0000, LR: [0.001855], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 01:11:27 - LOGS    - *** Validation summary for epoch 55
+         loss=2.9716 || top1=47.1111 || top5=73.5926
+2022-04-11 01:11:33 - LOGS    - Epoch:  55 [     100/    2605], loss: 2.6849, top1: 55.0000, top5: 80.0000, LR: [0.001855], Avg. batch load time: 0.000, Elapsed time:  3.68
+2022-04-11 01:11:33 - LOGS    - *** Validation (Ema) summary for epoch 55
+         loss=2.8176 || top1=51.1481 || top5=76.1852
+2022-04-11 01:11:34 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_45.2593.pt
+2022-04-11 01:11:34 - LOGS    - Averaging checkpoints: ['checkpoint_score_45.8889.pt', 'checkpoint_score_46.2222.pt', 'checkpoint_score_46.4444.pt', 'checkpoint_score_46.8889.pt', 'checkpoint_score_47.1111.pt']
+2022-04-11 01:11:34 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:11:34 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_49.4815.pt
+2022-04-11 01:11:34 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_49.5556.pt', 'checkpoint_ema_score_49.7407.pt', 'checkpoint_ema_score_50.4815.pt', 'checkpoint_ema_score_50.5185.pt', 'checkpoint_ema_score_51.1481.pt']
+2022-04-11 01:11:34 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:11:34 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:11:40 - LOGS    - Epoch:  56 [   43792/10000000], loss: 2.9317, top1: 46.8750, top5: 75.0000, LR: [0.00185], Avg. batch load time: 3.745, Elapsed time:  4.11
+2022-04-11 01:12:26 - LOGS    - Epoch:  56 [   44292/10000000], loss: 3.2009, top1: 41.5871, top5: 68.5442, LR: [0.00185], Avg. batch load time: 0.008, Elapsed time: 50.27
+2022-04-11 01:12:52 - LOGS    - *** Training summary for epoch 56
+         loss=3.2062 || top1=41.5761 || top5=68.4063
+2022-04-11 01:12:58 - LOGS    - Epoch:  56 [     100/    2605], loss: 3.1457, top1: 51.0000, top5: 69.0000, LR: [0.00185], Avg. batch load time: 0.000, Elapsed time:  3.66
+2022-04-11 01:12:59 - LOGS    - *** Validation summary for epoch 56
+         loss=3.0033 || top1=46.1852 || top5=73.2222
+2022-04-11 01:13:05 - LOGS    - Epoch:  56 [     100/    2605], loss: 2.6920, top1: 52.0000, top5: 79.0000, LR: [0.00185], Avg. batch load time: 0.000, Elapsed time:  3.73
+2022-04-11 01:13:05 - LOGS    - *** Validation (Ema) summary for epoch 56
+         loss=2.8106 || top1=51.3333 || top5=76.5926
+2022-04-11 01:13:05 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_49.5556.pt
+2022-04-11 01:13:05 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_49.7407.pt', 'checkpoint_ema_score_50.4815.pt', 'checkpoint_ema_score_50.5185.pt', 'checkpoint_ema_score_51.1481.pt', 'checkpoint_ema_score_51.3333.pt']
+2022-04-11 01:13:06 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:13:06 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:13:12 - LOGS    - Epoch:  57 [   44574/10000000], loss: 3.0882, top1: 42.9688, top5: 69.5312, LR: [0.001844], Avg. batch load time: 3.701, Elapsed time:  4.10
+2022-04-11 01:13:58 - LOGS    - Epoch:  57 [   45074/10000000], loss: 3.1864, top1: 42.0440, top5: 68.7188, LR: [0.001844], Avg. batch load time: 0.007, Elapsed time: 50.21
+2022-04-11 01:14:24 - LOGS    - *** Training summary for epoch 57
+         loss=3.1936 || top1=41.8368 || top5=68.6921
+2022-04-11 01:14:29 - LOGS    - Epoch:  57 [     100/    2605], loss: 2.9953, top1: 43.0000, top5: 72.0000, LR: [0.001844], Avg. batch load time: 0.000, Elapsed time:  3.57
+2022-04-11 01:14:30 - LOGS    - *** Validation summary for epoch 57
+         loss=2.9777 || top1=46.4815 || top5=73.7407
+2022-04-11 01:14:36 - LOGS    - Epoch:  57 [     100/    2605], loss: 2.6995, top1: 51.0000, top5: 80.0000, LR: [0.001844], Avg. batch load time: 0.000, Elapsed time:  3.74
+2022-04-11 01:14:37 - LOGS    - *** Validation (Ema) summary for epoch 57
+         loss=2.8071 || top1=50.9259 || top5=76.7778
+2022-04-11 01:14:37 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:14:43 - LOGS    - Epoch:  58 [   45356/10000000], loss: 3.1374, top1: 42.9688, top5: 71.8750, LR: [0.001839], Avg. batch load time: 3.706, Elapsed time:  4.04
+2022-04-11 01:15:29 - LOGS    - Epoch:  58 [   45856/10000000], loss: 3.1694, top1: 42.4058, top5: 69.1492, LR: [0.001839], Avg. batch load time: 0.007, Elapsed time: 50.24
+2022-04-11 01:15:55 - LOGS    - *** Training summary for epoch 58
+         loss=3.1836 || top1=42.1635 || top5=68.8829
+2022-04-11 01:16:01 - LOGS    - Epoch:  58 [     100/    2605], loss: 2.8876, top1: 48.0000, top5: 70.0000, LR: [0.001839], Avg. batch load time: 0.000, Elapsed time:  3.72
+2022-04-11 01:16:02 - LOGS    - *** Validation summary for epoch 58
+         loss=2.9542 || top1=47.2222 || top5=73.3333
+2022-04-11 01:16:07 - LOGS    - Epoch:  58 [     100/    2605], loss: 2.7015, top1: 50.0000, top5: 82.0000, LR: [0.001839], Avg. batch load time: 0.000, Elapsed time:  3.66
+2022-04-11 01:16:08 - LOGS    - *** Validation (Ema) summary for epoch 58
+         loss=2.8002 || top1=51.1481 || top5=77.0370
+2022-04-11 01:16:08 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_45.8889.pt
+2022-04-11 01:16:08 - LOGS    - Averaging checkpoints: ['checkpoint_score_46.2222.pt', 'checkpoint_score_46.4444.pt', 'checkpoint_score_46.8889.pt', 'checkpoint_score_47.1111.pt', 'checkpoint_score_47.2222.pt']
+2022-04-11 01:16:08 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:16:08 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:16:14 - LOGS    - Epoch:  59 [   46138/10000000], loss: 3.3092, top1: 37.5000, top5: 68.7500, LR: [0.001834], Avg. batch load time: 3.708, Elapsed time:  4.08
+2022-04-11 01:17:00 - LOGS    - Epoch:  59 [   46638/10000000], loss: 3.1713, top1: 42.4510, top5: 69.2537, LR: [0.001834], Avg. batch load time: 0.007, Elapsed time: 50.07
+2022-04-11 01:17:26 - LOGS    - *** Training summary for epoch 59
+         loss=3.1824 || top1=42.2275 || top5=69.0347
+2022-04-11 01:17:32 - LOGS    - Epoch:  59 [     100/    2605], loss: 3.0188, top1: 48.0000, top5: 71.0000, LR: [0.001834], Avg. batch load time: 0.000, Elapsed time:  3.66
+2022-04-11 01:17:33 - LOGS    - *** Validation summary for epoch 59
+         loss=2.9662 || top1=46.8889 || top5=73.8148
+2022-04-11 01:17:39 - LOGS    - Epoch:  59 [     100/    2605], loss: 2.6957, top1: 51.0000, top5: 82.0000, LR: [0.001834], Avg. batch load time: 0.000, Elapsed time:  3.67
+2022-04-11 01:17:39 - LOGS    - *** Validation (Ema) summary for epoch 59
+         loss=2.7954 || top1=51.5185 || top5=76.9630
+2022-04-11 01:17:40 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_49.7407.pt
+2022-04-11 01:17:40 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_50.4815.pt', 'checkpoint_ema_score_50.5185.pt', 'checkpoint_ema_score_51.1481.pt', 'checkpoint_ema_score_51.3333.pt', 'checkpoint_ema_score_51.5185.pt']
+2022-04-11 01:17:40 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:17:40 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:17:46 - LOGS    - Epoch:  60 [   46920/10000000], loss: 3.1735, top1: 42.9688, top5: 70.3125, LR: [0.001828], Avg. batch load time: 3.701, Elapsed time:  4.08
+2022-04-11 01:18:32 - LOGS    - Epoch:  60 [   47420/10000000], loss: 3.1613, top1: 42.7364, top5: 69.1305, LR: [0.001828], Avg. batch load time: 0.007, Elapsed time: 50.23
+2022-04-11 01:18:58 - LOGS    - *** Training summary for epoch 60
+         loss=3.1723 || top1=42.4053 || top5=69.0267
+2022-04-11 01:19:04 - LOGS    - Epoch:  60 [     100/    2605], loss: 2.8484, top1: 51.0000, top5: 72.0000, LR: [0.001828], Avg. batch load time: 0.000, Elapsed time:  3.58
+2022-04-11 01:19:04 - LOGS    - *** Validation summary for epoch 60
+         loss=2.9431 || top1=47.0741 || top5=73.8148
+2022-04-11 01:19:10 - LOGS    - Epoch:  60 [     100/    2605], loss: 2.6699, top1: 50.0000, top5: 81.0000, LR: [0.001828], Avg. batch load time: 0.000, Elapsed time:  3.63
+2022-04-11 01:19:11 - LOGS    - *** Validation (Ema) summary for epoch 60
+         loss=2.7887 || top1=51.1111 || top5=77.1852
+2022-04-11 01:19:11 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:19:17 - LOGS    - Epoch:  61 [   47702/10000000], loss: 3.0927, top1: 43.7500, top5: 70.3125, LR: [0.001823], Avg. batch load time: 3.670, Elapsed time:  4.05
+2022-04-11 01:20:03 - LOGS    - Epoch:  61 [   48202/10000000], loss: 3.1626, top1: 42.6491, top5: 69.2241, LR: [0.001823], Avg. batch load time: 0.007, Elapsed time: 50.04
+2022-04-11 01:20:29 - LOGS    - *** Training summary for epoch 61
+         loss=3.1690 || top1=42.4762 || top5=69.1826
+2022-04-11 01:20:35 - LOGS    - Epoch:  61 [     100/    2605], loss: 2.9217, top1: 50.0000, top5: 69.0000, LR: [0.001823], Avg. batch load time: 0.000, Elapsed time:  3.56
+2022-04-11 01:20:36 - LOGS    - *** Validation summary for epoch 61
+         loss=2.9704 || top1=47.4444 || top5=73.0000
+2022-04-11 01:20:41 - LOGS    - Epoch:  61 [     100/    2605], loss: 2.6751, top1: 51.0000, top5: 81.0000, LR: [0.001823], Avg. batch load time: 0.000, Elapsed time:  3.67
+2022-04-11 01:20:42 - LOGS    - *** Validation (Ema) summary for epoch 61
+         loss=2.7847 || top1=50.5926 || top5=77.2963
+2022-04-11 01:20:42 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_46.2222.pt
+2022-04-11 01:20:42 - LOGS    - Averaging checkpoints: ['checkpoint_score_46.4444.pt', 'checkpoint_score_46.8889.pt', 'checkpoint_score_47.1111.pt', 'checkpoint_score_47.2222.pt', 'checkpoint_score_47.4444.pt']
+2022-04-11 01:20:42 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:20:42 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:20:49 - LOGS    - Epoch:  62 [   48484/10000000], loss: 3.3124, top1: 35.9375, top5: 64.0625, LR: [0.001817], Avg. batch load time: 3.752, Elapsed time:  4.08
+2022-04-11 01:21:35 - LOGS    - Epoch:  62 [   48984/10000000], loss: 3.1478, top1: 42.9329, top5: 69.7948, LR: [0.001817], Avg. batch load time: 0.008, Elapsed time: 50.25
+2022-04-11 01:22:01 - LOGS    - *** Training summary for epoch 62
+         loss=3.1614 || top1=42.5841 || top5=69.5662
+2022-04-11 01:22:06 - LOGS    - Epoch:  62 [     100/    2605], loss: 2.8442, top1: 49.0000, top5: 78.0000, LR: [0.001817], Avg. batch load time: 0.000, Elapsed time:  3.61
+2022-04-11 01:22:07 - LOGS    - *** Validation summary for epoch 62
+         loss=2.9494 || top1=46.8519 || top5=74.9259
+2022-04-11 01:22:13 - LOGS    - Epoch:  62 [     100/    2605], loss: 2.6730, top1: 51.0000, top5: 81.0000, LR: [0.001817], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 01:22:14 - LOGS    - *** Validation (Ema) summary for epoch 62
+         loss=2.7825 || top1=50.6667 || top5=77.3704
+2022-04-11 01:22:14 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:22:20 - LOGS    - Epoch:  63 [   49266/10000000], loss: 3.1520, top1: 41.4062, top5: 66.4062, LR: [0.001811], Avg. batch load time: 3.679, Elapsed time:  4.05
+2022-04-11 01:23:06 - LOGS    - Epoch:  63 [   49766/10000000], loss: 3.1436, top1: 42.9188, top5: 69.7667, LR: [0.001811], Avg. batch load time: 0.007, Elapsed time: 49.97
+2022-04-11 01:23:32 - LOGS    - *** Training summary for epoch 63
+         loss=3.1518 || top1=42.7609 || top5=69.5582
+2022-04-11 01:23:38 - LOGS    - Epoch:  63 [     100/    2605], loss: 2.9402, top1: 48.0000, top5: 73.0000, LR: [0.001811], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 01:23:38 - LOGS    - *** Validation summary for epoch 63
+         loss=2.9787 || top1=45.7778 || top5=73.6667
+2022-04-11 01:23:44 - LOGS    - Epoch:  63 [     100/    2605], loss: 2.6725, top1: 52.0000, top5: 82.0000, LR: [0.001811], Avg. batch load time: 0.000, Elapsed time:  3.72
+2022-04-11 01:23:45 - LOGS    - *** Validation (Ema) summary for epoch 63
+         loss=2.7799 || top1=50.9259 || top5=77.2963
+2022-04-11 01:23:45 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:23:51 - LOGS    - Epoch:  64 [   50048/10000000], loss: 3.1546, top1: 35.1562, top5: 71.0938, LR: [0.001805], Avg. batch load time: 3.677, Elapsed time:  4.05
+2022-04-11 01:24:37 - LOGS    - Epoch:  64 [   50548/10000000], loss: 3.1378, top1: 43.1824, top5: 69.9523, LR: [0.001805], Avg. batch load time: 0.007, Elapsed time: 50.21
+2022-04-11 01:25:03 - LOGS    - *** Training summary for epoch 64
+         loss=3.1465 || top1=43.0637 || top5=69.7530
+2022-04-11 01:25:09 - LOGS    - Epoch:  64 [     100/    2605], loss: 2.7727, top1: 49.0000, top5: 74.0000, LR: [0.001805], Avg. batch load time: 0.000, Elapsed time:  3.61
+2022-04-11 01:25:10 - LOGS    - *** Validation summary for epoch 64
+         loss=2.9549 || top1=46.5556 || top5=73.8889
+2022-04-11 01:25:15 - LOGS    - Epoch:  64 [     100/    2605], loss: 2.6663, top1: 53.0000, top5: 82.0000, LR: [0.001805], Avg. batch load time: 0.000, Elapsed time:  3.66
+2022-04-11 01:25:16 - LOGS    - *** Validation (Ema) summary for epoch 64
+         loss=2.7744 || top1=50.7037 || top5=77.3333
+2022-04-11 01:25:16 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:25:22 - LOGS    - Epoch:  65 [   50830/10000000], loss: 2.8289, top1: 53.9062, top5: 72.6562, LR: [0.001799], Avg. batch load time: 3.730, Elapsed time:  4.06
+2022-04-11 01:26:08 - LOGS    - Epoch:  65 [   51330/10000000], loss: 3.1293, top1: 43.3196, top5: 70.0396, LR: [0.001799], Avg. batch load time: 0.008, Elapsed time: 50.04
+2022-04-11 01:26:34 - LOGS    - *** Training summary for epoch 65
+         loss=3.1380 || top1=43.0756 || top5=69.9089
+2022-04-11 01:26:40 - LOGS    - Epoch:  65 [     100/    2605], loss: 2.8076, top1: 53.0000, top5: 78.0000, LR: [0.001799], Avg. batch load time: 0.000, Elapsed time:  3.68
+2022-04-11 01:26:41 - LOGS    - *** Validation summary for epoch 65
+         loss=2.9623 || top1=46.8889 || top5=74.6667
+2022-04-11 01:26:46 - LOGS    - Epoch:  65 [     100/    2605], loss: 2.6577, top1: 55.0000, top5: 80.0000, LR: [0.001799], Avg. batch load time: 0.000, Elapsed time:  3.68
+2022-04-11 01:26:47 - LOGS    - *** Validation (Ema) summary for epoch 65
+         loss=2.7675 || top1=51.0741 || top5=77.2593
+2022-04-11 01:26:47 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:26:53 - LOGS    - Epoch:  66 [   51612/10000000], loss: 3.1744, top1: 41.4062, top5: 71.0938, LR: [0.001793], Avg. batch load time: 3.702, Elapsed time:  4.05
+2022-04-11 01:27:40 - LOGS    - Epoch:  66 [   52112/10000000], loss: 3.1300, top1: 43.3867, top5: 69.9975, LR: [0.001793], Avg. batch load time: 0.007, Elapsed time: 50.26
+2022-04-11 01:28:06 - LOGS    - *** Training summary for epoch 66
+         loss=3.1346 || top1=43.3054 || top5=69.9269
+2022-04-11 01:28:11 - LOGS    - Epoch:  66 [     100/    2605], loss: 2.7412, top1: 54.0000, top5: 77.0000, LR: [0.001793], Avg. batch load time: 0.000, Elapsed time:  3.59
+2022-04-11 01:28:12 - LOGS    - *** Validation summary for epoch 66
+         loss=2.9009 || top1=49.0000 || top5=75.0741
+2022-04-11 01:28:18 - LOGS    - Epoch:  66 [     100/    2605], loss: 2.6515, top1: 54.0000, top5: 80.0000, LR: [0.001793], Avg. batch load time: 0.000, Elapsed time:  3.71
+2022-04-11 01:28:18 - LOGS    - *** Validation (Ema) summary for epoch 66
+         loss=2.7581 || top1=51.3704 || top5=77.3333
+2022-04-11 01:28:19 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_46.4444.pt
+2022-04-11 01:28:19 - LOGS    - Averaging checkpoints: ['checkpoint_score_46.8889.pt', 'checkpoint_score_47.1111.pt', 'checkpoint_score_47.2222.pt', 'checkpoint_score_47.4444.pt', 'checkpoint_score_49.0000.pt']
+2022-04-11 01:28:19 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:28:19 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:28:25 - LOGS    - Epoch:  67 [   52394/10000000], loss: 3.1146, top1: 46.0938, top5: 74.2188, LR: [0.001787], Avg. batch load time: 3.678, Elapsed time:  4.09
+2022-04-11 01:29:11 - LOGS    - Epoch:  67 [   52894/10000000], loss: 3.1307, top1: 43.3009, top5: 69.9445, LR: [0.001787], Avg. batch load time: 0.007, Elapsed time: 50.03
+2022-04-11 01:29:37 - LOGS    - *** Training summary for epoch 67
+         loss=3.1376 || top1=43.1386 || top5=69.9409
+2022-04-11 01:29:43 - LOGS    - Epoch:  67 [     100/    2605], loss: 3.0577, top1: 47.0000, top5: 65.0000, LR: [0.001787], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 01:29:43 - LOGS    - *** Validation summary for epoch 67
+         loss=2.9310 || top1=48.5926 || top5=74.2963
+2022-04-11 01:29:49 - LOGS    - Epoch:  67 [     100/    2605], loss: 2.6498, top1: 55.0000, top5: 81.0000, LR: [0.001787], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 01:29:50 - LOGS    - *** Validation (Ema) summary for epoch 67
+         loss=2.7510 || top1=51.9630 || top5=77.7037
+2022-04-11 01:29:50 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_50.4815.pt
+2022-04-11 01:29:50 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_50.5185.pt', 'checkpoint_ema_score_51.1481.pt', 'checkpoint_ema_score_51.3333.pt', 'checkpoint_ema_score_51.5185.pt', 'checkpoint_ema_score_51.9630.pt']
+2022-04-11 01:29:50 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:29:50 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:29:56 - LOGS    - Epoch:  68 [   53176/10000000], loss: 3.1725, top1: 45.3125, top5: 75.0000, LR: [0.001781], Avg. batch load time: 3.677, Elapsed time:  4.09
+2022-04-11 01:30:42 - LOGS    - Epoch:  68 [   53676/10000000], loss: 3.1197, top1: 43.6377, top5: 70.3219, LR: [0.001781], Avg. batch load time: 0.007, Elapsed time: 50.25
+2022-04-11 01:31:08 - LOGS    - *** Training summary for epoch 68
+         loss=3.1272 || top1=43.4603 || top5=70.1447
+2022-04-11 01:31:14 - LOGS    - Epoch:  68 [     100/    2605], loss: 2.6584, top1: 49.0000, top5: 80.0000, LR: [0.001781], Avg. batch load time: 0.000, Elapsed time:  3.61
+2022-04-11 01:31:15 - LOGS    - *** Validation summary for epoch 68
+         loss=2.9065 || top1=47.4074 || top5=74.7778
+2022-04-11 01:31:21 - LOGS    - Epoch:  68 [     100/    2605], loss: 2.6487, top1: 54.0000, top5: 79.0000, LR: [0.001781], Avg. batch load time: 0.000, Elapsed time:  3.90
+2022-04-11 01:31:21 - LOGS    - *** Validation (Ema) summary for epoch 68
+         loss=2.7460 || top1=51.8519 || top5=77.3704
+2022-04-11 01:31:22 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:31:28 - LOGS    - Epoch:  69 [   53958/10000000], loss: 3.1690, top1: 41.4062, top5: 71.0938, LR: [0.001775], Avg. batch load time: 3.749, Elapsed time:  4.04
+2022-04-11 01:32:14 - LOGS    - Epoch:  69 [   54458/10000000], loss: 3.0973, top1: 44.3878, top5: 70.6353, LR: [0.001775], Avg. batch load time: 0.008, Elapsed time: 50.49
+2022-04-11 01:32:40 - LOGS    - *** Training summary for epoch 69
+         loss=3.1076 || top1=44.1017 || top5=70.3964
+2022-04-11 01:32:46 - LOGS    - Epoch:  69 [     100/    2605], loss: 2.7516, top1: 51.0000, top5: 77.0000, LR: [0.001775], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 01:32:46 - LOGS    - *** Validation summary for epoch 69
+         loss=2.8920 || top1=48.6296 || top5=74.8148
+2022-04-11 01:32:52 - LOGS    - Epoch:  69 [     100/    2605], loss: 2.6432, top1: 54.0000, top5: 81.0000, LR: [0.001775], Avg. batch load time: 0.000, Elapsed time:  3.63
+2022-04-11 01:32:53 - LOGS    - *** Validation (Ema) summary for epoch 69
+         loss=2.7436 || top1=51.9259 || top5=77.6667
+2022-04-11 01:32:53 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:32:59 - LOGS    - Epoch:  70 [   54740/10000000], loss: 2.9073, top1: 44.5312, top5: 74.2188, LR: [0.001769], Avg. batch load time: 3.692, Elapsed time:  4.05
+2022-04-11 01:33:45 - LOGS    - Epoch:  70 [   55240/10000000], loss: 3.1098, top1: 43.8389, top5: 70.3265, LR: [0.001769], Avg. batch load time: 0.007, Elapsed time: 50.23
+2022-04-11 01:34:11 - LOGS    - *** Training summary for epoch 70
+         loss=3.1099 || top1=43.8159 || top5=70.3615
+2022-04-11 01:34:17 - LOGS    - Epoch:  70 [     100/    2605], loss: 2.9335, top1: 48.0000, top5: 68.0000, LR: [0.001769], Avg. batch load time: 0.000, Elapsed time:  3.59
+2022-04-11 01:34:18 - LOGS    - *** Validation summary for epoch 70
+         loss=2.9124 || top1=47.8519 || top5=74.3333
+2022-04-11 01:34:23 - LOGS    - Epoch:  70 [     100/    2605], loss: 2.6320, top1: 53.0000, top5: 81.0000, LR: [0.001769], Avg. batch load time: 0.000, Elapsed time:  3.72
+2022-04-11 01:34:24 - LOGS    - *** Validation (Ema) summary for epoch 70
+         loss=2.7401 || top1=52.0370 || top5=78.0741
+2022-04-11 01:34:24 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_50.5185.pt
+2022-04-11 01:34:24 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_51.1481.pt', 'checkpoint_ema_score_51.3333.pt', 'checkpoint_ema_score_51.5185.pt', 'checkpoint_ema_score_51.9630.pt', 'checkpoint_ema_score_52.0370.pt']
+2022-04-11 01:34:25 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:34:25 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:34:31 - LOGS    - Epoch:  71 [   55522/10000000], loss: 3.1141, top1: 44.5312, top5: 70.3125, LR: [0.001762], Avg. batch load time: 3.696, Elapsed time:  3.94
+2022-04-11 01:35:20 - LOGS    - Epoch:  71 [   56022/10000000], loss: 3.0873, top1: 44.4704, top5: 71.0891, LR: [0.001762], Avg. batch load time: 0.007, Elapsed time: 53.24
+2022-04-11 01:35:46 - LOGS    - *** Training summary for epoch 71
+         loss=3.0996 || top1=44.1117 || top5=70.8010
+2022-04-11 01:35:52 - LOGS    - Epoch:  71 [     100/    2605], loss: 2.7702, top1: 50.0000, top5: 74.0000, LR: [0.001762], Avg. batch load time: 0.000, Elapsed time:  3.63
+2022-04-11 01:35:53 - LOGS    - *** Validation summary for epoch 71
+         loss=2.9085 || top1=48.0370 || top5=74.5926
+2022-04-11 01:35:58 - LOGS    - Epoch:  71 [     100/    2605], loss: 2.6351, top1: 51.0000, top5: 81.0000, LR: [0.001762], Avg. batch load time: 0.000, Elapsed time:  3.68
+2022-04-11 01:35:59 - LOGS    - *** Validation (Ema) summary for epoch 71
+         loss=2.7372 || top1=51.9630 || top5=77.8519
+2022-04-11 01:35:59 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:36:05 - LOGS    - Epoch:  72 [   56304/10000000], loss: 2.9922, top1: 45.3125, top5: 74.2188, LR: [0.001756], Avg. batch load time: 3.692, Elapsed time:  4.03
+2022-04-11 01:36:53 - LOGS    - Epoch:  72 [   56804/10000000], loss: 3.0867, top1: 44.5344, top5: 71.0298, LR: [0.001756], Avg. batch load time: 0.007, Elapsed time: 51.11
+2022-04-11 01:37:19 - LOGS    - *** Training summary for epoch 72
+         loss=3.0996 || top1=44.2166 || top5=70.7501
+2022-04-11 01:37:24 - LOGS    - Epoch:  72 [     100/    2605], loss: 2.6824, top1: 54.0000, top5: 76.0000, LR: [0.001756], Avg. batch load time: 0.000, Elapsed time:  3.74
+2022-04-11 01:37:25 - LOGS    - *** Validation summary for epoch 72
+         loss=2.9020 || top1=48.4815 || top5=74.9259
+2022-04-11 01:37:31 - LOGS    - Epoch:  72 [     100/    2605], loss: 2.6277, top1: 52.0000, top5: 82.0000, LR: [0.001756], Avg. batch load time: 0.000, Elapsed time:  3.68
+2022-04-11 01:37:32 - LOGS    - *** Validation (Ema) summary for epoch 72
+         loss=2.7339 || top1=52.4074 || top5=78.1111
+2022-04-11 01:37:32 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_51.1481.pt
+2022-04-11 01:37:32 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_51.3333.pt', 'checkpoint_ema_score_51.5185.pt', 'checkpoint_ema_score_51.9630.pt', 'checkpoint_ema_score_52.0370.pt', 'checkpoint_ema_score_52.4074.pt']
+2022-04-11 01:37:32 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:37:32 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:37:38 - LOGS    - Epoch:  73 [   57086/10000000], loss: 2.9714, top1: 53.1250, top5: 73.4375, LR: [0.00175], Avg. batch load time: 3.747, Elapsed time:  4.09
+2022-04-11 01:38:24 - LOGS    - Epoch:  73 [   57586/10000000], loss: 3.0791, top1: 44.6716, top5: 71.2310, LR: [0.00175], Avg. batch load time: 0.008, Elapsed time: 50.05
+2022-04-11 01:38:50 - LOGS    - *** Training summary for epoch 73
+         loss=3.0879 || top1=44.4373 || top5=71.0838
+2022-04-11 01:38:56 - LOGS    - Epoch:  73 [     100/    2605], loss: 2.8570, top1: 50.0000, top5: 75.0000, LR: [0.00175], Avg. batch load time: 0.000, Elapsed time:  3.71
+2022-04-11 01:38:56 - LOGS    - *** Validation summary for epoch 73
+         loss=2.9426 || top1=47.0370 || top5=74.3704
+2022-04-11 01:39:02 - LOGS    - Epoch:  73 [     100/    2605], loss: 2.6321, top1: 53.0000, top5: 83.0000, LR: [0.00175], Avg. batch load time: 0.000, Elapsed time:  3.69
+2022-04-11 01:39:03 - LOGS    - *** Validation (Ema) summary for epoch 73
+         loss=2.7358 || top1=52.0370 || top5=78.2593
+2022-04-11 01:39:03 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:39:09 - LOGS    - Epoch:  74 [   57868/10000000], loss: 3.0173, top1: 46.8750, top5: 74.2188, LR: [0.001743], Avg. batch load time: 3.721, Elapsed time:  4.04
+2022-04-11 01:39:55 - LOGS    - Epoch:  74 [   58368/10000000], loss: 3.0775, top1: 44.8603, top5: 71.2435, LR: [0.001743], Avg. batch load time: 0.008, Elapsed time: 50.40
+2022-04-11 01:40:22 - LOGS    - *** Training summary for epoch 74
+         loss=3.0842 || top1=44.6451 || top5=71.1077
+2022-04-11 01:40:27 - LOGS    - Epoch:  74 [     100/    2605], loss: 2.8186, top1: 50.0000, top5: 76.0000, LR: [0.001743], Avg. batch load time: 0.000, Elapsed time:  3.69
+2022-04-11 01:40:28 - LOGS    - *** Validation summary for epoch 74
+         loss=2.9266 || top1=47.0370 || top5=75.1481
+2022-04-11 01:40:34 - LOGS    - Epoch:  74 [     100/    2605], loss: 2.6284, top1: 53.0000, top5: 82.0000, LR: [0.001743], Avg. batch load time: 0.000, Elapsed time:  3.72
+2022-04-11 01:40:34 - LOGS    - *** Validation (Ema) summary for epoch 74
+         loss=2.7315 || top1=52.5556 || top5=78.1111
+2022-04-11 01:40:35 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_51.3333.pt
+2022-04-11 01:40:35 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_51.5185.pt', 'checkpoint_ema_score_51.9630.pt', 'checkpoint_ema_score_52.0370.pt', 'checkpoint_ema_score_52.4074.pt', 'checkpoint_ema_score_52.5556.pt']
+2022-04-11 01:40:35 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:40:35 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:40:41 - LOGS    - Epoch:  75 [   58650/10000000], loss: 3.1174, top1: 42.1875, top5: 70.3125, LR: [0.001736], Avg. batch load time: 3.764, Elapsed time:  4.07
+2022-04-11 01:41:27 - LOGS    - Epoch:  75 [   59150/10000000], loss: 3.0687, top1: 45.0786, top5: 71.4774, LR: [0.001736], Avg. batch load time: 0.008, Elapsed time: 50.31
+2022-04-11 01:41:54 - LOGS    - *** Training summary for epoch 75
+         loss=3.0779 || top1=44.7890 || top5=71.2126
+2022-04-11 01:42:00 - LOGS    - Epoch:  75 [     100/    2605], loss: 2.5967, top1: 54.0000, top5: 80.0000, LR: [0.001736], Avg. batch load time: 0.000, Elapsed time:  3.90
+2022-04-11 01:42:00 - LOGS    - *** Validation summary for epoch 75
+         loss=2.8930 || top1=48.6667 || top5=75.1481
+2022-04-11 01:42:06 - LOGS    - Epoch:  75 [     100/    2605], loss: 2.6241, top1: 54.0000, top5: 81.0000, LR: [0.001736], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 01:42:07 - LOGS    - *** Validation (Ema) summary for epoch 75
+         loss=2.7250 || top1=52.7778 || top5=77.8148
+2022-04-11 01:42:07 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_51.5185.pt
+2022-04-11 01:42:07 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_51.9630.pt', 'checkpoint_ema_score_52.0370.pt', 'checkpoint_ema_score_52.4074.pt', 'checkpoint_ema_score_52.5556.pt', 'checkpoint_ema_score_52.7778.pt']
+2022-04-11 01:42:07 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:42:07 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:42:13 - LOGS    - Epoch:  76 [   59432/10000000], loss: 3.0932, top1: 41.4062, top5: 67.9688, LR: [0.00173], Avg. batch load time: 3.710, Elapsed time:  4.06
+2022-04-11 01:43:00 - LOGS    - Epoch:  76 [   59932/10000000], loss: 3.0676, top1: 44.7277, top5: 71.4836, LR: [0.00173], Avg. batch load time: 0.007, Elapsed time: 51.16
+2022-04-11 01:43:27 - LOGS    - *** Training summary for epoch 76
+         loss=3.0769 || top1=44.5942 || top5=71.3225
+2022-04-11 01:43:32 - LOGS    - Epoch:  76 [     100/    2605], loss: 2.6742, top1: 54.0000, top5: 79.0000, LR: [0.00173], Avg. batch load time: 0.000, Elapsed time:  3.66
+2022-04-11 01:43:33 - LOGS    - *** Validation summary for epoch 76
+         loss=2.8702 || top1=48.8148 || top5=76.2963
+2022-04-11 01:43:39 - LOGS    - Epoch:  76 [     100/    2605], loss: 2.6089, top1: 55.0000, top5: 82.0000, LR: [0.00173], Avg. batch load time: 0.000, Elapsed time:  3.70
+2022-04-11 01:43:39 - LOGS    - *** Validation (Ema) summary for epoch 76
+         loss=2.7214 || top1=53.1852 || top5=78.2222
+2022-04-11 01:43:39 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_51.9630.pt
+2022-04-11 01:43:39 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_52.0370.pt', 'checkpoint_ema_score_52.4074.pt', 'checkpoint_ema_score_52.5556.pt', 'checkpoint_ema_score_52.7778.pt', 'checkpoint_ema_score_53.1852.pt']
+2022-04-11 01:43:40 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:43:40 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:43:46 - LOGS    - Epoch:  77 [   60214/10000000], loss: 3.4344, top1: 40.6250, top5: 64.8438, LR: [0.001723], Avg. batch load time: 3.785, Elapsed time:  4.08
+2022-04-11 01:44:34 - LOGS    - Epoch:  77 [   60714/10000000], loss: 3.0645, top1: 45.1378, top5: 71.6504, LR: [0.001723], Avg. batch load time: 0.008, Elapsed time: 52.68
+2022-04-11 01:45:01 - LOGS    - *** Training summary for epoch 77
+         loss=3.0737 || top1=44.7950 || top5=71.3265
+2022-04-11 01:45:07 - LOGS    - Epoch:  77 [     100/    2605], loss: 2.6318, top1: 55.0000, top5: 81.0000, LR: [0.001723], Avg. batch load time: 0.000, Elapsed time:  3.97
+2022-04-11 01:45:08 - LOGS    - *** Validation summary for epoch 77
+         loss=2.8808 || top1=49.9259 || top5=76.2222
+2022-04-11 01:45:14 - LOGS    - Epoch:  77 [     100/    2605], loss: 2.5893, top1: 55.0000, top5: 82.0000, LR: [0.001723], Avg. batch load time: 0.000, Elapsed time:  3.71
+2022-04-11 01:45:14 - LOGS    - *** Validation (Ema) summary for epoch 77
+         loss=2.7175 || top1=53.4815 || top5=78.5556
+2022-04-11 01:45:14 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_46.8889.pt
+2022-04-11 01:45:14 - LOGS    - Averaging checkpoints: ['checkpoint_score_47.1111.pt', 'checkpoint_score_47.2222.pt', 'checkpoint_score_47.4444.pt', 'checkpoint_score_49.0000.pt', 'checkpoint_score_49.9259.pt']
+2022-04-11 01:45:15 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:45:15 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_52.0370.pt
+2022-04-11 01:45:15 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_52.4074.pt', 'checkpoint_ema_score_52.5556.pt', 'checkpoint_ema_score_52.7778.pt', 'checkpoint_ema_score_53.1852.pt', 'checkpoint_ema_score_53.4815.pt']
+2022-04-11 01:45:15 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:45:15 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:45:21 - LOGS    - Epoch:  78 [   60996/10000000], loss: 3.3364, top1: 44.5312, top5: 63.2812, LR: [0.001716], Avg. batch load time: 3.797, Elapsed time:  4.10
+2022-04-11 01:46:08 - LOGS    - Epoch:  78 [   61496/10000000], loss: 3.0609, top1: 44.7995, top5: 71.4680, LR: [0.001716], Avg. batch load time: 0.008, Elapsed time: 51.21
+2022-04-11 01:46:34 - LOGS    - *** Training summary for epoch 78
+         loss=3.0717 || top1=44.7061 || top5=71.2046
+2022-04-11 01:46:40 - LOGS    - Epoch:  78 [     100/    2605], loss: 2.9203, top1: 49.0000, top5: 74.0000, LR: [0.001716], Avg. batch load time: 0.000, Elapsed time:  3.65
+2022-04-11 01:46:41 - LOGS    - *** Validation summary for epoch 78
+         loss=2.9144 || top1=48.5185 || top5=74.5926
+2022-04-11 01:46:46 - LOGS    - Epoch:  78 [     100/    2605], loss: 2.5675, top1: 55.0000, top5: 82.0000, LR: [0.001716], Avg. batch load time: 0.000, Elapsed time:  3.73
+2022-04-11 01:46:47 - LOGS    - *** Validation (Ema) summary for epoch 78
+         loss=2.7128 || top1=53.8148 || top5=78.8889
+2022-04-11 01:46:47 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_52.4074.pt
+2022-04-11 01:46:47 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_52.5556.pt', 'checkpoint_ema_score_52.7778.pt', 'checkpoint_ema_score_53.1852.pt', 'checkpoint_ema_score_53.4815.pt', 'checkpoint_ema_score_53.8148.pt']
+2022-04-11 01:46:48 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:46:48 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+2022-04-11 01:46:54 - LOGS    - Epoch:  79 [   61778/10000000], loss: 3.1854, top1: 41.4062, top5: 70.3125, LR: [0.001709], Avg. batch load time: 3.751, Elapsed time:  4.07
+2022-04-11 01:47:41 - LOGS    - Epoch:  79 [   62278/10000000], loss: 3.0336, top1: 45.6228, top5: 72.0387, LR: [0.001709], Avg. batch load time: 0.008, Elapsed time: 51.02
+2022-04-11 01:48:07 - LOGS    - *** Training summary for epoch 79
+         loss=3.0523 || top1=45.2725 || top5=71.6382
+2022-04-11 01:48:13 - LOGS    - Epoch:  79 [     100/    2605], loss: 2.7382, top1: 53.0000, top5: 77.0000, LR: [0.001709], Avg. batch load time: 0.000, Elapsed time:  3.89
+2022-04-11 01:48:14 - LOGS    - *** Validation summary for epoch 79
+         loss=2.8541 || top1=50.0000 || top5=76.5926
+2022-04-11 01:48:20 - LOGS    - Epoch:  79 [     100/    2605], loss: 2.5758, top1: 55.0000, top5: 81.0000, LR: [0.001709], Avg. batch load time: 0.000, Elapsed time:  3.80
+2022-04-11 01:48:21 - LOGS    - *** Validation (Ema) summary for epoch 79
+         loss=2.7086 || top1=53.9259 || top5=79.3333
+2022-04-11 01:48:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_score_47.1111.pt
+2022-04-11 01:48:21 - LOGS    - Averaging checkpoints: ['checkpoint_score_47.2222.pt', 'checkpoint_score_47.4444.pt', 'checkpoint_score_49.0000.pt', 'checkpoint_score_49.9259.pt', 'checkpoint_score_50.0000.pt']
+2022-04-11 01:48:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_avg.pt
+2022-04-11 01:48:21 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_52.5556.pt
+2022-04-11 01:48:21 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_52.7778.pt', 'checkpoint_ema_score_53.1852.pt', 'checkpoint_ema_score_53.4815.pt', 'checkpoint_ema_score_53.8148.pt', 'checkpoint_ema_score_53.9259.pt']
+2022-04-11 01:48:21 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:48:21 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
+======================================================================================================================================================
+2022-04-11 01:48:27 - LOGS    - Epoch:  80 [   62560/10000000], loss: 3.2881, top1: 39.0625, top5: 64.8438, LR: [0.001702], Avg. batch load time: 3.806, Elapsed time:  4.11
+2022-04-11 01:49:15 - LOGS    - Epoch:  80 [   63060/10000000], loss: 3.0374, top1: 45.6228, top5: 72.1011, LR: [0.001702], Avg. batch load time: 0.008, Elapsed time: 52.28
+2022-04-11 01:49:42 - LOGS    - *** Training summary for epoch 80
+         loss=3.0559 || top1=45.2146 || top5=71.8490
+2022-04-11 01:49:48 - LOGS    - Epoch:  80 [     100/    2605], loss: 2.7828, top1: 53.0000, top5: 77.0000, LR: [0.001702], Avg. batch load time: 0.000, Elapsed time:  3.64
+2022-04-11 01:49:49 - LOGS    - *** Validation summary for epoch 80
+         loss=2.8516 || top1=49.1852 || top5=76.5556
+2022-04-11 01:49:54 - LOGS    - Epoch:  80 [     100/    2605], loss: 2.5806, top1: 57.0000, top5: 82.0000, LR: [0.001702], Avg. batch load time: 0.000, Elapsed time:  3.84
+2022-04-11 01:49:55 - LOGS    - *** Validation (Ema) summary for epoch 80
+         loss=2.7051 || top1=54.3333 || top5=79.5556
+2022-04-11 01:49:55 - LOGS    - Deleting checkpoint: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_score_52.7778.pt
+2022-04-11 01:49:55 - LOGS    - Averaging checkpoints: ['checkpoint_ema_score_53.1852.pt', 'checkpoint_ema_score_53.4815.pt', 'checkpoint_ema_score_53.8148.pt', 'checkpoint_ema_score_53.9259.pt', 'checkpoint_ema_score_54.3333.pt']
+2022-04-11 01:49:56 - LOGS    - Averaged checkpoint saved at: results_mobilevit_x_small_noscales_tiny/sanity_check/checkpoint_ema_avg.pt
+2022-04-11 01:49:56 - INFO    - Checkpoints saved at: results_mobilevit_x_small_noscales_tiny/sanity_check
+======================================================================================================================================================
