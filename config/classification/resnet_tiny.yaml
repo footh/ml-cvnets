@@ -1,12 +1,12 @@
 common:
-  run_label: "run_1"
+  run_label: "correct_classes"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
 dataset:
-  root_train: "/home/jfaath/projects/image_data/tiny-imagenet-200/train"
-  root_val: "/home/jfaath/projects/image_data/tiny-imagenet-200/val/images"
-  name: "imagenet"
+  root_train: "../image_data/tiny-imagenet-200/train"
+  root_val: "../image_data/tiny-imagenet-200/val/images"
+  name: "tinyimagenet"
   category: "classification"
   train_batch_size0: 128
   val_batch_size0: 100
@@ -36,7 +36,7 @@ loss:
   category: "classification"
   classification:
     name: "label_smoothing"
-    label_smoothing_factor: 0.1
+    label_smoothing_factor: 0.02
 optim:
   name: "sgd"
   weight_decay: 1.e-4
@@ -55,6 +55,7 @@ scheduler:
 model:
   classification:
     name: "resnet"
+    n_classes: 200
     activation:
       name: "relu" # specify the activation function that you want to use in the classification network
     resnet:
