@@ -43,11 +43,11 @@ class SummaryPlots(object):
             lines = []
             with open(self.path_to_run_output_file) as f:
                 lines = f.readlines()
-                total_lines = lines.count
+                total_lines = len(lines)
                 
                 for line_num, line in enumerate(lines):
                     if line_num + 1 < total_lines: 
-                        next_line = line[line_num + 1]                        
+                        next_line = lines[line_num + 1]                        
                         if "*** Training summary" in line:
                             epoch = int(line.split(" ")[-1])
                             loss, top1, top5 = self.parse_values_in_summary_line(next_line)
@@ -66,7 +66,8 @@ class SummaryPlots(object):
         return np.array(train_epoch_loss_top1_top5), np.array(val_epoch_loss_top1_top5), np.array(valema_epoch_loss_top1_top5)             
         
     def plot_loss_train_val(self, train, val):
-        output_path = os.path.join(os.path.basename(self.path_to_run_output_file), "_loss.png")
+        
+        output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_loss.png"
         
         plt.figure()
         plt.plot(train[:,0], train[:,1], label="train") # epoch vs train loss
@@ -79,7 +80,7 @@ class SummaryPlots(object):
         plt.savefig(output_path)
     
     def plot_top1_train_val(self, train, val):
-        output_path = os.path.join(os.path.basename(self.path_to_run_output_file), "_top1.png")
+        output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_top1.png"
         
         plt.figure()
         plt.plot(train[:,0], train[:,2], label="train") # epoch vs train loss
@@ -93,7 +94,7 @@ class SummaryPlots(object):
         
     
     def plot_top5_train_val(self, train, val):
-        output_path = os.path.join(os.path.basename(self.path_to_run_output_file), "_top5.png")
+        output_path = os.path.splitext(self.path_to_run_output_file)[0] +"_top5.png"
         
         plt.figure()
         plt.plot(train[:,0], train[:,3], label="train") # epoch vs train loss
@@ -111,3 +112,15 @@ class SummaryPlots(object):
         self.plot_top5_train_val(train, val)
         
 
+## Test 
+def main():
+    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+    plots = SummaryPlots(input_run_file)
+    train, val, valema = plots.gen_loss_top1_top5()
+    if len(train) == 0:
+        print("No values to plot.")
+    else:
+        plots.gen_plots(train, valema)
+
+if __name__ == "__main__":
+    main()

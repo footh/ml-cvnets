@@ -19,6 +19,14 @@
             "program": "${workspaceFolder}/setup_val.py",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Python: plots",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/utils/summary_plots.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }
