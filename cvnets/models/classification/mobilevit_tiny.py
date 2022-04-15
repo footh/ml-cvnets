@@ -12,12 +12,12 @@ from utils import logger
 from . import register_cls_models
 from .base_cls import BaseEncoder
 from .config.mobilevit import get_configuration
-from ...layers import ConvLayer, LinearLayer, GlobalPool, Dropout, SeparableConv
+from ...layers import ConvLayer, LinearLayer, GlobalPool, Dropout, SeparableConv, Identity
 from ...modules import InvertedResidual, MobileViTBlock
 
 
 @register_cls_models("mobilevit_tiny")
-class MobileViT(BaseEncoder):
+class MobileViTTiny(BaseEncoder):
     """
         MobileViT: https://arxiv.org/abs/2110.02178?context=cs.LG
 
@@ -43,7 +43,7 @@ class MobileViT(BaseEncoder):
         elif output_stride == 16:
             dilate_l5 = True
 
-        super(MobileViT, self).__init__()
+        super(MobileViTTiny, self).__init__()
         self.dilation = 1
 
         # store model configuration in a dictionary
@@ -60,30 +60,35 @@ class MobileViT(BaseEncoder):
             opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer1"]
         )
         self.model_conf_dict['layer1'] = {'in': in_channels, 'out': out_channels}
+        # self.layer_1 = Identity()
 
         in_channels = out_channels
         self.layer_2, out_channels = self._make_layer(
             opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer2"]
         )
         self.model_conf_dict['layer2'] = {'in': in_channels, 'out': out_channels}
+        # self.layer_2 = Identity()
 
-        in_channels = out_channels
-        self.layer_3, out_channels = self._make_layer(
-            opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer3"]
-        )
-        self.model_conf_dict['layer3'] = {'in': in_channels, 'out': out_channels}
+        # in_channels = out_channels
+        # self.layer_3, out_channels = self._make_layer(
+        #     opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer3"]
+        # )
+        # self.model_conf_dict['layer3'] = {'in': in_channels, 'out': out_channels}
+        self.layer_3 = Identity()
 
-        in_channels = out_channels
-        self.layer_4, out_channels = self._make_layer(
-            opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer4"], dilate=dilate_l4
-        )
-        self.model_conf_dict['layer4'] = {'in': in_channels, 'out': out_channels}
+        # in_channels = out_channels
+        # self.layer_4, out_channels = self._make_layer(
+        #     opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer4"], dilate=dilate_l4
+        # )
+        # self.model_conf_dict['layer4'] = {'in': in_channels, 'out': out_channels}
+        self.layer_4 = Identity()
 
         in_channels = out_channels
         self.layer_5, out_channels = self._make_layer(
             opts=opts, input_channel=in_channels, cfg=mobilevit_config["layer5"], dilate=dilate_l5
         )
         self.model_conf_dict['layer5'] = {'in': in_channels, 'out': out_channels}
+        # self.layer_5 = Identity()
 
         in_channels = out_channels
         exp_channels = min(mobilevit_config["last_layer_exp_factor"] * in_channels, 960)

@@ -77,20 +77,19 @@ class BaseEncoder(nn.Module):
 
     def extract_features(self, x: Tensor) -> Tensor:
         x = self.conv_1(x)
-        # print(x.shape)
+        # print(f'after conv_1: {x.shape}')
         x = self.layer_1(x)
-        # print(x.shape)
+        # print(f'after layer_1: {x.shape}')
         x = self.layer_2(x)
-        # print(x.shape)
+        # print(f'after layer_2: {x.shape}')
         x = self.layer_3(x)
-        # print(x.shape)
-
+        # print(f'after layer_3: {x.shape}')
         x = self.layer_4(x)
-        # print(x.shape)
+        # print(f'after layer_4: {x.shape}')
         x = self.layer_5(x)
-        # print(x.shape)
+        # print(f'after layer_5: {x.shape}')
         x = self.conv_1x1_exp(x)
-        # print(x.shape)
+        # print(f'after conv_1x1_exp: {x.shape}')
         return x
 
     def forward(self, x: Tensor) -> Tensor:

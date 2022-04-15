@@ -101,7 +101,7 @@ class TinyImagenetDataset(BaseImageDataset, ImageFolder):
             del self.samples[img_index]
             input_img = np.zeros(shape=(crop_size_h, crop_size_w, 3), dtype=np.uint8)
 
-        data = {"image": input_img}
+        data = {"image": input_img, "path": img_path}
         data = transform_fn(data)
 
         # target is a 0-dimensional tensor

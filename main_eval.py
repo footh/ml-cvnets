@@ -139,6 +139,6 @@ def main_worker_detection(**kwargs):
 
 
 if __name__ == "__main__":
-    #main_worker()
-    main_worker_segmentation()
-    #main_worker_detection()
+    main_worker()
+    # main_worker_segmentation()
+    # main_worker_detection()

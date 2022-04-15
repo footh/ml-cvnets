@@ -178,25 +178,35 @@ class MobileViTBlock(BaseModule):
         return feature_map
 
     def forward(self, x: Tensor) -> Tensor:
+        # print('mobileViT block start')
+        # print(f'x: {x.shape}')
         res = x
 
         fm = self.local_rep(x)
+        # print(f'after local_rep: {fm.shape}')
 
         # convert feature map to patches
         patches, info_dict = self.unfolding(fm)
+        # print(f'after unfolding: {patches.shape}')
 
         # learn global representations
         patches = self.global_rep(patches)
+        # print(f'after global_rep: {patches.shape}')
 
         # [B x Patch x Patches x C] --> [B x C x Patches x Patch]
         fm = self.folding(patches=patches, info_dict=info_dict)
+        # print(f'after folding: {fm.shape}')
 
         fm = self.conv_proj(fm)
+        # print(f'after conv_proj: {fm.shape}')
 
         if self.fusion is not None:
+            # print('fusing')
             fm = self.fusion(
                 torch.cat((res, fm), dim=1)
             )
+            # print(f'after fusing: {fm.shape}')
+
         return fm
 
     def profile_module(self, input: Tensor) -> (Tensor, float, float):

@@ -1,5 +1,5 @@
 common:
-  run_label: "data_test"
+  run_label: "correct_classes"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -16,24 +16,28 @@ dataset:
   pin_memory: true
 image_augmentation:
   random_resized_crop:
-    enable: false
-    scale: [0.08, 1.0]
-    aspect_ratio: [0.9, 1.1]
+    enable: true
     interpolation: "bilinear"
+    # scale: [ 0.2, 1.0 ]
+    # aspect_ratio: [ 0.75, 1.33 ]
   random_horizontal_flip:
     enable: true
-  random_gauss_noise:
-    enable: false
 sampler:
-  name: "batch_sampler"
-  bs:
+  name: "variable_batch_sampler"
+  vbs:
     crop_size_width: 64
     crop_size_height: 64
+    max_n_scales: 1
+    min_crop_size_width: 64
+    max_crop_size_width: 64
+    min_crop_size_height: 64
+    max_crop_size_height: 64
+    check_scale: 8
 loss:
   category: "classification"
   classification:
     name: "label_smoothing"
-    label_smoothing_factor: 0.1
+    label_smoothing_factor: 0.02
 optim:
   name: "adamw"
   weight_decay: 1.e-2
@@ -52,14 +56,14 @@ scheduler:
     min_lr: 0.0002
 model:
   classification:
-    name: "mobilevit_tiny"
+    name: "mobilevit"
     n_classes: 200
     classifier_dropout: 0.1
     mit:
-      mode: "x_small"
+      mode: "xx_small"
       ffn_dropout: 0.0
       attn_dropout: 0.0
-      dropout: 0.1
+      dropout: 0.05
       number_heads: 4
       no_fuse_local_global_features: false
       conv_kernel_size: 3

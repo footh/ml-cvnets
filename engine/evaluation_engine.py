@@ -11,6 +11,10 @@ from utils import logger
 import time
 from engine.utils import print_summary
 from common import DEFAULT_LOG_FREQ
+import pandas as pd
+import numpy as np
+import os
+from utils.common_utils import create_directories
 
 
 class Evaluator(object):
@@ -49,6 +53,10 @@ class Evaluator(object):
     def eval_fn(self, model):
         log_freq = getattr(self.opts, "common.log_freq", DEFAULT_LOG_FREQ)
         device = getattr(self.opts, "dev.device", torch.device('cpu'))
+        save_dir = getattr(self.opts, "common.results_loc", "results")
+        chkpt_dir = getattr(self.opts, "model.classification.pretrained", "evaluation")
+        chkpt_name = os.path.splitext(os.path.basename(chkpt_dir))[0]
+        create_directories(f'{save_dir}/{chkpt_name}', True)
 
         evaluation_stats = Statistics(metric_names=self.metric_names, is_master_node=self.is_master_node)
 
@@ -62,8 +70,10 @@ class Evaluator(object):
             total_samples = len(self.eval_loader)
             processed_samples = 0
 
+            results_df = pd.DataFrame({'image': [], 'pred': [], 'label': []})
             for batch_id, batch in enumerate(self.eval_loader):
                 input_img, target_label = batch['image'], batch['label']
+                image_path = batch['path']
 
                 # move data to device
                 input_img = input_img.to(device)
@@ -73,6 +83,13 @@ class Evaluator(object):
                 with autocast(enabled=self.mixed_precision_training):
                     # prediction
                     pred_label = model(input_img)
+
+                cur_rows = {
+                    'image': np.asarray(image_path),
+                    'pred': torch.argmax(pred_label, dim=-1).cpu().numpy(),
+                    'label': target_label.cpu().numpy(),
+                }
+                results_df = pd.concat([results_df, pd.DataFrame(cur_rows)])
 
                 processed_samples += batch_size
                 metrics = metric_monitor(pred_label=pred_label, target_label=target_label, loss=0.0,
@@ -87,7 +104,7 @@ class Evaluator(object):
                                                   elapsed_time=epoch_start_time,
                                                   learning_rate=0.0
                                                   )
-
+            results_df.to_csv(f'{save_dir}/{chkpt_name}/eval.csv', index=False)
         evaluation_stats.epoch_summary(epoch=-1, stage="evaluation")
 
     def run(self):
