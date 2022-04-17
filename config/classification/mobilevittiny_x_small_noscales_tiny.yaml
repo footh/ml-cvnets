@@ -1,5 +1,5 @@
 common:
-  run_label: "remove_3_4"
+  run_label: "remove_3_4_nofuse_cutout"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -21,6 +21,8 @@ image_augmentation:
     scale: [ 0.1, 1.0 ]
     aspect_ratio: [ 0.75, 1.33 ]
   random_horizontal_flip:
+    enable: true
+  cutout:
     enable: true
 #  random_flip:
 #    enable: true
@@ -65,13 +67,13 @@ model:
     name: "mobilevit_tiny"
     n_classes: 200
     classifier_dropout: 0.1
-    mit:
+    mitt:
       mode: "x_small"
       ffn_dropout: 0.0
       attn_dropout: 0.0
       dropout: 0.1
       number_heads: 4
-      no_fuse_local_global_features: false
+      no_fuse_local_global_features: true
       conv_kernel_size: 3
     activation:
       name: "swish"

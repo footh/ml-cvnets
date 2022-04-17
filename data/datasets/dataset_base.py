@@ -55,6 +55,9 @@ class BaseImageDataset(data.Dataset):
         if getattr(opts, "image_augmentation.photo_metric_distort.enable", False):
             aug_list.append(cv_transforms.PhotometricDistort(opts=opts))
 
+        if getattr(opts, "image_augmentation.cutout.enable", False):
+            aug_list.append(cv_transforms.Cutout(opts=opts))
+
         # Flipping
         random_flip = getattr(opts, "image_augmentation.random_flip.enable", False)
         if random_flip:

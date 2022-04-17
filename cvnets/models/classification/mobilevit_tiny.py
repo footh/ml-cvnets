@@ -11,7 +11,7 @@ from utils import logger
 
 from . import register_cls_models
 from .base_cls import BaseEncoder
-from .config.mobilevit import get_configuration
+from .config.mobilevit_tiny import get_configuration
 from ...layers import ConvLayer, LinearLayer, GlobalPool, Dropout, SeparableConv, Identity
 from ...modules import InvertedResidual, MobileViTBlock
 
@@ -219,12 +219,12 @@ class MobileViTTiny(BaseEncoder):
                 n_transformer_blocks=cfg.get("transformer_blocks", 1),
                 patch_h=cfg.get("patch_h", 2),
                 patch_w=cfg.get("patch_w", 2),
-                dropout=getattr(opts, "model.classification.mit.dropout", 0.1),
-                ffn_dropout=getattr(opts, "model.classification.mit.ffn_dropout", 0.0),
-                attn_dropout=getattr(opts, "model.classification.mit.attn_dropout", 0.1),
+                dropout=getattr(opts, "model.classification.mitt.dropout", 0.1),
+                ffn_dropout=getattr(opts, "model.classification.mitt.ffn_dropout", 0.0),
+                attn_dropout=getattr(opts, "model.classification.mitt.attn_dropout", 0.1),
                 head_dim=head_dim,
-                no_fusion=getattr(opts, "model.classification.mit.no_fuse_local_global_features", False),
-                conv_ksize=getattr(opts, "model.classification.mit.conv_kernel_size", 3)
+                no_fusion=getattr(opts, "model.classification.mitt.no_fuse_local_global_features", False),
+                conv_ksize=getattr(opts, "model.classification.mitt.conv_kernel_size", 3)
             )
         )
 

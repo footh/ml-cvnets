@@ -15,6 +15,7 @@ import argparse
 from typing import Sequence, Dict, Any, Union, Tuple
 
 from . import register_transformations, BaseTransformation
+import albumentations as A
 
 """
     Different image transformation functions are defined in this file. We use OpenCV and not PIL Image
@@ -1337,3 +1338,37 @@ class PhotometricDistort(BaseTransformation):
     def __call__(self, data: Dict) -> Dict:
         data["image"] = self.apply_transformations(data["image"])
         return data
+
+
+@register_transformations(name="cutout", type="image")
+class Cutout(BaseTransformation):
+
+    def __init__(self, opts):
+        num_holes = getattr(opts, "image_augmentation.cutout.num_holes", 4)
+        max_height = getattr(opts, "image_augmentation.cutout.max_height", 4)
+        max_width = getattr(opts, "image_augmentation.cutout.max_width", 4)
+        p = getattr(opts, "image_augmentation.cutout.p", 0.5)
+        super(Cutout, self).__init__(opts=opts)
+        self.num_holes = num_holes
+        self.max_height = max_height
+        self.max_width = max_width
+        self.p = p
+        self.cutout = A.Cutout(num_holes=num_holes, max_h_size=max_height, max_w_size=max_width, p=p)
+
+    @classmethod
+    def add_arguments(cls, parser: argparse.ArgumentParser):
+        group = parser.add_argument_group(title="".format(cls.__name__), description="".format(cls.__name__))
+        group.add_argument("--image-augmentation.cutout.enable", action="store_true", help="Use cutout")
+        group.add_argument("--image-augmentation.cutout.num-holes", type=int, default=4, help="Number of holes")
+        group.add_argument("--image-augmentation.cutout.max-height", type=int, default=4, help="Max height")
+        group.add_argument("--image-augmentation.cutout.max-width", type=int, default=4, help="Max width")
+        group.add_argument("--image-augmentation.cutout.p", type=float, default=0.5, help="probability")
+        return parser
+
+    def __call__(self, data: Dict) -> Dict:
+        img_transformed = self.cutout(image=data['image'])
+        data['image'] = img_transformed['image']
+        return data
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}(num_holes={self.num_holes}, max_height={self.max_height}, max_width={self.max_width}, p={self.p})'

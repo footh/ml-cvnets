@@ -200,6 +200,7 @@ class MobileViTBlock(BaseModule):
         fm = self.conv_proj(fm)
         # print(f'after conv_proj: {fm.shape}')
 
+        # fm = F.layer_norm(res + fm, list(fm.shape[1:]))
         if self.fusion is not None:
             # print('fusing')
             fm = self.fusion(

@@ -55,6 +55,7 @@ class Evaluator(object):
         device = getattr(self.opts, "dev.device", torch.device('cpu'))
         save_dir = getattr(self.opts, "common.results_loc", "results")
         chkpt_dir = getattr(self.opts, "model.classification.pretrained", "evaluation")
+        print(chkpt_dir)
         chkpt_name = os.path.splitext(os.path.basename(chkpt_dir))[0]
         create_directories(f'{save_dir}/{chkpt_name}', True)
 
