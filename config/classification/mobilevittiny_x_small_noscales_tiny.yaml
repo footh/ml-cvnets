@@ -1,5 +1,5 @@
 common:
-  run_label: "remove_3_4_nofuse_cutout"
+  run_label: "remove_3_4_nofuse_sanity2"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -22,8 +22,8 @@ image_augmentation:
     aspect_ratio: [ 0.75, 1.33 ]
   random_horizontal_flip:
     enable: true
-  cutout:
-    enable: true
+#  cutout:
+#    enable: true
 #  random_flip:
 #    enable: true
 #  random_blur:

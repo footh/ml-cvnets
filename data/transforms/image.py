@@ -1344,16 +1344,16 @@ class PhotometricDistort(BaseTransformation):
 class Cutout(BaseTransformation):
 
     def __init__(self, opts):
-        num_holes = getattr(opts, "image_augmentation.cutout.num_holes", 4)
+        max_holes = getattr(opts, "image_augmentation.cutout.num_holes", 4)
         max_height = getattr(opts, "image_augmentation.cutout.max_height", 4)
         max_width = getattr(opts, "image_augmentation.cutout.max_width", 4)
         p = getattr(opts, "image_augmentation.cutout.p", 0.5)
         super(Cutout, self).__init__(opts=opts)
-        self.num_holes = num_holes
+        self.max_holes = max_holes
         self.max_height = max_height
         self.max_width = max_width
         self.p = p
-        self.cutout = A.Cutout(num_holes=num_holes, max_h_size=max_height, max_w_size=max_width, p=p)
+        self.cutout = A.CoarseDropout(max_holes=max_holes, max_height=max_height, max_width=max_width, p=p)
 
     @classmethod
     def add_arguments(cls, parser: argparse.ArgumentParser):
@@ -1371,4 +1371,4 @@ class Cutout(BaseTransformation):
         return data
 
     def __repr__(self):
-        return f'{self.__class__.__name__}(num_holes={self.num_holes}, max_height={self.max_height}, max_width={self.max_width}, p={self.p})'
+        return f'{self.__class__.__name__}(max_holes={self.max_holes}, max_height={self.max_height}, max_width={self.max_width}, p={self.p})'
