@@ -17,3 +17,7 @@ opencv-contrib-python
 
 # dependency for cityscape evaluation
 cityscapesscripts
+
+# for augmentation cutout
+albumentations
+pandas
