@@ -34,6 +34,13 @@ class SummaryPlots(object):
         top5 = float(split_parts[-1])
         
         return loss, top1, top5
+    
+    def parse_lr_values(self, prev_line):
+        split_parts = prev_line.split("LR: [")
+        lr_str = split_parts[1].split(",")[0]
+        lr = float(lr_str)
+        
+        return lr
         
     def gen_loss_top1_top5(self):
         train_epoch_loss_top1_top5 = [] # np.zeros((lines.count, 4))
@@ -47,64 +54,77 @@ class SummaryPlots(object):
                 
                 for line_num, line in enumerate(lines):
                     if line_num + 1 < total_lines: 
+                        prev_line = lines[line_num - 1] # to get 
                         next_line = lines[line_num + 1]                        
                         if "*** Training summary" in line:
                             epoch = int(line.split(" ")[-1])
                             loss, top1, top5 = self.parse_values_in_summary_line(next_line)
-                            train_epoch_loss_top1_top5.append( (epoch, loss, top1, top5) )
+                            lr = self.parse_lr_values(prev_line)
+                            train_epoch_loss_top1_top5.append( (epoch, loss, top1, top5, lr) )
                         elif "*** Validation summary" in line:
                             epoch = int(line.split(" ")[-1])
                             loss, top1, top5 = self.parse_values_in_summary_line(next_line)   
-                            val_epoch_loss_top1_top5.append( (epoch, loss, top1, top5) )                         
+                            lr = self.parse_lr_values(prev_line)
+                            val_epoch_loss_top1_top5.append( (epoch, loss, top1, top5, lr) )                         
                         elif "*** Validation (Ema) summary" in line:
                             epoch = int(line.split(" ")[-1])
                             loss, top1, top5 = self.parse_values_in_summary_line(next_line)  
-                            valema_epoch_loss_top1_top5.append( (epoch, loss, top1, top5) )                            
+                            lr = self.parse_lr_values(prev_line)
+                            valema_epoch_loss_top1_top5.append( (epoch, loss, top1, top5, lr) )                            
                         else: 
                             continue
          
         return np.array(train_epoch_loss_top1_top5), np.array(val_epoch_loss_top1_top5), np.array(valema_epoch_loss_top1_top5)             
         
-    def plot_loss_train_val(self, train, val):
-        
+    def plot_loss_train_val(self, train, val):        
         output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_loss.png"
         
-        plt.figure()
-        plt.plot(train[:,0], train[:,1], label="train") # epoch vs train loss
-        plt.plot(val[:,0], val[:,1], label="val") # epoch vs val loss 
-        plt.xlabel("epoch")
-        plt.ylabel("loss")
-        plt.title("training and validation loss")
-        plt.legend()
-        #plt.show()
-        plt.savefig(output_path)
+        fig, ax = plt.subplots()
+        ax.plot(train[:,0], train[:,1], label="train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,1], label="val") # epoch vs val loss 
+        ax.set_xlabel("epoch")
+        ax.set_ylabel("loss")
+        ax.set_title("training and validation loss")
+        ax.legend(loc="lower center")
+        ax2 = ax.twinx()
+        ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
+        ax2.set_ylabel("learning rate")
+        ax2.legend(loc='center right')
+        fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')
     
     def plot_top1_train_val(self, train, val):
         output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_top1.png"
         
-        plt.figure()
-        plt.plot(train[:,0], train[:,2], label="train") # epoch vs train loss
-        plt.plot(val[:,0], val[:,2], label="val") # epoch vs val loss 
-        plt.xlabel("epoch")
-        plt.ylabel("top1")
-        plt.title("training and validation top1")
-        plt.legend()
-        #plt.show()
-        plt.savefig(output_path)        
+        fig, ax = plt.subplots()
+        ax.plot(train[:,0], train[:,2], label="train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,2], label="val") # epoch vs val loss 
+        ax.set_xlabel("epoch")
+        ax.set_ylabel("top1")
+        ax.set_title("training and validation top1")
+        ax.legend(loc="lower center")
+        ax2 = ax.twinx()
+        ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
+        ax2.set_ylabel("learning rate")
+        ax2.legend(loc='center right')
+        fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')            
         
     
     def plot_top5_train_val(self, train, val):
         output_path = os.path.splitext(self.path_to_run_output_file)[0] +"_top5.png"
         
-        plt.figure()
-        plt.plot(train[:,0], train[:,3], label="train") # epoch vs train loss
-        plt.plot(val[:,0], val[:,3], label="val") # epoch vs val loss 
-        plt.xlabel("epoch")
-        plt.ylabel("top5")
-        plt.title("training and validation top5")
-        plt.legend()
-        #plt.show()
-        plt.savefig(output_path)             
+        fig, ax = plt.subplots()
+        ax.plot(train[:,0], train[:,3], label="train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,3], label="val") # epoch vs val loss 
+        ax.set_xlabel("epoch")
+        ax.set_ylabel("top1")
+        ax.set_title("training and validation top5")
+        ax.legend(loc="lower center")
+        ax2 = ax.twinx()
+        ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
+        ax2.set_ylabel("learning rate")
+        ax2.legend(loc='center right')
+        fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')          
+           
         
     def gen_plots(self, train, val):
         self.plot_loss_train_val(train, val)
