@@ -1,12 +1,12 @@
 common:
-  run_label: "run_1"
+  run_label: "baseline2"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
 dataset:
   root_train: "/home/jfaath/projects/image_data/tiny-imagenet-200/train"
   root_val: "/home/jfaath/projects/image_data/tiny-imagenet-200/val/images"
-  name: "imagenet"
+  name: "tinyimagenet"
   category: "classification"
   train_batch_size0: 128
   val_batch_size0: 100
@@ -26,16 +26,16 @@ sampler:
     crop_size_width: 64
     crop_size_height: 64
     max_n_scales: 5
-    min_crop_size_width: 64
-    max_crop_size_width: 96
-    min_crop_size_height: 64
-    max_crop_size_height: 96
-    check_scale: 8
+    min_crop_size_width: 58
+    max_crop_size_width: 82
+    min_crop_size_height: 58
+    max_crop_size_height: 82
+    check_scale: 6
 loss:
   category: "classification"
   classification:
     name: "label_smoothing"
-    label_smoothing_factor: 0.1
+    label_smoothing_factor: 0.02
 optim:
   name: "adamw"
   weight_decay: 1.e-2
@@ -46,7 +46,7 @@ optim:
 scheduler:
   name: "cosine"
   is_iteration_based: false
-  max_epochs: 300
+  max_epochs: 200
   warmup_iterations: 3000
   warmup_init_lr: 0.0002
   cosine:
@@ -55,6 +55,7 @@ scheduler:
 model:
   classification:
     name: "mobilevit"
+    n_classes: 200
     classifier_dropout: 0.1
     mit:
       mode: "xx_small"

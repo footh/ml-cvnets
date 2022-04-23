@@ -1,5 +1,5 @@
 common:
-  run_label: "remove_3_4_nofuse_sanity2"
+  run_label: "remove_3_4_nofuse"
   log_freq: 500
   auto_resume: true
   mixed_precision: false

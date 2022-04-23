@@ -1,5 +1,5 @@
 common:
-  run_label: "baseline"
+  run_label: "best"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -18,18 +18,28 @@ image_augmentation:
   random_resized_crop:
     enable: true
     interpolation: "bilinear"
+    scale: [ 0.1, 1.0 ]
+    aspect_ratio: [ 0.75, 1.33 ]
   random_horizontal_flip:
     enable: true
+#  cutout:
+#    enable: true
+#  random_flip:
+#    enable: true
+#  random_blur:
+#    enable: true
+#    kernel_size: [2, 4]
+#    p: 0.3
 sampler:
   name: "variable_batch_sampler"
   vbs:
     crop_size_width: 64
     crop_size_height: 64
-    max_n_scales: 5
+    max_n_scales: 1
     min_crop_size_width: 64
-    max_crop_size_width: 96
+    max_crop_size_width: 64
     min_crop_size_height: 64
-    max_crop_size_height: 96
+    max_crop_size_height: 64
     check_scale: 8
 loss:
   category: "classification"
@@ -47,22 +57,23 @@ scheduler:
   name: "cosine"
   is_iteration_based: false
   max_epochs: 200
-  warmup_iterations: 3000
+  warmup_iterations: 2000
   warmup_init_lr: 0.0002
   cosine:
     max_lr: 0.002
     min_lr: 0.0002
 model:
   classification:
-    name: "mobilevit"
+    name: "mobilevit_tiny"
+    n_classes: 200
     classifier_dropout: 0.1
-    mit:
+    mitt:
       mode: "x_small"
       ffn_dropout: 0.0
       attn_dropout: 0.0
       dropout: 0.1
       number_heads: 4
-      no_fuse_local_global_features: false
+      no_fuse_local_global_features: true
       conv_kernel_size: 3
     activation:
       name: "swish"
