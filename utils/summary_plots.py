@@ -134,7 +134,7 @@ class SummaryPlots(object):
 
 ## Test 
 def main():
-    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_cyclic.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment.txt"
@@ -142,6 +142,8 @@ def main():
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment3.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_300.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd1.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
     plots = SummaryPlots(input_run_file)
     train, val, valema = plots.gen_loss_top1_top5()
     if len(train) == 0:
