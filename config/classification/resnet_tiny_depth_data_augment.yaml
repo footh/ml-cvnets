@@ -1,5 +1,5 @@
 common:
-  run_label: "depth50_augment4"
+  run_label: "depth50_augment4_wd3"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -81,6 +81,7 @@ optim:
   no_decay_bn_filter_bias: true
   sgd:
     momentum: 0.9
+    nesterov: true
 scheduler:
   name: "cosine"
   is_iteration_based: false
