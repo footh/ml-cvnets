@@ -1,5 +1,5 @@
 common:
-  run_label: "correct_classes"
+  run_label: "correct_classes_lr0pt1"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -50,7 +50,7 @@ scheduler:
   warmup_iterations: 7500
   warmup_init_lr: 0.05
   cosine:
-    max_lr: 0.4
+    max_lr: 0.1
     min_lr: 2.e-4
 model:
   classification:

@@ -1933,3 +1933,243 @@ CosineScheduler(
 2022-04-25 23:37:44 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
 [31m======================================================================================================================================================[0m
 2022-04-25 23:37:56 - [34m[1mLOGS   [0m - Epoch: 130 [  101660/10000000], loss: 0.6519, top1: 91.4062, top5: 95.3125, LR: [0.004514, 0.004514], Avg. batch load time: 9.115, Elapsed time:  9.54
+2022-04-25 23:39:32 - [34m[1mLOGS   [0m - Epoch: 130 [  102160/10000000], loss: 0.6679, top1: 89.5319, top5: 96.1359, LR: [0.004514, 0.004514], Avg. batch load time: 0.018, Elapsed time: 105.44
+2022-04-25 23:40:24 - [34m[1mLOGS   [0m - *** Training summary for epoch 130
+	 loss=0.6723 || top1=89.4132 || top5=96.0598
+2022-04-25 23:40:35 - [34m[1mLOGS   [0m - Epoch: 130 [     100/    2605], loss: 2.4758, top1: 55.0000, top5: 72.0000, LR: [0.004514, 0.004514], Avg. batch load time: 0.000, Elapsed time:  9.14
+2022-04-25 23:40:37 - [34m[1mLOGS   [0m - *** Validation summary for epoch 130
+	 loss=2.5048 || top1=53.0000 || top5=75.8519
+2022-04-25 23:40:48 - [34m[1mLOGS   [0m - Epoch: 130 [     100/    2605], loss: 2.4457, top1: 58.0000, top5: 73.0000, LR: [0.004514, 0.004514], Avg. batch load time: 0.000, Elapsed time:  9.44
+2022-04-25 23:40:49 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 130
+	 loss=2.4843 || top1=54.2963 || top5=76.8519
+2022-04-25 23:40:50 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:41:02 - [34m[1mLOGS   [0m - Epoch: 131 [  102442/10000000], loss: 0.4845, top1: 94.5312, top5: 98.4375, LR: [0.004099, 0.004099], Avg. batch load time: 9.209, Elapsed time:  9.63
+2022-04-25 23:42:36 - [34m[1mLOGS   [0m - Epoch: 131 [  102942/10000000], loss: 0.6629, top1: 89.6582, top5: 96.0750, LR: [0.004099, 0.004099], Avg. batch load time: 0.018, Elapsed time: 103.82
+2022-04-25 23:43:28 - [34m[1mLOGS   [0m - *** Training summary for epoch 131
+	 loss=0.6692 || top1=89.4951 || top5=96.0488
+2022-04-25 23:43:39 - [34m[1mLOGS   [0m - Epoch: 131 [     100/    2605], loss: 2.4466, top1: 56.0000, top5: 75.0000, LR: [0.004099, 0.004099], Avg. batch load time: 0.000, Elapsed time:  9.07
+2022-04-25 23:43:40 - [34m[1mLOGS   [0m - *** Validation summary for epoch 131
+	 loss=2.5035 || top1=53.0000 || top5=76.5185
+2022-04-25 23:43:51 - [34m[1mLOGS   [0m - Epoch: 131 [     100/    2605], loss: 2.4325, top1: 58.0000, top5: 73.0000, LR: [0.004099, 0.004099], Avg. batch load time: 0.000, Elapsed time:  9.15
+2022-04-25 23:43:53 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 131
+	 loss=2.4759 || top1=54.0741 || top5=77.0370
+2022-04-25 23:43:53 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:44:05 - [34m[1mLOGS   [0m - Epoch: 132 [  103224/10000000], loss: 0.7515, top1: 85.9375, top5: 94.5312, LR: [0.003704, 0.003704], Avg. batch load time: 9.402, Elapsed time:  9.84
+2022-04-25 23:45:39 - [34m[1mLOGS   [0m - Epoch: 132 [  103724/10000000], loss: 0.6590, top1: 89.6691, top5: 96.1031, LR: [0.003704, 0.003704], Avg. batch load time: 0.019, Elapsed time: 104.11
+2022-04-25 23:46:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 132
+	 loss=0.6573 || top1=89.7229 || top5=96.1827
+2022-04-25 23:46:42 - [34m[1mLOGS   [0m - Epoch: 132 [     100/    2605], loss: 2.5941, top1: 52.0000, top5: 72.0000, LR: [0.003704, 0.003704], Avg. batch load time: 0.000, Elapsed time:  8.96
+2022-04-25 23:46:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 132
+	 loss=2.4956 || top1=52.8148 || top5=76.1852
+2022-04-25 23:46:54 - [34m[1mLOGS   [0m - Epoch: 132 [     100/    2605], loss: 2.4389, top1: 58.0000, top5: 72.0000, LR: [0.003704, 0.003704], Avg. batch load time: 0.000, Elapsed time:  9.01
+2022-04-25 23:46:55 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 132
+	 loss=2.4685 || top1=54.5185 || top5=76.8148
+2022-04-25 23:46:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:47:08 - [34m[1mLOGS   [0m - Epoch: 133 [  104006/10000000], loss: 0.5230, top1: 92.1875, top5: 96.8750, LR: [0.00333, 0.00333], Avg. batch load time: 9.123, Elapsed time:  9.65
+2022-04-25 23:48:39 - [34m[1mLOGS   [0m - Epoch: 133 [  104506/10000000], loss: 0.6526, top1: 89.9451, top5: 96.2746, LR: [0.00333, 0.00333], Avg. batch load time: 0.018, Elapsed time: 100.74
+2022-04-25 23:49:29 - [34m[1mLOGS   [0m - *** Training summary for epoch 133
+	 loss=0.6541 || top1=89.8967 || top5=96.2936
+2022-04-25 23:49:40 - [34m[1mLOGS   [0m - Epoch: 133 [     100/    2605], loss: 2.5030, top1: 59.0000, top5: 70.0000, LR: [0.00333, 0.00333], Avg. batch load time: 0.000, Elapsed time:  8.98
+2022-04-25 23:49:42 - [34m[1mLOGS   [0m - *** Validation summary for epoch 133
+	 loss=2.5549 || top1=53.4815 || top5=75.7407
+2022-04-25 23:49:53 - [34m[1mLOGS   [0m - Epoch: 133 [     100/    2605], loss: 2.4428, top1: 58.0000, top5: 72.0000, LR: [0.00333, 0.00333], Avg. batch load time: 0.000, Elapsed time:  8.95
+2022-04-25 23:49:54 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 133
+	 loss=2.4662 || top1=54.4074 || top5=76.8889
+2022-04-25 23:49:55 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:50:06 - [34m[1mLOGS   [0m - Epoch: 134 [  104788/10000000], loss: 0.5403, top1: 94.5312, top5: 96.8750, LR: [0.002976, 0.002976], Avg. batch load time: 9.072, Elapsed time:  9.49
+2022-04-25 23:51:37 - [34m[1mLOGS   [0m - Epoch: 134 [  105288/10000000], loss: 0.6504, top1: 89.9467, top5: 96.2840, LR: [0.002976, 0.002976], Avg. batch load time: 0.018, Elapsed time: 100.23
+2022-04-25 23:52:29 - [34m[1mLOGS   [0m - *** Training summary for epoch 134
+	 loss=0.6464 || top1=90.0436 || top5=96.3605
+2022-04-25 23:52:40 - [34m[1mLOGS   [0m - Epoch: 134 [     100/    2605], loss: 2.3207, top1: 55.0000, top5: 72.0000, LR: [0.002976, 0.002976], Avg. batch load time: 0.000, Elapsed time:  8.94
+2022-04-25 23:52:41 - [34m[1mLOGS   [0m - *** Validation summary for epoch 134
+	 loss=2.4301 || top1=53.1481 || top5=76.7778
+2022-04-25 23:52:52 - [34m[1mLOGS   [0m - Epoch: 134 [     100/    2605], loss: 2.4127, top1: 58.0000, top5: 72.0000, LR: [0.002976, 0.002976], Avg. batch load time: 0.000, Elapsed time:  8.92
+2022-04-25 23:52:54 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 134
+	 loss=2.4583 || top1=54.1111 || top5=76.8148
+2022-04-25 23:52:54 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:53:06 - [34m[1mLOGS   [0m - Epoch: 135 [  105570/10000000], loss: 0.6299, top1: 91.4062, top5: 96.0938, LR: [0.002642, 0.002642], Avg. batch load time: 9.096, Elapsed time:  9.69
+2022-04-25 23:54:38 - [34m[1mLOGS   [0m - Epoch: 135 [  106070/10000000], loss: 0.6430, top1: 90.0371, top5: 96.4087, LR: [0.002642, 0.002642], Avg. batch load time: 0.018, Elapsed time: 101.73
+2022-04-25 23:55:30 - [34m[1mLOGS   [0m - *** Training summary for epoch 135
+	 loss=0.6432 || top1=90.0855 || top5=96.3595
+2022-04-25 23:55:41 - [34m[1mLOGS   [0m - Epoch: 135 [     100/    2605], loss: 2.3710, top1: 55.0000, top5: 71.0000, LR: [0.002642, 0.002642], Avg. batch load time: 0.000, Elapsed time:  8.97
+2022-04-25 23:55:42 - [34m[1mLOGS   [0m - *** Validation summary for epoch 135
+	 loss=2.5442 || top1=53.3333 || top5=76.0741
+2022-04-25 23:55:53 - [34m[1mLOGS   [0m - Epoch: 135 [     100/    2605], loss: 2.4029, top1: 59.0000, top5: 72.0000, LR: [0.002642, 0.002642], Avg. batch load time: 0.000, Elapsed time:  8.92
+2022-04-25 23:55:54 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 135
+	 loss=2.4520 || top1=53.8519 || top5=76.8148
+2022-04-25 23:55:55 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:56:06 - [34m[1mLOGS   [0m - Epoch: 136 [  106352/10000000], loss: 0.6267, top1: 89.0625, top5: 96.8750, LR: [0.00233, 0.00233], Avg. batch load time: 9.070, Elapsed time:  9.47
+2022-04-25 23:57:39 - [34m[1mLOGS   [0m - Epoch: 136 [  106852/10000000], loss: 0.6318, top1: 90.3568, top5: 96.4290, LR: [0.00233, 0.00233], Avg. batch load time: 0.018, Elapsed time: 101.73
+2022-04-25 23:58:30 - [34m[1mLOGS   [0m - *** Training summary for epoch 136
+	 loss=0.6344 || top1=90.3293 || top5=96.4104
+2022-04-25 23:58:41 - [34m[1mLOGS   [0m - Epoch: 136 [     100/    2605], loss: 2.4117, top1: 57.0000, top5: 70.0000, LR: [0.00233, 0.00233], Avg. batch load time: 0.000, Elapsed time:  8.91
+2022-04-25 23:58:42 - [34m[1mLOGS   [0m - *** Validation summary for epoch 136
+	 loss=2.4614 || top1=53.6667 || top5=76.6667
+2022-04-25 23:58:53 - [34m[1mLOGS   [0m - Epoch: 136 [     100/    2605], loss: 2.3830, top1: 59.0000, top5: 72.0000, LR: [0.00233, 0.00233], Avg. batch load time: 0.000, Elapsed time:  8.95
+2022-04-25 23:58:54 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 136
+	 loss=2.4454 || top1=53.8519 || top5=76.8148
+2022-04-25 23:58:55 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-25 23:59:07 - [34m[1mLOGS   [0m - Epoch: 137 [  107134/10000000], loss: 0.6159, top1: 90.6250, top5: 97.6562, LR: [0.002038, 0.002038], Avg. batch load time: 9.074, Elapsed time:  9.52
+2022-04-26 00:00:39 - [34m[1mLOGS   [0m - Epoch: 137 [  107634/10000000], loss: 0.6334, top1: 90.4004, top5: 96.4633, LR: [0.002038, 0.002038], Avg. batch load time: 0.018, Elapsed time: 101.74
+2022-04-26 00:01:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 137
+	 loss=0.6320 || top1=90.4002 || top5=96.4574
+2022-04-26 00:01:42 - [34m[1mLOGS   [0m - Epoch: 137 [     100/    2605], loss: 2.4784, top1: 56.0000, top5: 72.0000, LR: [0.002038, 0.002038], Avg. batch load time: 0.000, Elapsed time:  9.13
+2022-04-26 00:01:44 - [34m[1mLOGS   [0m - *** Validation summary for epoch 137
+	 loss=2.5158 || top1=53.2963 || top5=76.5556
+2022-04-26 00:01:55 - [34m[1mLOGS   [0m - Epoch: 137 [     100/    2605], loss: 2.3845, top1: 60.0000, top5: 72.0000, LR: [0.002038, 0.002038], Avg. batch load time: 0.000, Elapsed time:  8.99
+2022-04-26 00:01:56 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 137
+	 loss=2.4404 || top1=54.1481 || top5=76.9630
+2022-04-26 00:01:57 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:02:08 - [34m[1mLOGS   [0m - Epoch: 138 [  107916/10000000], loss: 0.5416, top1: 92.9688, top5: 97.6562, LR: [0.001768, 0.001768], Avg. batch load time: 9.089, Elapsed time:  9.50
+2022-04-26 00:03:40 - [34m[1mLOGS   [0m - Epoch: 138 [  108416/10000000], loss: 0.6228, top1: 90.7076, top5: 96.5148, LR: [0.001768, 0.001768], Avg. batch load time: 0.018, Elapsed time: 101.75
+2022-04-26 00:04:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 138
+	 loss=0.6251 || top1=90.6270 || top5=96.5014
+2022-04-26 00:04:42 - [34m[1mLOGS   [0m - Epoch: 138 [     100/    2605], loss: 2.3952, top1: 54.0000, top5: 72.0000, LR: [0.001768, 0.001768], Avg. batch load time: 0.000, Elapsed time:  8.93
+2022-04-26 00:04:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 138
+	 loss=2.4309 || top1=53.0000 || top5=76.4444
+2022-04-26 00:04:54 - [34m[1mLOGS   [0m - Epoch: 138 [     100/    2605], loss: 2.3819, top1: 58.0000, top5: 72.0000, LR: [0.001768, 0.001768], Avg. batch load time: 0.000, Elapsed time:  8.93
+2022-04-26 00:04:56 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 138
+	 loss=2.4396 || top1=54.0370 || top5=77.0741
+2022-04-26 00:04:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:05:08 - [34m[1mLOGS   [0m - Epoch: 139 [  108698/10000000], loss: 0.4536, top1: 95.3125, top5: 98.4375, LR: [0.001518, 0.001518], Avg. batch load time: 9.042, Elapsed time:  9.52
+2022-04-26 00:06:39 - [34m[1mLOGS   [0m - Epoch: 139 [  109198/10000000], loss: 0.6211, top1: 90.7466, top5: 96.4976, LR: [0.001518, 0.001518], Avg. batch load time: 0.018, Elapsed time: 100.64
+2022-04-26 00:07:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 139
+	 loss=0.6240 || top1=90.6710 || top5=96.4594
+2022-04-26 00:07:42 - [34m[1mLOGS   [0m - Epoch: 139 [     100/    2605], loss: 2.3575, top1: 55.0000, top5: 73.0000, LR: [0.001518, 0.001518], Avg. batch load time: 0.000, Elapsed time:  8.95
+2022-04-26 00:07:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 139
+	 loss=2.4157 || top1=53.4815 || top5=76.1852
+2022-04-26 00:07:54 - [34m[1mLOGS   [0m - Epoch: 139 [     100/    2605], loss: 2.3672, top1: 58.0000, top5: 71.0000, LR: [0.001518, 0.001518], Avg. batch load time: 0.000, Elapsed time:  8.92
+2022-04-26 00:07:56 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 139
+	 loss=2.4333 || top1=53.8889 || top5=77.2222
+2022-04-26 00:07:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:08:08 - [34m[1mLOGS   [0m - Epoch: 140 [  109480/10000000], loss: 0.5575, top1: 89.8438, top5: 99.2188, LR: [0.00129, 0.00129], Avg. batch load time: 9.117, Elapsed time:  9.65
+2022-04-26 00:09:40 - [34m[1mLOGS   [0m - Epoch: 140 [  109980/10000000], loss: 0.6107, top1: 91.0663, top5: 96.6427, LR: [0.00129, 0.00129], Avg. batch load time: 0.018, Elapsed time: 101.31
+2022-04-26 00:10:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 140
+	 loss=0.6142 || top1=90.9557 || top5=96.6043
+2022-04-26 00:10:42 - [34m[1mLOGS   [0m - Epoch: 140 [     100/    2605], loss: 2.3397, top1: 58.0000, top5: 74.0000, LR: [0.00129, 0.00129], Avg. batch load time: 0.000, Elapsed time:  8.90
+2022-04-26 00:10:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 140
+	 loss=2.4697 || top1=54.0000 || top5=76.4074
+2022-04-26 00:10:54 - [34m[1mLOGS   [0m - Epoch: 140 [     100/    2605], loss: 2.3628, top1: 56.0000, top5: 71.0000, LR: [0.00129, 0.00129], Avg. batch load time: 0.000, Elapsed time:  8.99
+2022-04-26 00:10:56 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 140
+	 loss=2.4282 || top1=53.7037 || top5=77.0000
+2022-04-26 00:10:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:11:08 - [34m[1mLOGS   [0m - Epoch: 141 [  110262/10000000], loss: 0.7420, top1: 89.0625, top5: 96.0938, LR: [0.001084, 0.001084], Avg. batch load time: 9.120, Elapsed time:  9.52
+2022-04-26 00:12:40 - [34m[1mLOGS   [0m - Epoch: 141 [  110762/10000000], loss: 0.6242, top1: 90.5954, top5: 96.5366, LR: [0.001084, 0.001084], Avg. batch load time: 0.018, Elapsed time: 102.13
+2022-04-26 00:13:32 - [34m[1mLOGS   [0m - *** Training summary for epoch 141
+	 loss=0.6206 || top1=90.6660 || top5=96.5343
+2022-04-26 00:13:43 - [34m[1mLOGS   [0m - Epoch: 141 [     100/    2605], loss: 2.3991, top1: 55.0000, top5: 75.0000, LR: [0.001084, 0.001084], Avg. batch load time: 0.000, Elapsed time:  9.02
+2022-04-26 00:13:44 - [34m[1mLOGS   [0m - *** Validation summary for epoch 141
+	 loss=2.4473 || top1=52.9259 || top5=76.1852
+2022-04-26 00:13:55 - [34m[1mLOGS   [0m - Epoch: 141 [     100/    2605], loss: 2.3528, top1: 56.0000, top5: 71.0000, LR: [0.001084, 0.001084], Avg. batch load time: 0.000, Elapsed time:  8.91
+2022-04-26 00:13:57 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 141
+	 loss=2.4247 || top1=53.7407 || top5=76.5185
+2022-04-26 00:13:57 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:14:09 - [34m[1mLOGS   [0m - Epoch: 142 [  111044/10000000], loss: 0.6125, top1: 89.0625, top5: 94.5312, LR: [0.000899, 0.000899], Avg. batch load time: 9.075, Elapsed time:  9.48
+2022-04-26 00:15:41 - [34m[1mLOGS   [0m - Epoch: 142 [  111544/10000000], loss: 0.6090, top1: 91.0850, top5: 96.6302, LR: [0.000899, 0.000899], Avg. batch load time: 0.018, Elapsed time: 102.01
+2022-04-26 00:16:33 - [34m[1mLOGS   [0m - *** Training summary for epoch 142
+	 loss=0.6104 || top1=91.0156 || top5=96.6272
+2022-04-26 00:16:44 - [34m[1mLOGS   [0m - Epoch: 142 [     100/    2605], loss: 2.3899, top1: 56.0000, top5: 76.0000, LR: [0.000899, 0.000899], Avg. batch load time: 0.000, Elapsed time:  8.97
+2022-04-26 00:16:46 - [34m[1mLOGS   [0m - *** Validation summary for epoch 142
+	 loss=2.4909 || top1=53.3704 || top5=76.5556
+2022-04-26 00:16:57 - [34m[1mLOGS   [0m - Epoch: 142 [     100/    2605], loss: 2.3392, top1: 55.0000, top5: 73.0000, LR: [0.000899, 0.000899], Avg. batch load time: 0.000, Elapsed time:  8.98
+2022-04-26 00:16:58 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 142
+	 loss=2.4237 || top1=53.5926 || top5=76.7037
+2022-04-26 00:16:58 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:17:10 - [34m[1mLOGS   [0m - Epoch: 143 [  111826/10000000], loss: 0.6966, top1: 90.6250, top5: 96.0938, LR: [0.000735, 0.000735], Avg. batch load time: 9.110, Elapsed time:  9.71
+2022-04-26 00:18:40 - [34m[1mLOGS   [0m - Epoch: 143 [  112326/10000000], loss: 0.6105, top1: 90.8854, top5: 96.7300, LR: [0.000735, 0.000735], Avg. batch load time: 0.018, Elapsed time: 99.62
+2022-04-26 00:19:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 143
+	 loss=0.6106 || top1=90.9687 || top5=96.7022
+2022-04-26 00:19:42 - [34m[1mLOGS   [0m - Epoch: 143 [     100/    2605], loss: 2.3286, top1: 59.0000, top5: 74.0000, LR: [0.000735, 0.000735], Avg. batch load time: 0.000, Elapsed time:  8.91
+2022-04-26 00:19:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 143
+	 loss=2.4368 || top1=53.8148 || top5=76.5185
+2022-04-26 00:19:54 - [34m[1mLOGS   [0m - Epoch: 143 [     100/    2605], loss: 2.3407, top1: 56.0000, top5: 72.0000, LR: [0.000735, 0.000735], Avg. batch load time: 0.000, Elapsed time:  8.97
+2022-04-26 00:19:55 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 143
+	 loss=2.4268 || top1=53.4444 || top5=76.5185
+2022-04-26 00:19:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:20:08 - [34m[1mLOGS   [0m - Epoch: 144 [  112608/10000000], loss: 0.6084, top1: 86.7188, top5: 96.8750, LR: [0.000593, 0.000593], Avg. batch load time: 9.113, Elapsed time:  9.72
+2022-04-26 00:21:41 - [34m[1mLOGS   [0m - Epoch: 144 [  113108/10000000], loss: 0.6036, top1: 91.1989, top5: 96.6692, LR: [0.000593, 0.000593], Avg. batch load time: 0.018, Elapsed time: 103.67
+2022-04-26 00:22:33 - [34m[1mLOGS   [0m - *** Training summary for epoch 144
+	 loss=0.6018 || top1=91.2344 || top5=96.6992
+2022-04-26 00:22:44 - [34m[1mLOGS   [0m - Epoch: 144 [     100/    2605], loss: 2.3901, top1: 57.0000, top5: 71.0000, LR: [0.000593, 0.000593], Avg. batch load time: 0.000, Elapsed time:  8.95
+2022-04-26 00:22:46 - [34m[1mLOGS   [0m - *** Validation summary for epoch 144
+	 loss=2.4613 || top1=53.8889 || top5=76.2593
+2022-04-26 00:22:56 - [34m[1mLOGS   [0m - Epoch: 144 [     100/    2605], loss: 2.3527, top1: 56.0000, top5: 72.0000, LR: [0.000593, 0.000593], Avg. batch load time: 0.000, Elapsed time:  8.83
+2022-04-26 00:22:58 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 144
+	 loss=2.4291 || top1=53.4815 || top5=76.4074
+2022-04-26 00:22:58 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:23:10 - [34m[1mLOGS   [0m - Epoch: 145 [  113390/10000000], loss: 0.6612, top1: 92.1875, top5: 94.5312, LR: [0.000473, 0.000473], Avg. batch load time: 9.067, Elapsed time:  9.51
+2022-04-26 00:24:42 - [34m[1mLOGS   [0m - Epoch: 145 [  113890/10000000], loss: 0.6027, top1: 91.1240, top5: 96.7549, LR: [0.000473, 0.000473], Avg. batch load time: 0.018, Elapsed time: 101.76
+2022-04-26 00:25:33 - [34m[1mLOGS   [0m - *** Training summary for epoch 145
+	 loss=0.6035 || top1=91.1215 || top5=96.7221
+2022-04-26 00:25:44 - [34m[1mLOGS   [0m - Epoch: 145 [     100/    2605], loss: 2.2308, top1: 59.0000, top5: 75.0000, LR: [0.000473, 0.000473], Avg. batch load time: 0.000, Elapsed time:  8.98
+2022-04-26 00:25:45 - [34m[1mLOGS   [0m - *** Validation summary for epoch 145
+	 loss=2.3675 || top1=53.6296 || top5=76.3704
+2022-04-26 00:25:56 - [34m[1mLOGS   [0m - Epoch: 145 [     100/    2605], loss: 2.3455, top1: 56.0000, top5: 72.0000, LR: [0.000473, 0.000473], Avg. batch load time: 0.000, Elapsed time:  8.91
+2022-04-26 00:25:58 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 145
+	 loss=2.4289 || top1=53.4444 || top5=76.2963
+2022-04-26 00:25:58 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:26:10 - [34m[1mLOGS   [0m - Epoch: 146 [  114172/10000000], loss: 0.5686, top1: 92.1875, top5: 96.0938, LR: [0.000375, 0.000375], Avg. batch load time: 9.047, Elapsed time:  9.45
+2022-04-26 00:27:40 - [34m[1mLOGS   [0m - Epoch: 146 [  114672/10000000], loss: 0.5971, top1: 91.3220, top5: 96.8267, LR: [0.000375, 0.000375], Avg. batch load time: 0.018, Elapsed time: 99.74
+2022-04-26 00:28:33 - [34m[1mLOGS   [0m - *** Training summary for epoch 146
+	 loss=0.5951 || top1=91.3513 || top5=96.8420
+2022-04-26 00:28:44 - [34m[1mLOGS   [0m - Epoch: 146 [     100/    2605], loss: 2.3430, top1: 59.0000, top5: 73.0000, LR: [0.000375, 0.000375], Avg. batch load time: 0.000, Elapsed time:  8.96
+2022-04-26 00:28:45 - [34m[1mLOGS   [0m - *** Validation summary for epoch 146
+	 loss=2.4390 || top1=53.5556 || top5=76.7407
+2022-04-26 00:28:56 - [34m[1mLOGS   [0m - Epoch: 146 [     100/    2605], loss: 2.3397, top1: 56.0000, top5: 73.0000, LR: [0.000375, 0.000375], Avg. batch load time: 0.000, Elapsed time:  9.02
+2022-04-26 00:28:57 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 146
+	 loss=2.4303 || top1=53.5185 || top5=76.6296
+2022-04-26 00:28:58 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:29:09 - [34m[1mLOGS   [0m - Epoch: 147 [  114954/10000000], loss: 0.5024, top1: 93.7500, top5: 100.0000, LR: [0.000298, 0.000298], Avg. batch load time: 9.056, Elapsed time:  9.41
+2022-04-26 00:30:41 - [34m[1mLOGS   [0m - Epoch: 147 [  115454/10000000], loss: 0.5977, top1: 91.2394, top5: 96.8516, LR: [0.000298, 0.000298], Avg. batch load time: 0.018, Elapsed time: 101.35
+2022-04-26 00:31:32 - [34m[1mLOGS   [0m - *** Training summary for epoch 147
+	 loss=0.5987 || top1=91.2224 || top5=96.8181
+2022-04-26 00:31:43 - [34m[1mLOGS   [0m - Epoch: 147 [     100/    2605], loss: 2.3822, top1: 59.0000, top5: 74.0000, LR: [0.000298, 0.000298], Avg. batch load time: 0.000, Elapsed time:  9.01
+2022-04-26 00:31:45 - [34m[1mLOGS   [0m - *** Validation summary for epoch 147
+	 loss=2.4527 || top1=53.8889 || top5=76.7407
+2022-04-26 00:31:56 - [34m[1mLOGS   [0m - Epoch: 147 [     100/    2605], loss: 2.3352, top1: 57.0000, top5: 73.0000, LR: [0.000298, 0.000298], Avg. batch load time: 0.000, Elapsed time:  8.93
+2022-04-26 00:31:57 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 147
+	 loss=2.4276 || top1=53.7037 || top5=76.6296
+2022-04-26 00:31:58 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:32:09 - [34m[1mLOGS   [0m - Epoch: 148 [  115736/10000000], loss: 0.5344, top1: 92.9688, top5: 96.0938, LR: [0.000244, 0.000244], Avg. batch load time: 9.123, Elapsed time:  9.61
+2022-04-26 00:33:40 - [34m[1mLOGS   [0m - Epoch: 148 [  116236/10000000], loss: 0.5989, top1: 91.2737, top5: 96.8267, LR: [0.000244, 0.000244], Avg. batch load time: 0.018, Elapsed time: 100.48
+2022-04-26 00:34:32 - [34m[1mLOGS   [0m - *** Training summary for epoch 148
+	 loss=0.6007 || top1=91.1895 || top5=96.8091
+2022-04-26 00:34:42 - [34m[1mLOGS   [0m - Epoch: 148 [     100/    2605], loss: 2.4113, top1: 55.0000, top5: 69.0000, LR: [0.000244, 0.000244], Avg. batch load time: 0.000, Elapsed time:  8.88
+2022-04-26 00:34:44 - [34m[1mLOGS   [0m - *** Validation summary for epoch 148
+	 loss=2.4562 || top1=53.4815 || top5=76.1481
+2022-04-26 00:34:55 - [34m[1mLOGS   [0m - Epoch: 148 [     100/    2605], loss: 2.3394, top1: 57.0000, top5: 72.0000, LR: [0.000244, 0.000244], Avg. batch load time: 0.000, Elapsed time:  8.96
+2022-04-26 00:34:56 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 148
+	 loss=2.4266 || top1=53.7037 || top5=76.5185
+2022-04-26 00:34:57 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:35:08 - [34m[1mLOGS   [0m - Epoch: 149 [  116518/10000000], loss: 0.6798, top1: 89.0625, top5: 95.3125, LR: [0.000211, 0.000211], Avg. batch load time: 9.093, Elapsed time:  9.50
+2022-04-26 00:36:39 - [34m[1mLOGS   [0m - Epoch: 149 [  117018/10000000], loss: 0.6016, top1: 91.0913, top5: 96.7518, LR: [0.000211, 0.000211], Avg. batch load time: 0.018, Elapsed time: 100.28
+2022-04-26 00:37:31 - [34m[1mLOGS   [0m - *** Training summary for epoch 149
+	 loss=0.6001 || top1=91.1825 || top5=96.7431
+2022-04-26 00:37:42 - [34m[1mLOGS   [0m - Epoch: 149 [     100/    2605], loss: 2.2891, top1: 56.0000, top5: 73.0000, LR: [0.000211, 0.000211], Avg. batch load time: 0.000, Elapsed time:  8.89
+2022-04-26 00:37:43 - [34m[1mLOGS   [0m - *** Validation summary for epoch 149
+	 loss=2.3621 || top1=53.3333 || top5=76.3333
+2022-04-26 00:37:54 - [34m[1mLOGS   [0m - Epoch: 149 [     100/    2605], loss: 2.3456, top1: 57.0000, top5: 72.0000, LR: [0.000211, 0.000211], Avg. batch load time: 0.000, Elapsed time:  8.93
+2022-04-26 00:37:55 - [34m[1mLOGS   [0m - *** Validation (Ema) summary for epoch 149
+	 loss=2.4256 || top1=53.6296 || top5=76.4074
+2022-04-26 00:37:56 - [32m[1mINFO   [0m - Checkpoints saved at: results_resnet_tiny_correct_class/correct_classes_lr0pt1
+[31m======================================================================================================================================================[0m
+2022-04-26 00:37:56 - [34m[1mLOGS   [0m - Training took 12:48:31.56

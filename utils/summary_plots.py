@@ -143,7 +143,7 @@ class SummaryPlots(object):
 
 ## Test 
 def main(argv):
-    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_cyclic.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment.txt"
@@ -153,7 +153,7 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_300.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
-    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1-2.txt"
     
     if len(argv) < 1: 
