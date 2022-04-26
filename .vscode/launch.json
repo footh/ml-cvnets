@@ -13,7 +13,7 @@
             "justMyCode": true
         },
         {
-            "name": "Python: setup_val",
+            "name": "setup_val",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/setup_val.py",
@@ -21,11 +21,22 @@
             "justMyCode": true
         },
         {
-            "name": "Python: plots",
+            "name": "main-train config",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main_train.py",
+            "console": "integratedTerminal",
+            "args": ["--common.config-file", "config/classification/resnet_tiny.yaml", 
+                "--common.results-loc", "results_resnet_tiny_correct_class"],              
+            "justMyCode": true
+        },           
+        {
+            "name": "plots from run redir txt",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/utils/summary_plots.py",
             "console": "integratedTerminal",
+            //"args": ["results\\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"],            
             "justMyCode": true
         }
     ]

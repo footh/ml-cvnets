@@ -3,6 +3,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 class SummaryPlots(object):
     """
@@ -84,12 +85,15 @@ class SummaryPlots(object):
         ax.plot(val[:,0], val[:,1], label="val") # epoch vs val loss 
         ax.set_xlabel("epoch")
         ax.set_ylabel("loss")
+        ax.set_ylim([0, 8.0])
         ax.set_title("training and validation loss")
-        ax.legend(loc="lower center")
+        ax.legend(loc="upper center")
+        
         ax2 = ax.twinx()
         ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
         ax2.set_ylabel("learning rate")
-        ax2.legend(loc='center right')
+        ax2.legend(loc='lower center')
+        ax2.set_ylim([0.0, 0.5])
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')
     
     def plot_top1_train_val(self, train, val):
@@ -100,12 +104,15 @@ class SummaryPlots(object):
         ax.plot(val[:,0], val[:,2], label="val") # epoch vs val loss 
         ax.set_xlabel("epoch")
         ax.set_ylabel("top1")
+        ax.set_ylim([0, 100])
         ax.set_title("training and validation top1")
-        ax.legend(loc="lower center")
+        ax.legend(loc="upper center")
+        
         ax2 = ax.twinx()
         ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
         ax2.set_ylabel("learning rate")
-        ax2.legend(loc='center right')
+        ax2.legend(loc='lower center')
+        ax2.set_ylim([0.0, 0.5])        
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')            
         
     
@@ -116,13 +123,15 @@ class SummaryPlots(object):
         ax.plot(train[:,0], train[:,3], label="train") # epoch vs train loss
         ax.plot(val[:,0], val[:,3], label="val") # epoch vs val loss 
         ax.set_xlabel("epoch")
-        ax.set_ylabel("top1")
+        ax.set_ylabel("top5")
+        ax.set_ylim([0, 100])        
         ax.set_title("training and validation top5")
-        ax.legend(loc="lower center")
+        ax.legend(loc="upper center")
         ax2 = ax.twinx()
         ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
         ax2.set_ylabel("learning rate")
-        ax2.legend(loc='center right')
+        ax2.legend(loc='lower center')
+        ax2.set_ylim([0.0, 0.5])         
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')          
            
         
@@ -133,8 +142,8 @@ class SummaryPlots(object):
         
 
 ## Test 
-def main():
-    #input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+def main(argv):
+    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_cyclic.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment.txt"
@@ -143,7 +152,15 @@ def main():
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_300.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd1.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1-2.txt"
+    
+    if len(argv) < 1: 
+        input_run_file = input_run_file        
+    else:
+        input_run_file = argv[0]
+        
     plots = SummaryPlots(input_run_file)
     train, val, valema = plots.gen_loss_top1_top5()
     if len(train) == 0:
@@ -152,4 +169,4 @@ def main():
         plots.gen_plots(train, valema)
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
