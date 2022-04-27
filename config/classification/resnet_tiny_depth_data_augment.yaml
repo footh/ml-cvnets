@@ -1,5 +1,5 @@
 common:
-  run_label: "depth50_augment4_wd3"
+  run_label: "depth50_augment4_divbytenlr1"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -83,14 +83,16 @@ optim:
     momentum: 0.9
     nesterov: true
 scheduler:
-  name: "cosine"
+  name: "divbyten"
   is_iteration_based: false
   max_epochs: 150
   warmup_iterations: 7500
   warmup_init_lr: 0.05
-  cosine:
+  divbyten:
     max_lr: 0.4
     min_lr: 2.e-4
+    step1epoch: 40
+    step2epoch: 80
 model:
   classification:
     name: "resnet"
