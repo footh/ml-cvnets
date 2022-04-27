@@ -26,10 +26,20 @@
             "request": "launch",
             "program": "${workspaceFolder}/main_train.py",
             "console": "integratedTerminal",
-            "args": ["--common.config-file", "config/classification/resnet_tiny.yaml", 
+            "args": ["--common.config-file", "config\\classification\\resnet_tiny.yaml", 
                 "--common.results-loc", "results_resnet_tiny_correct_class"],              
             "justMyCode": true
-        },           
+        },          
+        {
+            "name": "main-train last config",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main_train.py",
+            "console": "integratedTerminal",
+            "args": ["--common.config-file", "config\\classification\\resnet_tiny_depth_data_augment.yaml", 
+                "--common.results-loc", "results_resnet_tiny_correct_class"],              
+            "justMyCode": true
+        },          
         {
             "name": "plots from run redir txt",
             "type": "python",
