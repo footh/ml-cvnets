@@ -153,8 +153,9 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_300.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1-2.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment4_divbytenlr.txt"
     
     if len(argv) < 1: 
         input_run_file = input_run_file        
