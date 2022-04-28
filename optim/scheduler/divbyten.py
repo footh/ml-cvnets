@@ -25,6 +25,7 @@ class DivByTen(BaseLRScheduler):
         self.max_lr = getattr(opts, "scheduler.divbyten.max_lr", 0.4)
         self.step1epoch = getattr(opts, "scheduler.divbyten.step1epoch", 40)
         self.step2epoch = getattr(opts, "scheduler.divbyten.step2epoch", 60)
+        self.step3epoch = getattr(opts, "scheduler.divbyten.step3epoch", 80)
 
         self.warmup_iterations = max(warmup_iterations, 0)
         if self.warmup_iterations > 0:
@@ -48,7 +49,9 @@ class DivByTen(BaseLRScheduler):
         group.add_argument('--scheduler.divbyten.step1epoch', type=float, default=40,
                            help="Step1 Epoch Value in DivByTen LR scheduler")
         group.add_argument('--scheduler.divbyten.step2epoch', type=float, default=60,
-                           help="Step2 Epoch value in DivByTen LR scheduler")                
+                           help="Step2 Epoch value in DivByTen LR scheduler")      
+        group.add_argument('--scheduler.divbyten.step3epoch', type=float, default=80,
+                           help="Step3 Epoch value in DivByTen LR scheduler")                    
 
         return parser
 
@@ -64,8 +67,10 @@ class DivByTen(BaseLRScheduler):
                     curr_lr = self.max_lr
                 elif epoch >= self.step1epoch and epoch < self.step2epoch:
                     curr_lr = self.max_lr / 10
-                elif epoch >= self.step2epoch :
+                elif epoch >= self.step2epoch and epoch < self.step3epoch:
                     curr_lr = self.max_lr / 100
+                elif epoch >= self.step3epoch:
+                    curr_lr = self.max_lr / 1000
                 else:
                     curr_lr = self.max_lr
                     
