@@ -84,23 +84,27 @@ class SummaryPlots(object):
         else: 
             output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_2in1_loss.png"
         
-        fig, ax = plt.subplots()
-        ax.plot(train[:,0], train[:,1], label="resnet train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,1], label="resnet val") # epoch vs val loss 
-        ax.plot(mtrain[:,0], mtrain[:,1], label="mobileViT train")
-        ax.plot(mval[:,0], mval[:,1], label="mobileViT val")
+        fig, (ax, ax2) = plt.subplots(2, 1)
+        ax.plot(train[:,0], train[:,1], 'b--', label="resnet train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,1], '#069af3', linewidth=3, label="resnet val") # epoch vs val loss
+        if mtrain is not None: 
+            ax.plot(mtrain[:,0], mtrain[:,1], 'r--', label="mobileViT train")
+            ax.plot(mval[:,0], mval[:,1], '#fa8072', linewidth=3, label="mobileViT val")
         ax.set_xlabel("epoch")
         ax.set_ylabel("loss")
         ax.set_ylim([0, 8.0])
         ax.set_title("training and validation loss")
         ax.legend(loc="best") # "upper center"
         
-        ax2 = ax.twinx()
-        ax2.plot(train[:,0], train[:,4], '.g', label="resnet learn rate") # epoch vs lr 
-        ax2.plot(mtrain[:,0], mtrain[:,3], '.g', label="mobileViT learn rate") # epoch vs lr 
-        ax2.set_ylabel("learning rate")
-        ax2.legend(loc="best") # 'lower center'
-        ax2.set_ylim([0.0, 0.5])
+        ax2.plot(train[:,0], train[:,4], '.b', label="resnet learn rate") # epoch vs lr 
+        ax2.set_ylabel("lr resnet")
+        ax2.legend(loc="center right", framealpha=0.2)  
+        if mtrain is not None:
+            ax3 = ax2.twinx()
+            ax3.plot(mtrain[:,0], mtrain[:,3], '.r', label="mobileViT learn rate") # epoch vs lr 
+            ax3.set_ylabel("lr mobileViT")
+            ax3.legend(loc="upper right", framealpha=0.2)
+        #ax2.set_ylim([0.0, 0.5])    
                 
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')
     
@@ -110,23 +114,27 @@ class SummaryPlots(object):
         else: 
             output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_2in1_top1.png"                    
         
-        fig, ax = plt.subplots()
-        ax.plot(train[:,0], train[:,2], label="resnet train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,2], label="resnet val") # epoch vs val loss 
-        ax.plot(mtrain[:,0], mtrain[:,2], label="mobileViT train")
-        ax.plot(mval[:,0], mval[:,2], label="mobileViT val")        
+        fig, (ax, ax2) = plt.subplots(2, 1)
+        ax.plot(train[:,0], train[:,2], 'b--', label="resnet train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,2], '#069af3', linewidth=3, label="resnet val") # epoch vs val loss 
+        if mtrain is not None:
+            ax.plot(mtrain[:,0], mtrain[:,2], 'r--', label="mobileViT train")
+            ax.plot(mval[:,0], mval[:,2], '#fa8072', linewidth=3, label="mobileViT val")        
         ax.set_xlabel("epoch")
-        ax.set_ylabel("top1")
+        ax.set_ylabel("top1 percent")
         ax.set_ylim([0, 100])
         ax.set_title("training and validation top1")
-        ax.legend(loc="best") # "upper center"
+        ax.legend(loc="best", framealpha=0.2) # "upper center"
         
-        ax2 = ax.twinx()
-        ax2.plot(train[:,0], train[:,4], '.g', label="resnet learn rate") # epoch vs lr 
-        ax2.plot(mtrain[:,0], mtrain[:,3], '.g', label="mobileViT learn rate") # epoch vs lr 
-        ax2.set_ylabel("learning rate")
-        ax2.legend(loc="best") #'lower center'
-        ax2.set_ylim([0.0, 0.5])        
+        ax2.plot(train[:,0], train[:,4], '.b', label="resnet learn rate") # epoch vs lr 
+        ax2.set_ylabel("lr resnet")
+        ax2.legend(loc="center right", framealpha=0.2)  
+        if mtrain is not None:
+            ax3 = ax2.twinx()
+            ax3.plot(mtrain[:,0], mtrain[:,3], '.r', label="mobileViT learn rate") # epoch vs lr 
+            ax3.set_ylabel("lr mobileViT")
+            ax3.legend(loc="upper right", framealpha=0.2)
+        #ax2.set_ylim([0.0, 0.5])        
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')            
         
     
@@ -137,7 +145,7 @@ class SummaryPlots(object):
         ax.plot(train[:,0], train[:,3], label="train") # epoch vs train loss
         ax.plot(val[:,0], val[:,3], label="val") # epoch vs val loss 
         ax.set_xlabel("epoch")
-        ax.set_ylabel("top5")
+        ax.set_ylabel("top5 percent")
         ax.set_ylim([0, 100])        
         ax.set_title("training and validation top5")
         ax.legend(loc="upper center")
@@ -182,7 +190,7 @@ class SummaryPlots(object):
 
 ## Test 
 def main(argv):
-    #input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_cyclic.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment.txt"
@@ -197,7 +205,7 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment4_divbytenlr.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt4__divbytenlr.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbytenlr.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbyten_lr0pt1_3step.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbyten_lr0pt1_3step.txt"
     
     if len(argv) < 1: 
         input_run_file = input_run_file        
