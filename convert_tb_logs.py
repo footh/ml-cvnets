@@ -31,4 +31,5 @@ def tflog2pandas(path):
 
 
 df = tflog2pandas(args.path)
-df.to_csv(f'{args.path.split("/")[0]}.csv')
+paths = args.path.split("/")
+df.to_csv(f'{paths[0]}_{paths[1]}.csv', index=False)
