@@ -1,5 +1,5 @@
 common:
-  run_label: "depth50_augment4_divbytenlr1"
+  run_label: "depth50_augment4_divbyten_lr0pt4_3step"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -93,6 +93,7 @@ scheduler:
     min_lr: 2.e-4
     step1epoch: 40
     step2epoch: 80
+    step3epoch: 120
 model:
   classification:
     name: "resnet"
