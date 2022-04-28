@@ -4,6 +4,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
+import csv
 
 class SummaryPlots(object):
     """
@@ -77,41 +78,54 @@ class SummaryPlots(object):
          
         return np.array(train_epoch_loss_top1_top5), np.array(val_epoch_loss_top1_top5), np.array(valema_epoch_loss_top1_top5)             
         
-    def plot_loss_train_val(self, train, val):        
-        output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_loss.png"
+    def plot_loss_train_val(self, train, val, mtrain=None, mval=None):      
+        if mtrain is None:  
+            output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_loss.png"
+        else: 
+            output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_2in1_loss.png"
         
         fig, ax = plt.subplots()
-        ax.plot(train[:,0], train[:,1], label="train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,1], label="val") # epoch vs val loss 
+        ax.plot(train[:,0], train[:,1], label="resnet train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,1], label="resnet val") # epoch vs val loss 
+        ax.plot(mtrain[:,0], mtrain[:,1], label="mobileViT train")
+        ax.plot(mval[:,0], mval[:,1], label="mobileViT val")
         ax.set_xlabel("epoch")
         ax.set_ylabel("loss")
         ax.set_ylim([0, 8.0])
         ax.set_title("training and validation loss")
-        ax.legend(loc="upper center")
+        ax.legend(loc="best") # "upper center"
         
         ax2 = ax.twinx()
-        ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
+        ax2.plot(train[:,0], train[:,4], '.g', label="resnet learn rate") # epoch vs lr 
+        ax2.plot(mtrain[:,0], mtrain[:,3], '.g', label="mobileViT learn rate") # epoch vs lr 
         ax2.set_ylabel("learning rate")
-        ax2.legend(loc='lower center')
+        ax2.legend(loc="best") # 'lower center'
         ax2.set_ylim([0.0, 0.5])
+                
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')
     
-    def plot_top1_train_val(self, train, val):
-        output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_top1.png"
+    def plot_top1_train_val(self, train, val, mtrain=None, mval=None):
+        if mtrain is None:  
+            output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_top1.png"
+        else: 
+            output_path = os.path.splitext(self.path_to_run_output_file)[0] + "_2in1_top1.png"                    
         
         fig, ax = plt.subplots()
-        ax.plot(train[:,0], train[:,2], label="train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,2], label="val") # epoch vs val loss 
+        ax.plot(train[:,0], train[:,2], label="resnet train") # epoch vs train loss
+        ax.plot(val[:,0], val[:,2], label="resnet val") # epoch vs val loss 
+        ax.plot(mtrain[:,0], mtrain[:,2], label="mobileViT train")
+        ax.plot(mval[:,0], mval[:,2], label="mobileViT val")        
         ax.set_xlabel("epoch")
         ax.set_ylabel("top1")
         ax.set_ylim([0, 100])
         ax.set_title("training and validation top1")
-        ax.legend(loc="upper center")
+        ax.legend(loc="best") # "upper center"
         
         ax2 = ax.twinx()
-        ax2.plot(train[:,0], train[:,4], '.g', label="learn rate") # epoch vs lr 
+        ax2.plot(train[:,0], train[:,4], '.g', label="resnet learn rate") # epoch vs lr 
+        ax2.plot(mtrain[:,0], mtrain[:,3], '.g', label="mobileViT learn rate") # epoch vs lr 
         ax2.set_ylabel("learning rate")
-        ax2.legend(loc='lower center')
+        ax2.legend(loc="best") #'lower center'
         ax2.set_ylim([0.0, 0.5])        
         fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')            
         
@@ -132,12 +146,37 @@ class SummaryPlots(object):
         ax2.set_ylabel("learning rate")
         ax2.legend(loc='lower center')
         ax2.set_ylim([0.0, 0.5])         
-        fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')          
-           
+        fig.savefig(output_path, format='png', dpi=300, bbox_inches='tight')  
         
-    def gen_plots(self, train, val):
-        self.plot_loss_train_val(train, val)
-        self.plot_top1_train_val(train, val)
+    def get_values_from_csv(self, csv_file, epochs=200):
+        # can include : row_name1="Train/Top1", row_name2="Val/Top1", row_name3="Val_EMA/Top1"
+        train_epoch_loss_top1 = []
+        val_epoch_loss_top1 = []
+        valema_epoch_loss_top1 = []
+        # sequence : LR / Train_Loss / Val Loss / Common/BestMetric / Val_EMA_Loss 
+        #                / Train_Top1 / Val_Top1 / Val_EMA_Top1     
+        with open(csv_file) as f:
+            reader = csv.reader(f)
+            data = list(reader)            
+            data = data[1:][:] # w/o header row
+            for i in range(epochs):
+                epoch = int(float((data[i][2]))) 
+                lr    = float(data[i][1])
+                train_loss  = float(data[i+200][1])
+                val_loss    = float(data[i+400][1])
+                valema_loss = float(data[i+800][1])
+                train_top1  = float(data[i+1000][1])
+                val_top1    = float(data[i+1200][1])
+                valema_top1 = float(data[i+1400][1])
+                train_epoch_loss_top1.append((epoch, train_loss, train_top1, lr))
+                val_epoch_loss_top1.append((epoch, val_loss, val_top1, lr))
+                valema_epoch_loss_top1.append((epoch, valema_loss, valema_top1, lr))
+            
+        return np.array(train_epoch_loss_top1), np.array(val_epoch_loss_top1), np.array(valema_epoch_loss_top1)             
+                   
+    def gen_plots(self, train, val, mtrain=None, mval=None):
+        self.plot_loss_train_val(train, val, mtrain, mval)
+        self.plot_top1_train_val(train, val, mtrain, mval)
         self.plot_top5_train_val(train, val)
         
 
@@ -164,13 +203,16 @@ def main(argv):
         input_run_file = input_run_file        
     else:
         input_run_file = argv[0]
-        
+        if len(argv) > 1:
+            input_mobileViT_csv = argv[1]
+            
     plots = SummaryPlots(input_run_file)
     train, val, valema = plots.gen_loss_top1_top5()
+    mtrain, mval, mvalema = plots.get_values_from_csv(input_mobileViT_csv)
     if len(train) == 0:
         print("No values to plot.")
     else:
-        plots.gen_plots(train, valema)
+        plots.gen_plots(train, valema, mtrain, mvalema)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
