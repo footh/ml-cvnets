@@ -155,7 +155,10 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_cutout_wd2.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt1-2.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment4_divbytenlr.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment4_divbytenlr.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt4__divbytenlr.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbytenlr.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbyten_lr0pt1_3step.txt"
     
     if len(argv) < 1: 
         input_run_file = input_run_file        
