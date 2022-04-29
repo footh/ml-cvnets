@@ -190,7 +190,7 @@ class SummaryPlots(object):
 
 ## Test 
 def main(argv):
-    input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_cyclic.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment.txt"
@@ -206,7 +206,9 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_lr0pt4__divbytenlr.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbytenlr.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbyten_lr0pt1_3step.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment4_divbyten_lr0pt4_3step.txt"
     
+    input_mobileViT_csv = None
     if len(argv) < 1: 
         input_run_file = input_run_file        
     else:
@@ -215,12 +217,16 @@ def main(argv):
             input_mobileViT_csv = argv[1]
             
     plots = SummaryPlots(input_run_file)
-    train, val, valema = plots.gen_loss_top1_top5()
-    mtrain, mval, mvalema = plots.get_values_from_csv(input_mobileViT_csv)
+    train, val, valema = plots.gen_loss_top1_top5()  
+        
     if len(train) == 0:
         print("No values to plot.")
     else:
-        plots.gen_plots(train, valema, mtrain, mvalema)
+        if input_mobileViT_csv is not None:
+            mtrain, mval, mvalema = plots.get_values_from_csv(input_mobileViT_csv)   
+            plots.gen_plots(train, valema, mtrain, mvalema)
+        else: 
+            plots.gen_plots(train, valema)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

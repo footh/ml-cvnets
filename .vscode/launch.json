@@ -41,7 +41,7 @@
             "justMyCode": true
         },          
         {
-            "name": "plots from run redir txt",
+            "name": "plots from 2in1 best",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/utils/summary_plots.py",
@@ -50,5 +50,16 @@
                      "results\\mobilevittiny_best.csv"],            
             "justMyCode": true
         }
+        ,          
+        {
+            "name": "plots from resnet",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/utils/summary_plots.py",
+            "console": "integratedTerminal",
+            //"args": ["results\\AU_results_resnet_tiny_correct_class.txt", 
+            //         "results\\mobilevittiny_best.csv"],            
+            "justMyCode": true
+        }        
     ]
 }
