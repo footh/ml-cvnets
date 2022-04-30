@@ -1,5 +1,5 @@
 common:
-  run_label: "correct_classes_depth34"
+  run_label: "correct_classes_depth18_vbs1"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -25,12 +25,12 @@ sampler:
   vbs:
     crop_size_width: 64
     crop_size_height: 64
-    max_n_scales: 5
+    max_n_scales: 1
     min_crop_size_width: 64
-    max_crop_size_width: 96
+    max_crop_size_width: 64
     min_crop_size_height: 64
-    max_crop_size_height: 96
-    check_scale: 8
+    max_crop_size_height: 64
+    check_scale: 8    
 #
 loss:
   category: "classification"
