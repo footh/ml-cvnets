@@ -86,22 +86,22 @@ class SummaryPlots(object):
         
         fig, (ax, ax2) = plt.subplots(2, 1)
         ax.plot(train[:,0], train[:,1], 'b--', label="resnet train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,1], '#069af3', linewidth=3, label="resnet val") # epoch vs val loss
+        ax.plot(val[:,0], val[:,1], color='#069af3', linewidth=3, label="resnet val") # epoch vs val loss
         if mtrain is not None: 
             ax.plot(mtrain[:,0], mtrain[:,1], 'r--', label="mobileViT train")
-            ax.plot(mval[:,0], mval[:,1], '#fa8072', linewidth=3, label="mobileViT val")
+            ax.plot(mval[:,0], mval[:,1], color='#fa8072', linewidth=3, label="mobileViT val")
         ax.set_xlabel("epoch")
         ax.set_ylabel("loss")
         ax.set_ylim([0, 8.0])
         ax.set_title("training and validation loss")
         ax.legend(loc="best") # "upper center"
         
-        ax2.plot(train[:,0], train[:,4], '.b', label="resnet learn rate") # epoch vs lr 
+        ax2.plot(train[:,0], train[:,4], marker='.', color='#069af3', label="resnet learn rate") # epoch vs lr 
         ax2.set_ylabel("lr resnet")
         ax2.legend(loc="center right", framealpha=0.2)  
         if mtrain is not None:
             ax3 = ax2.twinx()
-            ax3.plot(mtrain[:,0], mtrain[:,3], '.r', label="mobileViT learn rate") # epoch vs lr 
+            ax3.plot(mtrain[:,0], mtrain[:,3], marker='.', color='#fa8072', label="mobileViT learn rate") # epoch vs lr 
             ax3.set_ylabel("lr mobileViT")
             ax3.legend(loc="upper right", framealpha=0.2)
         #ax2.set_ylim([0.0, 0.5])    
@@ -116,22 +116,22 @@ class SummaryPlots(object):
         
         fig, (ax, ax2) = plt.subplots(2, 1)
         ax.plot(train[:,0], train[:,2], 'b--', label="resnet train") # epoch vs train loss
-        ax.plot(val[:,0], val[:,2], '#069af3', linewidth=3, label="resnet val") # epoch vs val loss 
+        ax.plot(val[:,0], val[:,2], color='#069af3', linewidth=3, label="resnet val") # epoch vs val loss 
         if mtrain is not None:
             ax.plot(mtrain[:,0], mtrain[:,2], 'r--', label="mobileViT train")
-            ax.plot(mval[:,0], mval[:,2], '#fa8072', linewidth=3, label="mobileViT val")        
+            ax.plot(mval[:,0], mval[:,2], color='#fa8072', linewidth=3, label="mobileViT val")        
         ax.set_xlabel("epoch")
         ax.set_ylabel("top1 percent")
         ax.set_ylim([0, 100])
         ax.set_title("training and validation top1")
         ax.legend(loc="best", framealpha=0.2) # "upper center"
         
-        ax2.plot(train[:,0], train[:,4], '.b', label="resnet learn rate") # epoch vs lr 
+        ax2.plot(train[:,0], train[:,4], marker='.', color='#069af3', label="resnet learn rate") # epoch vs lr 
         ax2.set_ylabel("lr resnet")
         ax2.legend(loc="center right", framealpha=0.2)  
         if mtrain is not None:
             ax3 = ax2.twinx()
-            ax3.plot(mtrain[:,0], mtrain[:,3], '.r', label="mobileViT learn rate") # epoch vs lr 
+            ax3.plot(mtrain[:,0], mtrain[:,3], marker='.', color='#fa8072', label="mobileViT learn rate") # epoch vs lr 
             ax3.set_ylabel("lr mobileViT")
             ax3.legend(loc="upper right", framealpha=0.2)
         #ax2.set_ylim([0.0, 0.5])        

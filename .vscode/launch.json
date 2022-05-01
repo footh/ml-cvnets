@@ -46,7 +46,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/utils/summary_plots.py",
             "console": "integratedTerminal",
-            "args": ["results\\AU_results_resnet_tiny_correct_class.txt", 
+            "args": ["results\\AU_results_resnet_tiny_correct_class_depth50_vbs1.txt", 
                      "results\\mobilevittiny_best.csv"],            
             "justMyCode": true
         }
