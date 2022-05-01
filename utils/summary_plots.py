@@ -213,7 +213,8 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment4_divbyten_lr0pt4_3step_vbs1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_vbs1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_vbs1.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment5_tiny_cosine_vbs1.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment5_tiny_cosine_vbs1.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_divbyten__vbs1.txt"
     
     input_mobileViT_csv = None
     if len(argv) < 1: 
