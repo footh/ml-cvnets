@@ -1,5 +1,5 @@
 common:
-  run_label: "depth18_augment5_tiny_cosine_vbs1"
+  run_label: "depth50_augment5_tiny_cosine_vbs1"
   log_freq: 500
   auto_resume: true
   mixed_precision: false
@@ -98,7 +98,7 @@ model:
     activation:
       name: "relu" # specify the activation function that you want to use in the classification network
     resnet:
-      depth: 18
+      depth: 50
   normalization:
     name: "batch_norm_2d"
     momentum: 0.1
