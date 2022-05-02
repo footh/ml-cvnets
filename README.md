@@ -21,7 +21,7 @@
 ```
 
 
-# --------------------------- original repo author readme file starts from here ---------------------
+# ----- original repo author readme file starts from here -------
 # CVNets: A library for training computer vision networks
 
 This repository contains the source code for training computer vision models. Specifically, it contains the source code of the [MobileViT](https://arxiv.org/abs/2110.02178?context=cs.LG) paper for the following tasks:
