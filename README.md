@@ -1,3 +1,27 @@
+# Steps to reproduce best results for TinyImageNet
+
+* Follow "Installation" section below to install required environment and packages
+* Place the "tiny-imagenet-200" folder in "image_data" at the same level as the project root folder
+* Run the script "setup_val.py" to setup validation data
+* Folder with validation data is formed 
+       
+* When in the required environment enter following command in main repo folder to start training the required resnet model: 
+```
+(ml-cvnets) C:\ml-cvnets>cvnets-train --common.config-file config/classification/resnet_tiny_depth.yaml --common.results-loc results_resnet > results\resnet_depth50_best.txt
+```
+
+* When in the main repo folder and required environment enter following command to start trainng the required mobileViT mode:
+```
+(ml-cvnets) C:\ml-cvnets>cvnets-train --common.config-file config/classification/mobilevittiny_best.yaml --common.results-loc results_mobilevit > results\mobilevit_best.txt
+```
+
+* Once the run is complete the following command can be used to generate summary plots from resnet_depth50_best.txt
+```
+(ml-cvnets2) C:\ml-cvnets>utils/summary_plots.py "results\\resnet_depth50_best.txt" "results\\mobilevittiny_best.csv"
+```
+
+
+# --------------------------- original repo author readme file starts from here ---------------------
 # CVNets: A library for training computer vision networks
 
 This repository contains the source code for training computer vision models. Specifically, it contains the source code of the [MobileViT](https://arxiv.org/abs/2110.02178?context=cs.LG) paper for the following tasks:
