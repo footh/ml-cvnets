@@ -217,7 +217,8 @@ def main(argv):
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_divbyten__vbs1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth18_augment5_divbyten_vbs1.txt"
     #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_augment5_tiny_cosine_vbs1.txt"
-    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_wd4e5_vbs1.txt"
+    #input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_wd4e5_vbs1.txt"
+    input_run_file = "results\AU_results_resnet_tiny_correct_class_depth50_divbyten_vbs1.txt"
     
     input_mobileViT_csv = None
     if len(argv) < 1: 
